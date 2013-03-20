@@ -1,0 +1,8 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="subMasterPage.master.cs" Inherits="subMasterPage" MasterPageFile="~/MasterPage.master" %>
+
+    <asp:Content ID="cnt_subContent" runat="server" ContentPlaceHolderID="cph_subcontent">
+        <asp:Label ID="lbl_subContent" runat="server" Text="This is new content from a nested master page and will be considered as default content for a different layout or theme." BackColor="Purple" SkinID="subMaster" />
+        <br />
+        <br />
+        <asp:ContentPlaceHolder ID="cph_subcontent" runat="server" />
+    </asp:Content>

@@ -1,0 +1,17 @@
+﻿#mail_header
+{
+    float:left;
+    text-align:left;
+    position: absolute; 
+    top: 15px;
+padding:.4em;
+    position: absolute; top: 15px;
+                    height: 400px; width: 368px;
+}
+
+#card_message
+{
+    text-align:center;
+    margin:0 auto;
+    position:relative;
+}

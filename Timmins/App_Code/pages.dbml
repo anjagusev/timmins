@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="anjag_sql" Class="pagesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=50.97.99.169;Initial Catalog=anjag_sql;User ID=anjag_1" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="anjag_sqlConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="anjag_1.pages" Member="pages">
+    <Type Name="page">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subject_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="menu_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="position" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="visible" Type="System.Data.Linq.Binary" DbType="Binary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_content" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="images" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="uploads" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

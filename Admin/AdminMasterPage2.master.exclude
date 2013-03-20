@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage2.master.cs" Inherits="AdminMasterPage" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet'
+    type='text/css'>
+<script type="text/javascript" src="js/enquire.js"></script>
+<script type="text/javascript" src="js/query.js"></script>
+<head runat="server">
+    <title>
+        <%=pp_masterTitle %></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="maxcontainer">
+        <div id="container">
+            <div id="header-container">
+                <div id="img">
+                    <asp:Image ID="img_logo" runat="server" CssClass="img-logo" ImageUrl="../img/tdhlogo.png" />
+                </div>
+                <div id="header-text-container">
+                    <asp:Label ID="lbl_header" runat="server" CssClass="hospital-header header-text-container"
+                        Text="Admin" />
+                    <br />
+                    <asp:Label ID="lbl_subheader" runat="server" CssClass="subheader header-text-container"
+                        Text="Timmins and District Hospital L'Hopital de Timmins et du district" />
+                </div>
+                <div id="header-right">
+                    <div id="textsize">
+                        <asp:Label ID="lbl_bigt" runat="server" Text="A++ | " />
+                        <asp:Label ID="lbl_smallt" runat="server" Text="--A" />
+                    </div>
+                    <div id="search">
+                        <asp:TextBox ID="searchbox" CssClass="search-bar" runat="server" />
+                        <asp:Button ID="btn_search" runat="server" CssClass="search-button" Text="Search" />
+                    </div>
+                    <%-- <div class="contact-header">
+                        <asp:Image ID="phoneicon" CssClass="images" runat="server" ImageUrl="img/phone.png" />
+                        <asp:Label ID="lbl_phone" AssociatedControlID="phoneicon" runat="server" Text="705-267-2131" />
+                        <br />
+                        <asp:Image ID="mapicon" CssClass="images" runat="server" ImageUrl="img/map.png" />
+                        <asp:Label ID="lbl_address" AssociatedControlID="mapicon" runat="server" CssClass="address"
+                            Text="700 Ross Avenue East Timmins, ON P4N 8P2" />
+                    </div>--%>
+                </div>
+            </div>
+            <div class="clearfloat">
+            </div>
+           <%-- <div id="top-nav-bar">
+                <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
+                    StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="false">
+                    <DynamicMenuItemStyle CssClass="menuItem"></DynamicMenuItemStyle>
+                    <StaticMenuItemStyle CssClass="menuItem" HorizontalPadding="1em"></StaticMenuItemStyle>
+                </asp:Menu>
+                <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource1"
+                    CssClass="mobilemenu" />
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+            </div>
+            <div id="submenu-slider-container">
+                <div id="img-slider">
+
+
+                </div>
+                <div id="side-nav">
+                    <div class="side-nav-box">
+                        <asp:HyperLink ID="pnv" runat="server" NavigateUrl="~/patientsandvisitors.aspx" CssClass="text"
+                            Text="Patients & Visitors" />
+                    </div>
+                    <div class="side-nav-box second">
+                        Give Back
+                    </div>
+                    <div class="side-nav-box third">
+                        Staff & Students
+                    </div>
+                </div>
+            </div>
+            <div class="clearfloat">
+            </div>
+            <div id="featured-news-container">
+                <h1>
+                    Featured News</h1>
+                <asp:ContentPlaceHolder ID="cph_news_list" runat="server">
+                    <ul class="ft-news-list">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue.</li>
+                        <li>Dui nibh ullamcorper augue, sit amet condimentum</li>
+                    </ul>
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="award-container">
+                <h1>
+                    Awarded Exemplary Standing</h1>
+                <div class="award-text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus, diam in
+                        cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum. Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui
+                        nibh ullamcorper augue, sit amet condimentum>Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue,
+                        sit amet condimentum</p>
+                    <p>
+                        Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus, diam in
+                        cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum>Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui
+                        nibh ullamcorper augue, sit amet condimentum</p>
+                </div>
+            </div>
+            <div id="main-quick-links">
+                <div class="quicklink">
+                    <h4>
+                        Patient Mail</h4>
+                    <h5>
+                        Send a message</h5>
+                </div>
+                <div class="quicklink">
+                    <h4>
+                        Schedule an Appointment</h4>
+                    <h5>
+                        Just leave your information and we will contact you</h5>
+                </div>
+                <div class="quicklink">
+                    <h4>
+                        Send Us Your Feedback</h4>
+                    <h5>
+                        Let Us Know How We`re Doing</h5>
+                </div>
+                <div class="quicklink">
+                    <h4>
+                        Subscribe To Our Newsletter</h4>
+                    <h5>
+                        Sign Up To Get Updated Every Month</h5>
+                </div>
+            </div>
+        </div>--%>
+        <div id="admin_main">
+        <asp:ContentPlaceHolder ID="cph_admin_main" runat="server">
+        </asp:ContentPlaceHolder>
+        </div>
+
+        <asp:ContentPlaceHolder ID="cph_news_list" runat="server" />
+        <asp:ContentPlaceHolder ID="cph_main" runat="server">
+            HELLO
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

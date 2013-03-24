@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="specialties_doctors">
+  <DataContextMoniker Name="/specialties_doctorsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a20849c9-7482-4ebc-be21-d5a47a01147f" absoluteBounds="0.5, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/specialties_doctorsDataContext/tbl_doctor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="945da35f-5bda-48bd-ac12-e15b8da3534c" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aca91117-81ef-4cad-9e64-f7a1f891738c" absoluteBounds="5.125, 3.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/specialties_doctorsDataContext/tbl_specialty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b306693e-f6db-437f-8e2b-8852319c8719" absoluteBounds="5.14, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.125 : 3.75); (6.125 : 1.57774983723958); (2.5 : 1.57774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/specialties_doctorsDataContext/tbl_specialty/tbl_specialty_tbl_doctor" />
+      <nodes>
+        <classShapeMoniker Id="aca91117-81ef-4cad-9e64-f7a1f891738c" />
+        <classShapeMoniker Id="a20849c9-7482-4ebc-be21-d5a47a01147f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

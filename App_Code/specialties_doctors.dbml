@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="timmins" Class="specialties_doctorsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=snare.arvixe.com;Initial Catalog=timmins;User ID=timmins" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="timminsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="timmins.tbl_doctors" Member="tbl_doctors">
+    <Type Name="tbl_doctor">
+      <Column Name="doctor_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="bio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="specialty_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_specialty_tbl_doctor" Member="tbl_specialty" ThisKey="doctor_id" OtherKey="specialty_id" Type="tbl_specialty" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="timmins.tbl_specialties" Member="tbl_specialties">
+    <Type Name="tbl_specialty">
+      <Column Name="specialty_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="specialty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_specialty_tbl_doctor" Member="tbl_doctor" ThisKey="specialty_id" OtherKey="doctor_id" Type="tbl_doctor" Cardinality="One" />
+    </Type>
+  </Table>
+</Database>

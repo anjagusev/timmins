@@ -64,8 +64,8 @@
                             Text="Give Back" />
                     </div>
                     <div class="side-nav-box third">
-                        <asp:HyperLink ID="staffandstudents" runat="server" NavigateUrl="~/staffandstudents.aspx"
-                            CssClass="text" Text="Staff and Students" />
+                        <asp:HyperLink ID="staffandstudents" runat="server" NavigateUrl="~/FindaDoctor.aspx"
+                            CssClass="text" Text="Find A Doctor" />
                     </div>
                 </div>
             </div>

@@ -1,14 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FindaDoctor.aspx.cs" Inherits="FindaDoctor" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/subPage.master" CodeFile="FindaDoctor.aspx.cs" Inherits="FindaDoctor" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
+
+
+ <asp:Content ID="Content1" ContentPlaceHolderID="main_content" Runat="S   <div>
      <asp:label ID="lbl_Sspecialty" runat="server" Text="Search by specialty:" />
         <br />
         <asp:Label ID="lbl_speciality" runat="server" Text="Select Specialty: " />
@@ -71,3 +66,5 @@
     </form>
 </body>
 </html>
+
+</asp:Content>

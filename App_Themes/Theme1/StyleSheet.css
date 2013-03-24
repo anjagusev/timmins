@@ -887,6 +887,65 @@ img
 }
 
 
+
+
+
+/*Footer style*/
+
+
+
+#footer {}
+
+#logo_f {  
+    /*border:dashed 2px red;*/
+     width:300px; 
+     height:100px; 
+     float:left;  
+}
+.logo_ft {
+    float:left;
+    padding-right:1.000em;
+}
+
+
+.phone_ft {display:block; }
+.address_ft {}
+
+
+#icons_f {
+float:right;
+margin-top:5%;
+margin-right:3%;
+text-align:right;
+/*border:solid 2px black;*/
+
+}
+
+.nav_f {
+    clear:both;
+padding-left:64%;
+text-align:left;
+font:bold;
+height:20px;
+font-size:small;
+background-color:rgb(219,220,221);
+box-shadow: 10px 10px 5px #888;
+-moz-box-shadow: 10px 10px 5px #888;
+-webkit-box-shadow: 10px 10px 5px #888;
+   
+
+}
+
+
+#copy_ft {
+    text-align:center;
+    font-size:x-small;
+
+}
+ 
+
+
+
 /*.mobilemenu {
 	display: none;
 }

@@ -18,4 +18,44 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         Response.Redirect("~/Default.aspx");
     }
+
+    //creating an instance of the article class
+    articleClass objNews = new articleClass();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        _subRebind();
+    }
+
+    private void _panelControl(Panel pnl)
+    {
+        pnl_paragraph.Visible = false;
+        pnl_feeds.Visible = false;
+        pnl.Visible = true;
+    }
+
+    private void _subRebind()
+    {
+
+        rpt_news.DataSource = objNews.getArticles();
+        rpt_news.DataBind();
+        _panelControl(pnl_feeds);
+    }
+
+    private void _showNews(int id)
+    {
+        _panelControl(pnl_paragraph);
+        rpt_paragraph.DataSource = objNews.getArticleByID(id);
+        rpt_paragraph.DataBind();
+    }
+
+    protected void subAdmin(object sender, CommandEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "Showall":
+                _showNews(int.Parse(e.CommandArgument.ToString()));
+                break;
+        }
+    }
 }

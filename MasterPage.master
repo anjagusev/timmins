@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <script type="text/javascript" src="js/enquire.js"></script>
 <script type="text/javascript" src="js/query.js"></script>
+<script type="text/javascript" src="js/news.js"></script>
 <head runat="server">
     <title>
         <%=pp_masterTitle %></title>
@@ -47,7 +48,9 @@
                 </asp:Menu>
                 <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource1"
                     CssClass="mobilemenu" />
-                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="main_nav" ShowStartingNode="false" />
+                <%-- Joel commented this section out because its not working
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="main_nav" ShowStartingNode="false" />--%>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
             </div>
             <div id="submenu-slider-container">
                 <div id="img-slider">
@@ -72,14 +75,105 @@
             <div class="clearfloat">
             </div>
             <div id="featured-news-container">
-                <h1>
-                    Featured News</h1>
+                <h1>Featured News</h1>
                 <asp:ContentPlaceHolder ID="cph_news_list" runat="server">
-                    <ul class="ft-news-list">
+                    <%--<ul class="ft-news-list">
                         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                         <li>Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue.</li>
                         <li>Dui nibh ullamcorper augue, sit amet condimentum</li>
-                    </ul>
+                    </ul>--%>
+                <asp:Panel ID="pnl_feeds" runat="server">
+                <div id="tickerContainer"></div>
+                    <dl id="ticker">
+                        <asp:Repeater ID="rpt_news" runat="server">
+                            <ItemTemplate>
+                                <asp:HiddenField ID="hdf_id" runat="server" Value='<%#Eval("id") %>' />
+                                <dt class="heading"><%#Eval("heading") %></dt>
+                                <dd class="text">
+                                    <%#Eval("intro") %>
+                                    <br />
+                                    <asp:LinkButton ID="btn_more" runat="server" Text="Read More" CommandName="Showall" CommandArgument='<%#Eval("id") %>' OnCommand="subAdmin" />
+                                </dd>
+                    
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </dl>
+            </asp:Panel>
+            <asp:Panel ID="Panel1" runat="server">
+                <asp:Repeater ID="Repeater1" runat="server">
+                    <ItemTemplate>
+                        <h3><%#Eval("heading") %></h3>
+                        <%#Eval("paragraph") %>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </asp:Panel>
+            <asp:Panel ID="pnl_paragraph" runat="server">
+                <asp:Repeater ID="rpt_paragraph" runat="server">
+                    <ItemTemplate>
+                        <h3><%#Eval("heading") %></h3>
+                        <%#Eval("paragraph") %>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </asp:Panel>
+        <script type="text/javascript">
+            $(function () {
+
+                //cache the ticker
+                var ticker = $("#ticker");
+
+                //wrap dt:dd pairs in divs
+                ticker.children().filter("dt").each(function () {
+
+                    var dt = $(this),
+		        container = $("<div>");
+
+                    dt.next().appendTo(container);
+                    dt.prependTo(container);
+
+                    container.appendTo(ticker);
+                });
+
+                //hide the scrollbar
+                ticker.css("overflow", "hidden");
+
+                //animator function
+                function animator(currentItem) {
+
+                    //work out new anim duration
+                    var distance = currentItem.height();
+                    duration = (distance + parseInt(currentItem.css("marginTop"))) / 0.025;
+
+                    //animate the first child of the ticker
+                    currentItem.animate({ marginTop: -distance }, duration, "linear", function () {
+
+                        //move current item to the bottom
+                        currentItem.appendTo(currentItem.parent()).css("marginTop", 0);
+
+                        //recurse
+                        animator(currentItem.parent().children(":first"));
+                    });
+                };
+
+                //start the ticker
+                animator(ticker.children(":first"));
+
+                //set mouseenter
+                ticker.mouseenter(function () {
+
+                    //stop current animation
+                    ticker.children().stop();
+
+                });
+
+                //set mouseleave
+                ticker.mouseleave(function () {
+
+                    //resume animation
+                    animator(ticker.children(":first"));
+
+                });
+            });
+        </script>
                 </asp:ContentPlaceHolder>
             </div>
             <div id="award-container">
@@ -150,9 +244,10 @@
             </div>
 
            <div id="navi_bar_f">
+              <%-- Joel commented this section out because its not working
               <asp:Menu ID="menu1" Orientation="Horizontal" StaticMenuItemStyle-HorizontalPadding="5" CssClass="nav_f" runat="server" DataSourceID="nav_ft" >  
               </asp:Menu>
-              <asp:SiteMapDataSource ID="nav_ft" runat="server" SiteMapProvider="footer_nav" ShowStartingNode="false"   />
+              <asp:SiteMapDataSource ID="nav_ft" runat="server" SiteMapProvider="footer_nav" ShowStartingNode="false"   />--%>
            </div>   
         
      </div>

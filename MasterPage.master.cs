@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 public partial class MasterPage : System.Web.UI.MasterPage
 {
     private string _title = "Timmins and District Hospital";
@@ -60,5 +61,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 _subRebind();
                 break;
         }
+    }
+
+
+    protected void subsubmit(object sender, EventArgs e)
+    { 
     }
 }

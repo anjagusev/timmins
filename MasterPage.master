@@ -158,9 +158,10 @@
                         Let Us Know How We`re Doing</h5>
                 </div>
                 <div class="quicklink">
-                    <h4>
-                        Subscribe To Our Newsletter</h4>
-            <div id="subscribe">
+                    <h4>Subscribe To Our Newsletter</h4>
+            <asp:Label ID="email_Exist" runat="server" /><br />
+              <div id="subscribe">
+                  <asp:Panel ID="pnl_sub" runat="server" Visible="true">
                 <asp:label ID="lbl_name" runat="server" Text="Name :" AssociatedControlID="txt_name" />
                 <asp:TextBox ID="txt_name" runat="server" />
                 <asp:RequiredFieldValidator ID="rfv_name" runat="server" ControlToValidate="txt_name" ErrorMessage="*" ValidationGroup="req" />
@@ -172,6 +173,7 @@
                 <br />
                 <asp:Button ID="btn_subscribe" runat="server" Text="Subscribe" ValidationGroup="req" OnClick="subsubmit" />
        
+                   </asp:Panel>
                 <br />
             </div>
                 </div>
@@ -184,30 +186,30 @@
       <%--  Footer--%>
         <div id="footer">
 
-             <div id="logo_f">
-                <asp:Image ID="logo_ft" CssClass="logo_ft" runat="server" ImageUrl="~/img/logo_ft.png" />
-                <asp:Label ID="phone_ft" CssClass="phone_ft" runat="server" Text="705-267-2131"/>
-                <br />
-                <asp:Label ID="address" CssClass="address_ft" runat="server" Text="700 Ross Avenue East Timmins, ON P4N 8P2" />
+             <div id="logo_f">    <asp:Image ID="logo_ft" CssClass="logo_ft" runat="server" ImageUrl="~/img/logo_ft.png" />
+                <asp:Label ID="phone_ft" CssClass="phone_ft" runat="server" Text="705-267-2131"/>
+            
+                <br />    <asp:Label ID="address" CssClass="address_ft" runat="server" Text="700 Ross Avenue East Timmins, ON P4N 8P2" />
+            
              </div>
 
              <div id="icons_f">
-                <asp:Label ID="ico_ft" runat="server" CssClass="ic_txt_ft" Text="Follow us on:" />
-                <asp:ImageButton ID="fb_ft" runat="server" ImageUrl="~/img/facebook.png" ImageAlign="AbsBottom" />
-                <asp:ImageButton ID="rss_ft" runat="server" ImageUrl="~/img/RSS.png" ImageAlign="AbsBottom" />
-                <asp:ImageButton ID="twitter_ft" runat="server" ImageUrl="~/img/twitter.png" ImageAlign="AbsBottom" />
+                <asp:Label ID="ico_ft" runat="server" CssClass="ic_txt_ft" Text="Follow us on:" />    <asp:ImageButton ID="fb_ft" runat="server" ImageUrl="~/img/facebook.png" ImageAlign="AbsBottom" />
+                <asp:ImageButton ID="rss_ft" runat="server" ImageUrl="~/img/RSS.png" ImageAlign="AbsBottom" />
+                <asp:ImageButton ID="twitter_ft" runat="server" ImageUrl="~/img/twitter.png" ImageAlign="AbsBottom" />
+            
             </div>
 
            <div id="navi_bar_f">
-              <%-- Joel commented this section out because its not working--%>
-              <asp:Menu ID="menu1" Orientation="Horizontal" StaticMenuItemStyle-HorizontalPadding="5" CssClass="nav_f" runat="server" DataSourceID="nav_ft" >  
-              </asp:Menu>
-              <asp:SiteMapDataSource ID="nav_ft" runat="server" SiteMapProvider="footer_nav" ShowStartingNode="false"   />
+              <%-- Joel commented this section out because its not working--%>  <asp:Menu ID="menu1" Orientation="Horizontal" StaticMenuItemStyle-HorizontalPadding="5" CssClass="nav_f" runat="server" DataSourceID="nav_ft" >  
+            
+              </asp:Menu>  <asp:SiteMapDataSource ID="nav_ft" runat="server" SiteMapProvider="footer_nav" ShowStartingNode="false"   />
+           <
            </div>   
         
      </div>
-            <div id="copy_ft">
-                <asp:Label ID="copyright" runat="server" CssClass="copy_ft" Text="Copyright@2012 Timmins and District Hospital" />
+            <div id="copy_ft">    <asp:Label ID="copyright" runat="server" CssClass="copy_ft" Text="Copyright@2012 Timmins and District Hospital" />
+            
             </div>
        <%-- ----End of Footer --------%>
 

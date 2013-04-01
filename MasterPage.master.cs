@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
 
 
 public partial class MasterPage : System.Web.UI.MasterPage
@@ -25,8 +26,12 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        _subRebind();
+        if (!Page.IsPostBack)
+        {
+            _subRebind();
+        }
     }
+    
 
     private void _panelControl(Panel pnl)
     {
@@ -64,7 +69,57 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
 
 
+    // this code is for newsletter feature
+    subscriberClass objsubscribe = new subscriberClass();
+
+    MailMessage objMail = new MailMessage();
+
+   
+
+    public void _strMessage(bool flag, string str)
+    {
+        if (flag)
+        {
+            email_Exist.Text = "<span style='color:green;'>Successfully  " + str + "<br/> Please check your email to verify.</span>";
+            pnl_sub.Visible = false;        
+        }
+        else
+        {
+            email_Exist.Text = "<span style='color:red;'>You're already  " + str + " </span>";
+        }
+    }
+
+
+    // code for submit button
     protected void subsubmit(object sender, EventArgs e)
-    { 
+    {
+        
+
+        string Username = txt_name.Text;
+        string Useremail = txt_email.Text;
+        var exist = objsubscribe.emailExist(Useremail);
+
+        if (exist.Any())
+        {
+            _strMessage(false, "subscribed");
+            _subRebind();
+        }
+        else
+        {
+            // insert through linq 
+            _strMessage(objsubscribe.CommitInsert(Username, Useremail), "subscribed");
+            _subRebind();
+
+            // test last inserted id
+            // lbl_lastid.Text = objsubClass.last_id().ToString();
+
+            int lastID = Convert.ToInt16(objsubscribe .last_id().ToString());
+
+            // send mail which will carry last inserted id
+            email objemail = new email();
+
+            objemail.emailMethod(Useremail, lastID);
+        }
+
     }
 }

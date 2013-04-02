@@ -53,9 +53,9 @@
                 </asp:Menu>
                 <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="main_nav" CssClass="mobilemenu" />
                 <%-- Joel commented this section out because its not working 
-                  
-                <asp:SiteMapDataSource ID="main_nav" runat="server" SiteMapProvider="main_nav" ShowStartingNode="false" />--%>
-                    <asp:SiteMapDataSource ID="main_nav" runat="server" ShowStartingNode="false" />   
+                   <asp:SiteMapDataSource ID="main_nav" runat="server" ShowStartingNode="false" /> --%>
+                <asp:SiteMapDataSource ID="main_nav" runat="server" SiteMapProvider="main_nav" ShowStartingNode="false" />
+                     
                
             </div>
             <div id="submenu-slider-container">
@@ -157,6 +157,8 @@
                     <h5>
                         Let Us Know How We`re Doing</h5>
                 </div>
+
+                <%--new letter--%>
                 <div class="quicklink">
                     <h4>Subscribe To Our Newsletter</h4>
             <asp:Label ID="email_Exist" runat="server" /><br />

@@ -11,7 +11,7 @@ public partial class FindaDoctor : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Page.Is(!Page.IsPostBack)
+        if (!Page.IsPostBack)
         {
             _subRebind();
         }
@@ -19,10 +19,11 @@ public partial class FindaDoctor : System.Web.UI.Page
 
     private void _subRebind()
     {
-        ddl_sp.DataSo
+
         no_result.Text = string.Empty;
         grd_doc.DataSource = null;
-Source = objLinq.getspecialities();
+
+        ddl_sp.DataSource = objLinq.getspecialities();
 
         ddl_sp.DataTextField = "specialty";
         ddl_sp.DataValueField = "specialty_id";
@@ -45,7 +46,6 @@ Source = objLinq.getspecialities();
             grd_doc.DataSource = null;
             grd_doc.DataBind();
         }
-
         else
         {
             no_result.Text = string.Empty;

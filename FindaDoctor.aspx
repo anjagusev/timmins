@@ -3,7 +3,7 @@
 
 
 
- <asp:Content ID="Content1" ContentPlaceHolderID="main_content" Runat="S   <div>
+ <asp:Content ID="Content1" ContentPlaceHolderID="main_content" runat="server">   <div>
      <asp:label ID="lbl_Sspecialty" runat="server" Text="Search by specialty:" />
         <br />
         <asp:Label ID="lbl_speciality" runat="server" Text="Select Specialty: " />
@@ -16,13 +16,14 @@
         <br />
         <asp:Label ID="lbl_fname" runat="server" Text="Enter First Name: " AssociatedControlID="txt_fname" />
         <asp:TextBox ID="txt_fname" runat="server" />
-        <br />
-        <asp:Label ID=asp:RequiredFieldValidator ID="rfv_fname" runat="server" ControlToValidate="txt_fname" ErrorMessage="*" ValidationGroup="req <asp:Label ID="lbl_lname" runat="server" Text="Enter Last Name: " AssociatedControlID="txt_lname" />
+        <asp:RequiredFieldValidator ID="rfv_fname" runat="server" ControlToValidate="txt_fname" ErrorMessage="*" ValidationGroup="req" />
+        <br />   
+        <asp:Label ID="lbl_lname" runat="server" Text="Enter Last Name: " AssociatedControlID="txt_lname" />
         <asp:TextBox ID="txt_lname" runat="server" />
+        <asp:RequiredFieldValidator ID="rfv_lname" runat="server" ControlToValidate="txt_lname" ErrorMessage="*" ValidationGroup="req" />
         <br />
-        <asp:Button ID=" <asp:RequiredFieldValidator ID="rfv_lname" runat="server" ControlToValidate="txt_lname" ErrorMessage="*" ValidationGroup="req" />
+        <asp:Button ID="btn" runat="server" Text="Search" ValidationGroup="req" /> 
         <br />
-        <asp:Button ID="btn" runat="server" Text="Search" ValidationGroup="req    <br />
         <asp:Label ID="no_result" runat="server" />
         <br />
 
@@ -61,9 +62,6 @@
         <%=grd_doc.PageIndex + 1%>
         of
         <%=grd_doc.PageCount%>
-     grd_doc.PageIndex + 1%>
-        of
-        <%= grd_doc.PageCount%>
         </i>
     </div>
    

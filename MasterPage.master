@@ -107,8 +107,7 @@
                                 <asp:Repeater ID="rpt_paragraph" runat="server">
                                     <ItemTemplate>
                                         <h3><%#Eval("heading") %></h3>
-                                        <%#Eval("paragraph") %>
-                                        <br />
+                                        <p><%#Eval("paragraph") %></p>
                                         <asp:LinkButton ID="btn_article" runat="server" Text="Back to Articles" CommandName="Feeds" OnCommand="subAdmin" />
                                     </ItemTemplate>
                                 </asp:Repeater>

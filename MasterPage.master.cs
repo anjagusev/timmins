@@ -62,7 +62,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
             case "Showall":
                 _showNews(int.Parse(e.CommandArgument.ToString()));
                 break;
-            case "Feed":
+            case "Feeds":
                 _subRebind();
                 break;
         }

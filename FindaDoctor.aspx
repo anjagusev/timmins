@@ -22,7 +22,7 @@
         <asp:TextBox ID="txt_lname" runat="server" />
         <asp:RequiredFieldValidator ID="rfv_lname" runat="server" ControlToValidate="txt_lname" ErrorMessage="*" ValidationGroup="req" />
         <br />
-        <asp:Button ID="btn" runat="server" Text="Search" ValidationGroup="req" /> 
+        <asp:Button ID="btn" runat="server" Text="Search" OnClick="search" ValidationGroup="req" /> 
         <br />
         <asp:Label ID="no_result" runat="server" />
         <br />

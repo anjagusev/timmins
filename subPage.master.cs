@@ -13,9 +13,17 @@ public partial class subPage : System.Web.UI.MasterPage
     }
 
     private string _title = "Timmins and District Hospital";
-    public string pp_masterTitle
+    public string pp_submasterTitle
     {
         get { return _title; }
         set { _title = value; }
     }
+
+    private string _subheading = "Default Heading";
+    public string pp_submasterSubHeading
+    {
+        get { return _subheading; }
+        set { _subheading = value; }
+    }
 }
+

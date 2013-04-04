@@ -142,7 +142,7 @@ a:hover
 #header-text-container
 {
     padding-top: 2.2%;
-    max-width: 61%;
+    max-width: 63%;
     float: left;
     margin-left: .5em; /*border:1px solid red;*/
     height: 100%;
@@ -588,18 +588,23 @@ img
 }
 
 
+.subMain 
+{
+    margin:1em;
+       width: 70%;
+}
 /* MEDIA SCREENS BELOW*/
 
 @media only screen and (min-width: 768px) and (max-width: 959px)
 {
     .img-logo
     {
-        width: 100%;
+        width: auto;
     }
     
     #container
     {
-        width: 90%;
+        width: 92%;
     }
 
     #header-text-container
@@ -656,6 +661,20 @@ img
     {
         height:auto;
     }
+    
+    .subMain 
+    {
+        width:auto;
+        
+        border:1px solid purple;
+        padding:0;
+        margin:0;
+    }
+    
+    #link-container
+    {
+        width:20%;
+    }
 }
 
 
@@ -663,7 +682,7 @@ img
 {
         .img-logo
     {
-        width: 100%;
+        width:20%;
     }
     body
     {
@@ -688,7 +707,7 @@ img
         font-size: .75em;
         height: auto;
         border: 1px solid black;
-        
+        width:50%;
     }
 
 
@@ -739,6 +758,9 @@ img
         width: 10%;
     }
 
+#link-container 
+{
+}
 
 }
 
@@ -750,7 +772,11 @@ img
     {
         width: 99%;
     }
-
+    
+#link-container
+    {
+    
+    }
     #maxcontainer
     {
         width: 100%;
@@ -778,7 +804,7 @@ img
     
     .img-logo
     {
-        width: 100%;
+      
     }
 
     .mobilemenu
@@ -865,7 +891,14 @@ img
     {
         width: 90%;
     }
-
+   
+    .subMain 
+    {
+        border:1px solid black;
+        width:auto;
+    }
+    
+   
     #side-nav
     {
         padding-left: .8em;
@@ -891,7 +924,7 @@ img
     }
     .img-logo
     {
-        width: 100%;
+       
     }
     .top-nav-bar
     {

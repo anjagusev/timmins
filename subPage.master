@@ -1,14 +1,15 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="subPage.master.cs" Inherits="subPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>
         <%=pp_masterTitle %>
     </title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <%--  This is unnecessary - April 4 Anja ------
+
+  <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>--%>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -67,8 +68,9 @@
             <div class="clearfloat">
             </div>
             <div id="link-container">
-                <h1>Main Links</h1>
-                <asp:ContentPlaceHolder ID="cph_news_list" runat="server">
+                <h1>
+                    Quick Links</h1>
+                <asp:ContentPlaceHolder ID="cph_sideNav" runat="server">
                     <ul class="ft-news-list">
                         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                         <li>Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue.</li>
@@ -76,28 +78,30 @@
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>
-            
             <div id="main-container">
-                <asp:ContentPlaceHolder ID="main_content" runat="server">
-                <h1>Main Content</h1>
-                <div class="award-text">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus, diam in
-                        cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum. Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui
-                        nibh ullamcorper augue, sit amet condimentum>Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue,
-                        sit amet condimentum</p>
-                    <p>
-                        Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus, diam in
-                        cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum>Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui
-                        nibh ullamcorper augue, sit amet condimentum</p>
-                </div>
+                <h1>
+                    <asp:ContentPlaceHolder ID="cph_subheading" runat="server">
+                        Main Content
                     </asp:ContentPlaceHolder>
+                </h1>
+                <asp:ContentPlaceHolder ID="cph_main" runat="server">
+                    <div class="award-text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus, diam in
+                            cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum. Lorem ipsum dolor
+                            sit amet, consectetur adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui
+                            nibh ullamcorper augue, sit amet condimentum>Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue,
+                            sit amet condimentum</p>
+                        <p>
+                            Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus, diam in
+                            cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum>Lorem ipsum dolor
+                            sit amet, consectetur adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui
+                            nibh ullamcorper augue, sit amet condimentum</p>
+                    </div>
+                </asp:ContentPlaceHolder>
             </div>
-                 
             <%--<div id="main-quick-links">
                 <div class="quicklink">
                     <h4>
@@ -125,39 +129,39 @@
                 </div>
             </div>
         </div>--%>
-        <asp:ContentPlaceHolder ID="cph_main" runat="server">
+            <%-- 
+  
+  This is unnecessary Anja April 4 --
+  
+       <asp:ContentPlaceHolder ID="cph_main" runat="server">
             HELLO
-        </asp:ContentPlaceHolder>
-
-   <div id="footer">
-
-             <div id="logo_f">
-               <%-- <asp:Image ID="logo_ft" CssClass="logo_ft" runat="server" ImageUrl="~/img/logo_ft.png" />
+        </asp:ContentPlaceHolder>--%>
+            <div id="footer">
+                <div id="logo_f">
+                    <%-- <asp:Image ID="logo_ft" CssClass="logo_ft" runat="server" ImageUrl="~/img/logo_ft.png" />
                 <asp:Label ID="phone_ft" CssClass="phone_ft" runat="server" Text="705-267-2131"/>
                 <br />
                 <asp:Label ID="address" CssClass="address_ft" runat="server" Text="700 Ross Avenue East Timmins, ON P4N 8P2" />
-            --%> </div>
-
-             <div id="icons_f">
-                <asp:Label ID="ico_ft" runat="server" CssClass="ic_txt_ft" Text="Follow us on:" />
-                <asp:ImageButton ID="fb_ft" runat="server" ImageUrl="~/img/facebook.png" ImageAlign="AbsBottom" />
-                <asp:ImageButton ID="rss_ft" runat="server" ImageUrl="~/img/RSS.png" ImageAlign="AbsBottom" />
-                <asp:ImageButton ID="twitter_ft" runat="server" ImageUrl="~/img/twitter.png" ImageAlign="AbsBottom" />
+                    --%>
+                </div>
+                <div id="icons_f">
+                    <asp:Label ID="ico_ft" runat="server" CssClass="ic_txt_ft" Text="Follow us on:" />
+                    <asp:ImageButton ID="fb_ft" runat="server" ImageUrl="~/img/facebook.png" ImageAlign="AbsBottom" />
+                    <asp:ImageButton ID="rss_ft" runat="server" ImageUrl="~/img/RSS.png" ImageAlign="AbsBottom" />
+                    <asp:ImageButton ID="twitter_ft" runat="server" ImageUrl="~/img/twitter.png" ImageAlign="AbsBottom" />
+                </div>
+                <div id="navi_bar_f">
+                    <asp:Menu ID="menu1" Orientation="Horizontal" StaticMenuItemStyle-HorizontalPadding="5"
+                        CssClass="nav_f" runat="server" DataSourceID="nav_ft">
+                    </asp:Menu>
+                    <asp:SiteMapDataSource ID="nav_ft" runat="server" SiteMapProvider="footer_nav" ShowStartingNode="false" />
+                </div>
             </div>
-
-           <div id="navi_bar_f">
-              <asp:Menu ID="menu1" Orientation="Horizontal" StaticMenuItemStyle-HorizontalPadding="5" CssClass="nav_f" runat="server" DataSourceID="nav_ft" >  
-              </asp:Menu>
-              <asp:SiteMapDataSource ID="nav_ft" runat="server" SiteMapProvider="footer_nav" ShowStartingNode="false"   />
-           </div>   
-        
-     </div>
             <div id="copy_ft">
                 <asp:Label ID="copyright" runat="server" CssClass="copy_ft" Text="Copyright@2012 Timmins and District Hospital" />
             </div>
-       <%-- ----End of Footer --------%>
-
-    </div>
+            <%-- ----End of Footer --------%>
+        </div>
     </form>
 </body>
 </html>

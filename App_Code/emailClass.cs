@@ -11,7 +11,7 @@ using System.Net.Mime;
 
 
 // ================================================================
-/*
+/*Anja Gusev's Class
  * Email Class
  * 
  * Instantiate this class to use the gmail emailer for Nortre Dame 

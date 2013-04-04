@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GreetingCardMakerRevisited.aspx.cs"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GreetingCard.aspx.cs"
     Inherits="GreetingCardMakerRevisited" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"

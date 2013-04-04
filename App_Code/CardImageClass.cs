@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for card_imageClass
+/// This is Anja's Class for the Greeting Card
 /// </summary>
 public class CardImageClass
 {

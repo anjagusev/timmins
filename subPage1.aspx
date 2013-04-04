@@ -3,6 +3,10 @@
    <%-- Access exposed elements from the master page--%>
     <%@ MasterType VirtualPath="~/subPage.master" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_sideNav" runat="Server">
-    CPH_NEWS_LIST
+  SIDE NAV 
+</asp:Content>
+<%--<asp:Content ID="cnt_main" ContentPlaceHolderID="cph_main" runat="server">
+//put your feature in here
 </asp:Content>
 
+--%>

@@ -109,13 +109,17 @@
                 <asp:Label ID="address" CssClass="address_ft" runat="server" Text="700 Ross Avenue East Timmins, ON P4N 8P2" />
                     --%>
                 </div>
-                <div id="icons_f">
-                    <asp:Label ID="ico_ft" runat="server" CssClass="ic_txt_ft" Text="Follow us on:" />
-                    <asp:ImageButton ID="fb_ft" runat="server" ImageUrl="~/img/facebook.png" ImageAlign="AbsBottom" />
-                    <asp:ImageButton ID="rss_ft" runat="server" ImageUrl="~/img/RSS.png" ImageAlign="AbsBottom" />
-                    <asp:ImageButton ID="twitter_ft" runat="server" ImageUrl="~/img/twitter.png" ImageAlign="AbsBottom" />
-                </div>
+                 <div id="icons_f">
+                        <asp:Label ID="ico_ft" runat="server" CssClass="ic_txt_ft" Text="Follow us on:" />
+                        <asp:ImageButton ID="fb_ft" runat="server" ImageUrl="~/img/facebook.png" ImageAlign="AbsBottom" />
+                        <asp:ImageButton ID="rss_ft" runat="server" ImageUrl="~/img/RSS.png" ImageAlign="AbsBottom" />
+                        <asp:ImageButton ID="twitter_ft" runat="server" ImageUrl="~/img/twitter.png" ImageAlign="AbsBottom" />
+                     </div>
+
+
+              
                 <div id="navi_bar_f">
+                     
                     <asp:Menu ID="menu1" Orientation="Horizontal" StaticMenuItemStyle-HorizontalPadding="5"
                         CssClass="nav_f" runat="server" DataSourceID="nav_ft">
                     </asp:Menu>
@@ -123,7 +127,7 @@
                 </div>
             </div>
             <div id="copy_ft">
-                <asp:Label ID="copyright" runat="server" CssClass="copy_ft" Text="Copyright@2012 Timmins and District Hospital" />
+                <asp:Label ID="copyright" runat="server" CssClass="copy_ft" Text="Copyright(c)2012 Timmins and District Hospital" />
             </div>
             <%-- ----End of Footer --------%>
         </div>

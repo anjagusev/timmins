@@ -587,11 +587,20 @@ img
     background-image: -webkit-gradient( 	linear, 	left bottom, 	left top, 	color-stop(0, rgb(68,149,199)), 	color-stop(1, rgb(163,210,239)) );
 }
 
-
+.subMain h1 
+{
+     font-size: 2.1em;
+    color: Maroon;
+    margin-top: .3em;
+    margin-bottom: .3em;
+    text-align: center;
+    
+}
 .subMain 
 {
     margin:1em;
-       width: 70%;
+       width: 100%;
+       min-height:500px;
 }
 /* MEDIA SCREENS BELOW*/
 
@@ -666,7 +675,6 @@ img
     {
         width:auto;
         
-        border:1px solid purple;
         padding:0;
         margin:0;
     }
@@ -709,7 +717,11 @@ img
         border: 1px solid black;
         width:50%;
     }
-
+    
+    .subMain 
+    {
+      width: auto;  
+    }
 
     /*#header-right
             	{
@@ -894,7 +906,7 @@ img
    
     .subMain 
     {
-        border:1px solid black;
+        
         width:auto;
     }
     

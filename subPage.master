@@ -78,20 +78,21 @@
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>
-            <div id="main-container">
+           
+             <div class="subMain">
             <div class="subhead">
                 <h1>
                     <%=pp_submasterSubHeading %>
                 </h1>
                 </div>
                 <asp:ContentPlaceHolder ID="cph_main" runat="server">
-                    <div class="subMain">
+                   
                         <p>
                            Fill this section with all your content
                     </div>
                 </asp:ContentPlaceHolder>
                 
-            </div>
+            
             <%-- 
   
   This is unnecessary Anja April 4 --

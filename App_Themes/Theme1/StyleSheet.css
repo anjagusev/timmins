@@ -566,7 +566,7 @@ img
 
 #link-container
 {
-    width: 28%;
+    width: 20%;
     height: 384px; /*border:1px solid pink;*/
     float: left;
     margin: 1em;
@@ -600,7 +600,16 @@ img
 {
     margin:1em;
        width: 100%;
+      
        min-height:500px;
+       border:1px solid black;
+}
+
+.subContent
+{
+    border:1px solid black;
+    width:76%;
+    float:left;
 }
 /* MEDIA SCREENS BELOW*/
 

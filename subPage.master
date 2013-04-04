@@ -78,21 +78,21 @@
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>
-           
-             <div class="subMain">
-            <div class="subhead">
-                <h1>
-                    <%=pp_submasterSubHeading %>
-                </h1>
-                </div>
-                <asp:ContentPlaceHolder ID="cph_main" runat="server">
-                   
-                        <p>
-                           Fill this section with all your content
-                    </div>
-                </asp:ContentPlaceHolder>
-                
+            <div class="subMain">
             
+                <div class="subhead">
+                    <h1>
+                        <%=pp_submasterSubHeading %>
+                    </h1>
+                </div>
+                <div class="subContent">
+                <asp:ContentPlaceHolder ID="cph_main" runat="server">
+                <p>
+                    Fill this section with all your content
+           
+            </asp:ContentPlaceHolder>
+             </div>
+            </div>
             <%-- 
   
   This is unnecessary Anja April 4 --
@@ -100,8 +100,7 @@
        <asp:ContentPlaceHolder ID="cph_main" runat="server">
             HELLO
         </asp:ContentPlaceHolder>--%>
-
-       <%-----------------------     FOOTER BEGINS        -------------%>
+            <%-----------------------     FOOTER BEGINS        -------------%>
             <div id="footer">
                 <div id="logo_f">
                     <%-- <asp:Image ID="logo_ft" CssClass="logo_ft" runat="server" ImageUrl="~/img/logo_ft.png" />

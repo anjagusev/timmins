@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +14,7 @@ public class email
 		// email to 
 		obj_Mail.To.Add(_emailTo);
 	// email from and instance of mailAddress
-		MailAddress mailAddress = new MailAddress("timmins@sidhusweb.com");
+		MailAddress mailAddress = new MailAddress("info@timmins.sidhusweb.com");
 		obj_Mail.From = mailAddress;
 		// Subject and Body
 		obj_Mail.Subject = "Confirm Your Registration with Timmins and District Hospital";
@@ -27,7 +27,7 @@ public class email
 		SmtpClient smtpClient = new SmtpClient("mail.snare.arvixe.com", 587);
 
 		System.Net.NetworkCredential credentials =
-		   new System.Net.NetworkCredential("timmins@sidhusweb", "group");
+		   new System.Net.NetworkCredential("mail.timmins.sidhusweb.com", "group4");
 		smtpClient.Credentials = credentials;
 
 		smtpClient.Send(obj_Mail);

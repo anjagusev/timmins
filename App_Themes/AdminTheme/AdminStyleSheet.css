@@ -493,6 +493,7 @@ img
         z-index: 99;
     }
 
+
     body
     {
         font-size: 12px;
@@ -501,6 +502,7 @@ img
     #container
     {
         width: 90%;
+        margin:0 auto;
     }
 
     #header-text-container
@@ -536,6 +538,10 @@ img
         width: 11%;
     }
 
+.img-logo 
+{
+    width:auto;
+}
 }
 
 

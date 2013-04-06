@@ -54,6 +54,24 @@ public class emailClass
             return true;
         }
     }
+
+
+    //Joel: I added this "sendMail" section
+    public bool sendMail(string _conName, string _conEmail, string _conReason, string _conMessage)
+    {
+        MailMessage objMail = new MailMessage(_conEmail, _conEmail, _conReason, _conMessage);
+        NetworkCredential objNC = new NetworkCredential("timminshospital@gmail.com", "group_four");
+        SmtpClient objSMTP = new SmtpClient("smtp.gmail.com", 587); // smtp server for gmail
+
+        using (objSMTP)
+        {
+            objMail.IsBodyHtml = true; // allows use of html in body
+            objSMTP.EnableSsl = true; // enable ssl, required for gmail
+            objSMTP.Credentials = objNC;
+            objSMTP.Send(objMail);
+            return true;
+        }
+    }
 }
 
 

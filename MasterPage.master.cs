@@ -122,4 +122,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
         }
 
     }
+
+    //sends the search text to "results.aspx" to perform search function and display the results
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        Session["test"] = searchbox.Text;
+        Response.Redirect("result.aspx");//sends the text to result.aspx and opens it
+    }
 }

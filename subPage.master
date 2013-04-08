@@ -33,7 +33,7 @@
                     </div>
                     <div id="search">
                         <asp:TextBox ID="searchbox" CssClass="search-bar" runat="server" />
-                        <asp:Button ID="btn_search" runat="server" CssClass="search-button" Text="Search" />
+                        <asp:Button ID="btn_search" runat="server" CssClass="search-button" Text="Search" OnClick="btnSearch_Click" />
                     </div>
                 </div>
             </div>

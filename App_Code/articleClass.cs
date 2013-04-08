@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Linq.SqlClient;//needed to perform the sql search query
 
 /// <summary>
 /// Summary description for articleClass
@@ -74,5 +75,18 @@ public class articleClass
             objNewsDC.SubmitChanges();
             return true;
         }
+    }
+
+    //public IQueryable<tbl_article> searchArticles(string _input)
+    public IQueryable searchArticles(string _input)// function used to search the database
+    {
+        articlesDataContext objNewsDC = new articlesDataContext();
+
+        var result = from a in objNewsDC.tbl_articles
+                     where SqlMethods.Like(a.paragraph, "%" + _input + "%")
+                     select a;
+
+        //make it return a sentence if it finds no result
+        return result;
     }
 }

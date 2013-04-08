@@ -25,27 +25,24 @@ using System.Net.Mime;
 
 public class emailClass
 {
-    public bool sendEmail(string _conName, string mappath, string _conEmail, string _conReason, string _conMessage)
+    public bool sendEmail(string _conName, string background, string _conEmail, string _conReason, string _conMessage)
     {
         MailMessage objMail = new MailMessage(_conEmail, _conEmail, _conReason, _conMessage);
         NetworkCredential objNC = new NetworkCredential("timminshospital@gmail.com", "_timmins");
         SmtpClient objSMTP = new SmtpClient("smtp.gmail.com", 587); // smptp server for gmail
-        
-        
 
 
 
-        LinkedResource backgroundimg = new LinkedResource(mappath);
-        backgroundimg.ContentId = "background";
+        string imgdisplay = "http://timmins.sidhusweb.com/" + background;
+
+        //LinkedResource backgroundimg = new LinkedResource(imgdisplay);
+        //backgroundimg.ContentId = "background";
         // done HTML formatting in the next line to display my logo
-        AlternateView av1 = AlternateView.CreateAlternateViewFromString("<html><body><img src=cid:background/><br>" + _conMessage +"</body></html>", null, MediaTypeNames.Text.Html);
-
+        AlternateView av1 = AlternateView.CreateAlternateViewFromString("<html><body><img src='timmins.sidhusweb.com/" + background + "' width='368px' height='400px' Style='z-index: position: absolute;''/><br>" + _conMessage + "</body></html>", null, MediaTypeNames.Text.Html);
 
         using (objSMTP)
         {
-
-            
-            av1.LinkedResources.Add(backgroundimg);
+          //    av1.LinkedResources.Add(backgroundimg);
             objMail.AlternateViews.Add(av1);
             objMail.IsBodyHtml = true; // allows use of html in body
             objSMTP.EnableSsl = true; // enable ssl, required for gmail

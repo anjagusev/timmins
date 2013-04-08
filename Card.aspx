@@ -140,7 +140,8 @@
             <ContentTemplate>
                 <asp:Panel ID="pnlCard" Style="float:left; position:relative; z-index:101; top: 15px;
                     height: 400px; width: 368px;" runat="server" HorizontalAlign="Center">
-                    <asp:Image ID="img_background" runat="server" /><br />
+                    <asp:Image ID="img_background" runat="server"  Style="position:absolute; z-index: 101; height: 400px;
+                        width: 368px;" /><br />
                     &nbsp;
                     <div id="mail_header">
                         <asp:Label ID="lblSubject" runat="server" />

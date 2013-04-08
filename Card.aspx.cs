@@ -76,7 +76,7 @@ public partial class subPage1 : System.Web.UI.Page
         // Update the color.
         pnlCard.BackColor = Color.FromName(lstBackColor.SelectedItem.Text);
         lblGreeting.ForeColor = Color.FromName(lstForeColor.SelectedItem.Text);
-       img_background.ImageUrl = "img/" + lstBackColor.SelectedValue.ToString();
+        img_background.ImageUrl = "http://timmins.sidhusweb.com/img/" + lstBackColor.SelectedValue.ToString();
 
 
         // Update the font.
@@ -156,17 +156,6 @@ public partial class subPage1 : System.Web.UI.Page
        
     }
 
-
-
-    //protected override void RenderContents(HtmlTextWriter writer)
-    //{
-
-    //    UpdatePanel updatePanel = (UpdatePanel)FindControl("UpdatePanel1");
-    //    updatePanel.ContentTemplateContainer.RenderControl(writer);
-
-    //}
-
-
     emailClass objEmail = new emailClass();
 
     protected void subClick(object sender, EventArgs e)
@@ -182,8 +171,7 @@ public partial class subPage1 : System.Web.UI.Page
       string mappath = Server.MapPath(@background); // my image is placed in images folder
 
       Response.Write(mappath);
-        _strMessage(objEmail.sendEmail(txtName.Text, mappath, txtPatient.Text.ToString(), txtReason, panel_html));// name, email, subject, message
-       
+        _strMessage(objEmail.sendEmail(txtName.Text, background, txtPatient.Text.ToString(), txtReason, panel_html));// name, email, subject, message
     }
 
     private void _subRebind()

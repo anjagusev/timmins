@@ -1,0 +1,13 @@
+Admin user
+username: timmins
+password: timmins#
+
+Doctor user
+username: doctor#1
+password: doctor#1
+
+username: doctor#2
+password: doctor#2
+
+username: doctor#3
+password: doctor#3

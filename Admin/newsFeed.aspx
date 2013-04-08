@@ -14,7 +14,7 @@
             <td><asp:Label ID="lbl_headI" runat="server" Text="Heading: " AssociatedControlID="txt_headI" /></td>
             <td>
                 <asp:TextBox ID="txt_headI" runat="server" />
-                <asp:RequiredFieldValidator ID="rfv_headI" runat="server" Text="*Required" ControlToValidate="txt_headI" ValidationGroup="insert" />
+                <%-- <asp:RequiredFieldValidator ID="rfv_headI" runat="server" Text="*Required" ControlToValidate="txt_headI" ValidationGroup="insert" />--%>
             </td>
         </tr>
         <tr>
@@ -28,7 +28,7 @@
             <td><asp:Label ID="lbl_paraI" runat="server" Text="Paragraph: " AssociatedControlID="txt_paraI" /></td>
             <td>
                 <asp:TextBox ID="txt_paraI" runat="server" TextMode="MultiLine" />
-                <asp:RequiredFieldValidator ID="rfv_paraI" runat="server" ControlToValidate="txt_paraI" Text="*Required" Display="Dynamic" ValidationGroup="insert" />
+                <%--<asp:RequiredFieldValidator ID="rfv_paraI" runat="server" ControlToValidate="txt_paraI" Text="*Required" Display="Dynamic" ValidationGroup="insert" />--%>
             </td>
         </tr>
         </table>

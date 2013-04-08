@@ -34,6 +34,7 @@ public class articleClass
     //doing insert
     public bool commitInsert(string _heading, string _intro, string _para)
     {
+        articlesDataContext objNewsDC = new articlesDataContext();
         //to ensure all data will be disposed when finished
         using (objNewsDC)
         {
@@ -66,8 +67,16 @@ public class articleClass
 
     public bool commitDelete(int _id)
     {
+        articlesDataContext objNewsDC = new articlesDataContext();
         using (objNewsDC)
         {
+
+            // Query the database for the rows to be deleted.
+            /*var objDelArt =
+                from x in objNewsDC.tbl_articles
+                where x.id == _id
+                select _id;*/
+
             var objDelArt = objNewsDC.tbl_articles.Single(x => x.id == _id);
             //delete command
             objNewsDC.tbl_articles.DeleteOnSubmit(objDelArt);

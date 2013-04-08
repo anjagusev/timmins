@@ -11,7 +11,10 @@ public partial class Admin_newsFeed : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        _subRebind();
+        if (!Page.IsPostBack)
+        {
+            _subRebind();
+        }
     }
 
     private void _subRebind()
@@ -49,7 +52,7 @@ public partial class Admin_newsFeed : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Insert":
-                _strMessage(objNews.commitInsert(txt_headI.Text.ToString(), txt_introI.Text.ToString(), txt_paraI.Text.ToString()), "inserted");
+                _strMessage(objNews.commitInsert(txt_headI.Text, txt_introI.Text, txt_paraI.Text), "inserted");
                 break;
             case "Update":
                 _showUpdate(int.Parse(e.CommandArgument.ToString()));

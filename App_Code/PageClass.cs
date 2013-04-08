@@ -8,6 +8,13 @@ using System.Web;
 /// </summary>
 public class PageClass
 {
+    public IQueryable<page> getPageByName(string _menu_name)
+    {
+        pagesDataContext objPageDC = new pagesDataContext();
+        var allPages = objPageDC.pages.Where(x => x.menu_name == _menu_name).Select(x => x);
+        return allPages;
+    }
+
     public IQueryable<page> getPages()
     {
         //create an insteance of the data context class called ObjPageDC

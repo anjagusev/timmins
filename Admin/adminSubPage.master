@@ -1,4 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminSubPage.master.cs" Inherits="adminSubPage" %>
+<%@ Register Src="~/Controls/adminmenu.ascx" TagName="Menu" TagPrefix="uc" %>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -16,7 +18,6 @@
         <div id="container">
             <div id="header-container">
                 <div id="logo">
-           <span style="color:red; font-weight:bold; text-align:center;"> ADMIN TEMPORARY HEADER</span>
                     <asp:ImageButton ID="img_logo" runat="server" CssClass="img-logo" ImageUrl="../img/timminslogo.png" OnClick="imgClick" />
                 </div>
                 <div id="header-right">
@@ -34,13 +35,13 @@
             </div>
             <div id="top-nav-bar">
                 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
-                    StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="false">
+                    StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="AdminSiteMapDataSource1" StaticEnableDefaultPopOutImage="false">
                     <DynamicMenuItemStyle CssClass="menuItem"></DynamicMenuItemStyle>
                     <StaticMenuItemStyle CssClass="menuItem" HorizontalPadding="1em"></StaticMenuItemStyle>
                 </asp:Menu>
-                <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource1"
+                <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="AdminSiteMapDataSource1"
                     CssClass="mobilemenu" />
-                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+                <asp:SiteMapDataSource ID="AdminSiteMapDataSource1" runat="server" ShowStartingNode="false" SiteMapProvider="AdminSqlSiteMapProvider" />
             </div>
             <%-- <div id="submenu-slider-container">
                 <div id="img-slider">

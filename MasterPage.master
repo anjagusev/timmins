@@ -29,7 +29,7 @@
                         <asp:Label ID="lbl_bigt" runat="server" Text="A++ | " />
                         <asp:Label ID="lbl_smallt" runat="server" Text="--A" />
                     </div>
-                    <div id="search">
+                    <div  id="search">
                         <asp:TextBox ID="searchbox" CssClass="search-bar" runat="server" />
                         <asp:Button ID="btn_search" runat="server" CssClass="search-button" Text="Search" OnClick="btnSearch_Click" />
                     </div>

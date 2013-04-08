@@ -166,6 +166,7 @@ a:hover
     padding-left: .5em;
 }
 
+
 #header-right
 {
     max-width: 40%;
@@ -177,7 +178,7 @@ a:hover
         margin: 0;
         float:right;
         position:relative;
-        z-index:-1;
+        /*z-index:-1; Joel: commented this out because it hinders input from being entered and the button from being clicked on chrome and firefox*/
         top:-3em;
         border:1px solid green;
         padding-bottom:0px;
@@ -746,7 +747,7 @@ img
         margin: 0;
         float:right;
         position:relative;
-        z-index:-1;
+        /*z-index:-1; Joel: commented this out because it hinders input from being entered and the button from being clicked on chrome and firefox*/
         top:-2em;
         border:1px solid green;
     }

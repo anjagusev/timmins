@@ -16,6 +16,7 @@
         <div id="container">
             <div id="header-container">
                 <div id="logo">
+           <span style="color:red; font-weight:bold; text-align:center;"> ADMIN TEMPORARY HEADER</span>
                     <asp:ImageButton ID="img_logo" runat="server" CssClass="img-logo" ImageUrl="../img/timminslogo.png" OnClick="imgClick" />
                 </div>
                 <div id="header-right">

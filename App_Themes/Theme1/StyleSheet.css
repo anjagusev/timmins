@@ -602,12 +602,12 @@ img
        width: 100%;
       
        min-height:500px;
-       border:1px solid black;
+      
 }
 
 .subContent
 {
-    border:1px solid black;
+   
     width:76%;
     float:left;
 }

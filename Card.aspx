@@ -12,7 +12,7 @@
         <div style="float:left; border-right: thin ridge; padding-right: 20px; border-top: thin ridge;
             padding-left: 20px; font-size: x-small; padding-bottom: 20px; border-left: thin ridge;
             width: 293px; padding-top: 10px; border-bottom: thin ridge; font-family: Verdana;
-            height: 408px; background-color: lightyellow">
+            height: 408px; background-color: lightblue">
             <table>
                 <tr>
                     <td>

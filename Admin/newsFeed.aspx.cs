@@ -7,8 +7,93 @@ using System.Web.UI.WebControls;
 
 public partial class Admin_newsFeed : System.Web.UI.Page
 {
+    articleClass objNews = new articleClass();
+
     protected void Page_Load(object sender, EventArgs e)
     {
+        _subRebind();
+    }
 
+    private void _subRebind()
+    {
+        txt_headI.Text = string.Empty;
+        txt_introI.Text = string.Empty;
+        txt_paraI.Text = string.Empty;
+        rpt_all.DataSource = objNews.getArticles();
+        rpt_all.DataBind();
+        _panelControl(pnl_all);
+    }
+
+    private void _panelControl(Panel pnl)
+    {
+        pnl_all.Visible = false;
+        pnl_delete.Visible = false;
+        pnl_update.Visible = false;
+        pnl.Visible = true;
+    }
+
+    private void _strMessage(bool flag, string str)
+    {
+        if (flag)
+        {
+            lbl_message.Text = "Article was succesfully " + str + ".";
+        }
+        else
+        {
+            lbl_message.Text = "Sorry, unable to " + str + " the article article.";
+        }
+    }
+
+    protected void subAdmin(object sender, CommandEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "Insert":
+                _strMessage(objNews.commitInsert(txt_headI.Text.ToString(), txt_introI.Text.ToString(), txt_paraI.Text.ToString()), "inserted");
+                break;
+            case "Update":
+                _showUpdate(int.Parse(e.CommandArgument.ToString()));
+                break;
+            case "Delete":
+                _showDelete(int.Parse(e.CommandArgument.ToString()));
+                break;
+        }
+    }
+
+    private void _showUpdate(int id)
+    {
+        _panelControl(pnl_update);
+        rpt_update.DataSource = objNews.getArticleByID(id);
+        rpt_update.DataBind();
+    }
+
+    private void _showDelete(int id)
+    {
+        _panelControl(pnl_delete);
+        rpt_delete.DataSource = objNews.getArticleByID(id);
+        rpt_delete.DataBind();
+    }
+
+    protected void subUpDel(object sender, RepeaterCommandEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "Update":
+                TextBox txtHead = (TextBox)e.Item.FindControl("txt_headingU");
+                TextBox txtIntro = (TextBox)e.Item.FindControl("txt_introU");
+                TextBox txtPara = (TextBox)e.Item.FindControl("txt_paraU");
+                HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_id");
+                int proID = int.Parse(hdfID.Value.ToString());
+                _strMessage(objNews.commitUpdate(proID, txtHead.Text.ToString(), txtIntro.Text.ToString(), txtPara.Text.ToString()), "updated");
+                break;
+            case "Delete":
+                int _id = int.Parse(((HiddenField)e.Item.FindControl("hdf_id")).Value);
+                _strMessage(objNews.commitDelete(_id), "deleted");
+                _subRebind();
+                break;
+            case "Cancel":
+                _subRebind();
+                break;
+        }
     }
 }

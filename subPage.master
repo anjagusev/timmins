@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="subPage.master.cs" Inherits="subPage" %>
-<%--Registering the menu controls--%>
+<%--Registering the menu controls--%>\
 <%@ Register Src="~/Controls/Menu.ascx" TagName="Menu" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/sideMenu.ascx" TagName="sideMenu" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

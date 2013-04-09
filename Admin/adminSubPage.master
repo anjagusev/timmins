@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminSubPage.master.cs" Inherits="adminSubPage" %>
-<%@ Register Src="~/Controls/adminmenu.ascx" TagName="Menu" TagPrefix="uc" %>
+<%@ Register Src="~/Controls/adminmenu.ascx" TagName="adminMenu" TagPrefix="uc2" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -34,6 +34,8 @@
             <div class="clearfloat">
             </div>
             <div id="top-nav-bar">
+            <uc2:adminMenu ID="sideMenu" runat="server"></uc2:adminMenu>
+            <%--
                 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
                     StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="AdminSiteMapDataSource1" StaticEnableDefaultPopOutImage="false">
                     <DynamicMenuItemStyle CssClass="menuItem"></DynamicMenuItemStyle>
@@ -41,7 +43,7 @@
                 </asp:Menu>
                 <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="AdminSiteMapDataSource1"
                     CssClass="mobilemenu" />
-                <asp:SiteMapDataSource ID="AdminSiteMapDataSource1" runat="server" ShowStartingNode="false"  />
+                <asp:SiteMapDataSource ID="AdminSiteMapDataSource1" runat="server" ShowStartingNode="false"  />--%>
             </div>
             <%-- <div id="submenu-slider-container">
                 <div id="img-slider">

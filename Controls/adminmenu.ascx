@@ -1,14 +1,14 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" EnableViewState="false" CodeFile="adminmenu.ascx.cs"
     Inherits="adminMenu" %>
 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
-    DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="false" StaticMenuStyle-CssClass="top-nav-bar">
+    DataSourceID="AdminSiteMapDataSource1" StaticEnableDefaultPopOutImage="false" StaticMenuStyle-CssClass="top-nav-bar">
     <DynamicMenuStyle CssClass="dynamicMenu" />
     <DynamicMenuItemStyle CssClass="dynamicMenu"></DynamicMenuItemStyle>
     <StaticMenuItemStyle CssClass="menuItem" HorizontalPadding="1em"></StaticMenuItemStyle>
 </asp:Menu>
-<asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource1"
+<asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="AdminSiteMapDataSource1"
     CssClass="mobilemenu" />
-<asp:SiteMapDataSource ID="AdminSiteMapDataSource1" runat="server" ShowStartingNode="false" />
+<asp:SiteMapDataSource ID="AdminSiteMapDataSource1" SiteMapProvider="AdminSiteMapProvider"  runat="server" ShowStartingNode="false" />
 <%-- <asp:Menu ID="menu1" Orientation="Horizontal"  runat="server"
                     StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="main_nav" >
                     <DynamicMenuItemStyle CssClass="menuItem"></DynamicMenuItemStyle>

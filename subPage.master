@@ -17,14 +17,7 @@
         <div id="container">
             <div id="header-container">
                 <div id="img">
-                    <asp:Image ID="img_logo" runat="server" CssClass="img-logo" ImageUrl="img/tdhlogo.png" />
-                </div>
-                <div id="header-text-container">
-                    <asp:Label ID="lbl_header" runat="server" CssClass="hospital-header header-text-container"
-                        Text="Timmins and District Hospital" />
-                    <br />
-                    <asp:Label ID="lbl_subheader" runat="server" CssClass="subheader header-text-container"
-                        Text="L'Hopital de Timmins et du district" />
+                    <asp:ImageButton ID="img_logo" runat="server" CssClass="img-logo" ImageUrl="img/timminslogo.png" OnClick="imgClick" />
                 </div>
                 <div id="header-right">
                     <div id="textsize">

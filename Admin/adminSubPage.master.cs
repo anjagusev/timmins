@@ -13,7 +13,7 @@ public partial class adminSubPage : System.Web.UI.MasterPage
     }
     protected void imgClick(object sender, EventArgs e)
     {
-        Response.Redirect("~/Default.aspx");
+        Response.Redirect("Default.aspx");
     }
 
     private string _title = "Timmins and District Hospital";

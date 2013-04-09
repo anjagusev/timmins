@@ -18,7 +18,7 @@
         <div id="container">
             <div id="header-container">
                 <div id="logo">
-                    <asp:ImageButton ID="img_logo" runat="server" CssClass="img-logo" ImageUrl="../img/timminslogo.png" OnClick="imgClick" />
+                    <asp:ImageButton ID="img_logo" runat="server" CssClass="img-logo" ImageUrl="../img/timminsadminlogo.png" OnClick="imgClick" />
                 </div>
                 <div id="header-right">
                     <div id="textsize">

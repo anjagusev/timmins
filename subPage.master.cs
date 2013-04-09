@@ -26,6 +26,11 @@ public partial class subPage : System.Web.UI.MasterPage
         set { _subheading = value; }
     }
 
+    protected void imgClick(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Default.aspx");
+    }
+
     //sends the search text to "results.aspx" to perform search function and display the results
     protected void btnSearch_Click(object sender, EventArgs e)
     {

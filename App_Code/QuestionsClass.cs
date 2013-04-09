@@ -24,6 +24,7 @@ public class QuestionsClass
     public IQueryable<Question> GetQuestionByID(int _id)
     {
         DataClassesDataContext dbDC = new DataClassesDataContext();
+
         var allquestions = dbDC.Questions.Where(x => x.ID == _id).Select(x => x);
         return allquestions;
     }

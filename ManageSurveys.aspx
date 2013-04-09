@@ -1,9 +1,33 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/adminSubPage.master" AutoEventWireup="true"
-    CodeFile="CreateSurvey.aspx.cs" Inherits="CreateSurvey" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ManageSurveys.aspx.cs" Inherits="ManageSurvey" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" runat="Server">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        #listboxSource
+        {
+            overflow: auto;
+            width: 25em;
+        }
+        .style1
+        {
+            width: 40%;
+        }
+        .style2
+        {
+            width: 20%;
+            height: 76px;
+        }
+        .style3
+        {
+            width: 20%;
+            height: 76px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
     <h1>
         <asp:Label ID="lbl_header" runat="server" Text="Add A Survey" /></h1>
     <table cellpadding="2" class="style1">
@@ -125,7 +149,7 @@
         </tr>
         </td> </tr>
     </table>
-    <tr>
+    </tr><tr>
         <td style="width: 25%; text-align: left;">
             &nbsp;
         </td>
@@ -142,6 +166,7 @@
             &nbsp;
         </td>
     </tr>
+    </table>
     <div>
         <asp:Label ID="lbl_output" runat="server" />
         <asp:Label ID="lblTest" runat="server" />
@@ -151,7 +176,8 @@
         <asp:DropDownList ID="ddlSurveys" runat="server" AutoPostBack="false" ValidationGroup="status"
             Width="21%">
         </asp:DropDownList>
-        <asp:Button ID="btn_status" runat="server" ValidationGroup="status" OnClick="subStatus"
-            Text="Make Active" />
+        <asp:Button ID="btn_status" runat="server" ValidationGroup="status" OnClick="subStatus" Text="Make Active" />
     </div>
-</asp:Content>
+    </form>
+</body>
+</html>

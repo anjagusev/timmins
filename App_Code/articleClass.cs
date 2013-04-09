@@ -31,6 +31,20 @@ public class articleClass
         return articleID;
     }
 
+    public IQueryable<tbl_article> getLastFiveArticles()
+    {
+        articlesDataContext objNewsDC = new articlesDataContext();
+
+        /*var latestArticles = (from a in objNewsDC.tbl_articles
+                             select a).OrderByDescending(r => r.id);*/
+
+        var latestArticles = (from a in objNewsDC.tbl_articles
+                              orderby a.id descending
+                              select a).Take(5);//only selects the last 5 records (based on id)
+
+        return latestArticles;
+    }
+
     //doing insert
     public bool commitInsert(string _heading, string _intro, string _para)
     {

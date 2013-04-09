@@ -16,13 +16,6 @@
         </p>
 
         <br />
-        <p><asp:Label ID="lbl_mymail" runat="server" Text="Your Email: " />
-        <asp:TextBox ID="txt_mymail" runat="server" />
-        <asp:RequiredFieldValidator ID="rfv_mymail" runat="server" ControlToValidate="txt_mymail" Text="*Enter your mail please" />
-        <%--Need to add the regular expression validator--%>
-        </p>
-
-        <br />
         <p><asp:Label ID="lbl_email" runat="server" Text="Receiver's Email: " />
         <asp:TextBox ID="txt_email" runat="server" />
         <asp:RequiredFieldValidator ID="rfv_email" runat="server" ControlToValidate="txt_email" Text="*Enter a destination mail address" />
@@ -41,7 +34,7 @@
         <asp:TextBox ID="txt_message" runat="server" TextMode="MultiLine" />
         <asp:RequiredFieldValidator ID="rfv_message" runat="server" ControlToValidate="txt_message" Text="*Your email cannot be empty" />
         </p>
-
+            
         <br />
         <asp:LinkButton ID="btn" OnClick="subClick" runat="server" Text="Send" />
         <br /><br />

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="newsFeed.aspx.cs" Inherits="Admin_newsFeed" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/adminSubPage.master" AutoEventWireup="true" CodeFile="newsFeed.aspx.cs" Inherits="Admin_newsFeed" %>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" Runat="Server">

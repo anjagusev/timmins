@@ -43,7 +43,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
     private void _subRebind()
     {
 
-        rpt_news.DataSource = objNews.getArticles();
+        /*rpt_news.DataSource = objNews.getArticles();*/
+        rpt_news.DataSource = objNews.getLastFiveArticles();
+        
         rpt_news.DataBind();
         _panelControl(pnl_feeds);
     }

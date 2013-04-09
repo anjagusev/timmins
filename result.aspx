@@ -6,8 +6,12 @@
         <asp:Label ID="lbl" runat="server" />
 
         <br /><br />
-        <asp:Gridview ID="gtv" runat="server">
-        </asp:Gridview>
+        <asp:Repeater ID="gtv" runat="server">
+            <ItemTemplate>
+                <h2><%#Eval("heading") %></h2>
+                <p><%#Eval("paragraph") %></p>
+            </ItemTemplate>
+        </asp:Repeater>
     </div>
 </asp:Content>
 

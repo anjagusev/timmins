@@ -106,14 +106,6 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<AdminSiteMap> AdminSiteMaps
-	{
-		get
-		{
-			return this.GetTable<AdminSiteMap>();
-		}
-	}
-	
 	public System.Data.Linq.Table<SurveyQuestion> SurveyQuestions
 	{
 		get
@@ -143,6 +135,14 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<Question>();
+		}
+	}
+	
+	public System.Data.Linq.Table<AdminSiteMap> AdminSiteMaps
+	{
+		get
+		{
+			return this.GetTable<AdminSiteMap>();
 		}
 	}
 }
@@ -875,123 +875,6 @@ public partial class SiteMap : INotifyPropertyChanging, INotifyPropertyChanged
 		if ((this.PropertyChanged != null))
 		{
 			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="timmins.AdminSiteMap")]
-public partial class AdminSiteMap
-{
-	
-	private int _ID;
-	
-	private string _Url;
-	
-	private string _Title;
-	
-	private string _Description;
-	
-	private System.Nullable<int> _ParentID;
-	
-	private System.Nullable<int> _OrdinalPosition;
-	
-	public AdminSiteMap()
-	{
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-	public int ID
-	{
-		get
-		{
-			return this._ID;
-		}
-		set
-		{
-			if ((this._ID != value))
-			{
-				this._ID = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="VarChar(100)")]
-	public string Url
-	{
-		get
-		{
-			return this._Url;
-		}
-		set
-		{
-			if ((this._Url != value))
-			{
-				this._Url = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-	public string Title
-	{
-		get
-		{
-			return this._Title;
-		}
-		set
-		{
-			if ((this._Title != value))
-			{
-				this._Title = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(250)")]
-	public string Description
-	{
-		get
-		{
-			return this._Description;
-		}
-		set
-		{
-			if ((this._Description != value))
-			{
-				this._Description = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentID", DbType="Int")]
-	public System.Nullable<int> ParentID
-	{
-		get
-		{
-			return this._ParentID;
-		}
-		set
-		{
-			if ((this._ParentID != value))
-			{
-				this._ParentID = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrdinalPosition", DbType="Int")]
-	public System.Nullable<int> OrdinalPosition
-	{
-		get
-		{
-			return this._OrdinalPosition;
-		}
-		set
-		{
-			if ((this._OrdinalPosition != value))
-			{
-				this._OrdinalPosition = value;
-			}
 		}
 	}
 }
@@ -1877,6 +1760,123 @@ public partial class Question : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		this.SendPropertyChanging();
 		entity.Question = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="timmins.AdminSiteMap")]
+public partial class AdminSiteMap
+{
+	
+	private int _ID;
+	
+	private string _Url;
+	
+	private string _Title;
+	
+	private string _Description;
+	
+	private System.Nullable<int> _ParentID;
+	
+	private System.Nullable<int> _OrdinalPosition;
+	
+	public AdminSiteMap()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				this._ID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="VarChar(100)")]
+	public string Url
+	{
+		get
+		{
+			return this._Url;
+		}
+		set
+		{
+			if ((this._Url != value))
+			{
+				this._Url = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+	public string Title
+	{
+		get
+		{
+			return this._Title;
+		}
+		set
+		{
+			if ((this._Title != value))
+			{
+				this._Title = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(250)")]
+	public string Description
+	{
+		get
+		{
+			return this._Description;
+		}
+		set
+		{
+			if ((this._Description != value))
+			{
+				this._Description = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentID", DbType="Int")]
+	public System.Nullable<int> ParentID
+	{
+		get
+		{
+			return this._ParentID;
+		}
+		set
+		{
+			if ((this._ParentID != value))
+			{
+				this._ParentID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrdinalPosition", DbType="Int")]
+	public System.Nullable<int> OrdinalPosition
+	{
+		get
+		{
+			return this._OrdinalPosition;
+		}
+		set
+		{
+			if ((this._OrdinalPosition != value))
+			{
+				this._OrdinalPosition = value;
+			}
+		}
 	}
 }
 #pragma warning restore 1591

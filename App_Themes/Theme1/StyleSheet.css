@@ -612,6 +612,12 @@ img
     width:76%;
     float:left;
 }
+
+.dynamicMenu li
+        {
+            display:none;
+            
+        }
 /* MEDIA SCREENS BELOW*/
 
 @media only screen and (min-width: 768px) and (max-width: 959px)

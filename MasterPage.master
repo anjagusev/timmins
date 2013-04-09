@@ -1,11 +1,22 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
+<%--Registering the menu controls--%>
+<%@ Register Src="~/Controls/Menu.ascx" TagName="Menu" TagPrefix="uc" %>
+<%@ Register Src="~/Controls/sideMenu.ascx" TagName="sideMenu" TagPrefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <script type="text/javascript" src="js/enquire.js"></script>
 <script type="text/javascript" src="js/query.js"></script>
 <script type="text/javascript" src="js/news.js"></script>
 <script type="text/javascript" src="js/feed.js"></script>
+<style type="text/css">
+        .dynamicMenu li
+        {
+            display:none;
+            
+        }
+        </style>
 <head runat="server">
     <title>
         <%=pp_masterTitle %></title>
@@ -46,16 +57,16 @@
             <div class="clearfloat">
             </div>
             <div id="top-nav-bar">
-                <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
-                    StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="main_nav" StaticEnableDefaultPopOutImage="false">
+             <uc:Menu ID="Menu" runat="server"></uc:Menu>
+             <%--OLD MENU --- CAN BE DELETED --
+   <%--             <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
+                    StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="SiteMap" StaticEnableDefaultPopOutImage="false">
                     <DynamicMenuItemStyle CssClass="menuItem"></DynamicMenuItemStyle>
                     <StaticMenuItemStyle CssClass="menuItem" HorizontalPadding="1em"></StaticMenuItemStyle>
                 </asp:Menu>
-                <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="main_nav" CssClass="mobilemenu" />
-                <%-- Joel commented this section out because its not working 
-                   <asp:SiteMapDataSource ID="main_nav" runat="server" ShowStartingNode="false" /> --%>
-                <asp:SiteMapDataSource ID="main_nav" runat="server" SiteMapProvider="main_nav" ShowStartingNode="false" />
-                     
+                <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMap" CssClass="mobilemenu" />
+                 <asp:SiteMapDataSource ID="SiteMap" runat="server" SiteMapProvider="SqlSiteMapProvider" ShowStartingNode="false" />
+                     --%>
                
             </div>
             <div id="submenu-slider-container">

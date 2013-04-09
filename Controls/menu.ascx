@@ -8,7 +8,7 @@
 </asp:Menu>
 <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource1"
     CssClass="mobilemenu" />
-<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+<asp:SiteMapDataSource ID="SiteMapDataSource1" SiteMapProvider="SqlSiteMapProvider" runat="server" ShowStartingNode="false" />
 <%-- <asp:Menu ID="menu1" Orientation="Horizontal"  runat="server"
                     StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="main_nav" >
                     <DynamicMenuItemStyle CssClass="menuItem"></DynamicMenuItemStyle>

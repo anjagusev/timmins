@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="subPage.master.cs" Inherits="subPage" %>
-
+<%--Registering the menu controls--%>
+<%@ Register Src="~/Controls/Menu.ascx" TagName="Menu" TagPrefix="uc" %>
+<%@ Register Src="~/Controls/sideMenu.ascx" TagName="sideMenu" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -33,6 +35,10 @@
             <div class="clearfloat">
             </div>
             <div id="top-nav-bar">
+            <%--new menu user control --%>
+            <uc:Menu ID="Menu" runat="server"></uc:Menu>
+            <%--OLD MENU ---- CAN BE DELETED -------------------- %>
+            
                 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
                     StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="false">
                     <DynamicMenuItemStyle CssClass="menuItem"></DynamicMenuItemStyle>
@@ -40,7 +46,8 @@
                 </asp:Menu>
                 <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource1"
                     CssClass="mobilemenu" />
-                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />--%>
+
             </div>
             <%-- <div id="submenu-slider-container">
                 <div id="img-slider">
@@ -63,11 +70,13 @@
             <div id="link-container">
                 <h1>
                     Quick Links</h1>
+                    <!--SIDE MENU CONTROL-->
+                     <!-- MENU CONTROL HERE -->
+                <uc1:sideMenu ID="sideMenu" runat="server"></uc1:sideMenu>
                 <asp:ContentPlaceHolder ID="cph_sideNav" runat="server">
                     <ul class="side-nav">
                         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue.</li>
-                        <li>Dui nibh ullamcorper augue, sit amet condimentum</li>
+                  
                     </ul>
                 </asp:ContentPlaceHolder>
             </div>

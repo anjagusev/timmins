@@ -10,19 +10,19 @@ public class AdminSiteMapClass
 {
     public IQueryable<AdminSiteMap> getAdminSiteMaps()
     {
-
-        //create an insteance of the data context class called ObjAdminSiteMapDC
-        adminsitemapDataContext objAdminSiteMapDC = new adminsitemapDataContext();
+        
+        //create an insteance of the data context class called dbDC
+        DataClassesDataContext dbDC = new DataClassesDataContext();
         //creating anonymous variable with value being instance of LINQ object
-        var allAdminSiteMaps = objAdminSiteMapDC.AdminSiteMaps.Select(x => x);
+        var allAdminSiteMaps = dbDC.AdminSiteMaps.Select(x => x);
         //return IQueryable<product> for databound control to bind to
         return allAdminSiteMaps;
     }
 
     public IQueryable<AdminSiteMap> getAdminSiteMapByID(int _id)
     {
-        adminsitemapDataContext objAdminSiteMapDC = new adminsitemapDataContext();
-        var allAdminSiteMaps = objAdminSiteMapDC.AdminSiteMaps.Where(x => x.ID == _id).Select(x => x);
+        DataClassesDataContext dbDC = new DataClassesDataContext();
+        var allAdminSiteMaps = dbDC.AdminSiteMaps.Where(x => x.ID == _id).Select(x => x);
         return allAdminSiteMaps;
     }
 
@@ -30,9 +30,9 @@ public class AdminSiteMapClass
 
     public bool commitInsert(string _url, string _title, string _description, int _parentid, int _ordinalposition)
     {
-        adminsitemapDataContext objAdminSiteMapDC = new adminsitemapDataContext();
+        DataClassesDataContext dbDC = new DataClassesDataContext();
         //to ensure all data will be disposed when finished
-        using (objAdminSiteMapDC)
+        using (dbDC)
         {
             //create an instance of the table
             AdminSiteMap objNewAdminSiteMap = new AdminSiteMap();
@@ -44,21 +44,21 @@ public class AdminSiteMapClass
             objNewAdminSiteMap.ParentID = _parentid;
             objNewAdminSiteMap.OrdinalPosition = _ordinalposition;
           
-            objAdminSiteMapDC.AdminSiteMaps.InsertOnSubmit(objNewAdminSiteMap);
+            dbDC.AdminSiteMaps.InsertOnSubmit(objNewAdminSiteMap);
             //commit insert against db
-            objAdminSiteMapDC.SubmitChanges();
+            dbDC.SubmitChanges();
             return true;
         }
     }
 
     public bool commitUpdate(int _id, string _url, string _title, string _description, int _parentid, int _ordinalposition)
     {
-        adminsitemapDataContext objAdminSiteMapDC = new adminsitemapDataContext();
-        using (objAdminSiteMapDC)
+        DataClassesDataContext dbDC = new DataClassesDataContext();
+        using (dbDC)
         {
 
 
-            var objUpAdminSiteMap = objAdminSiteMapDC.AdminSiteMaps.Single(x => x.ID == _id);
+            var objUpAdminSiteMap = dbDC.AdminSiteMaps.Single(x => x.ID == _id);
             objUpAdminSiteMap.ID = _id;
             objUpAdminSiteMap.Url = _url;
             objUpAdminSiteMap.Title = _title;
@@ -67,21 +67,21 @@ public class AdminSiteMapClass
             objUpAdminSiteMap.OrdinalPosition = _ordinalposition;
          
             //commit update against db
-            objAdminSiteMapDC.SubmitChanges();
+            dbDC.SubmitChanges();
 
             return true;
         }
     }
     public bool commitDelete(int _id)
     {
-        adminsitemapDataContext objAdminSiteMapDC = new adminsitemapDataContext();
-        using (objAdminSiteMapDC)
+        DataClassesDataContext dbDC = new DataClassesDataContext();
+        using (dbDC)
         {
-            var objDelSub = objAdminSiteMapDC.AdminSiteMaps.Single(x => x.ID == _id);
+            var objDelSub = dbDC.AdminSiteMaps.Single(x => x.ID == _id);
             //delete command
-            objAdminSiteMapDC.AdminSiteMaps.DeleteOnSubmit(objDelSub);
+            dbDC.AdminSiteMaps.DeleteOnSubmit(objDelSub);
             //commit delete aginst  db
-            objAdminSiteMapDC.SubmitChanges();
+            dbDC.SubmitChanges();
             return true;
         }
 

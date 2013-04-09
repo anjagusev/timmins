@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="timmins" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=snare.arvixe.com;Initial Catalog=timmins;Persist Security Info=True;User ID=timmins" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="timminsConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="timmins.pages" Member="pages">
+    <Type Name="page">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subject_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="menu_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="position" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="visible" Type="System.Data.Linq.Binary" DbType="Binary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_content" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="images" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="uploads" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="subject_page" Member="subject" ThisKey="subject_id" OtherKey="id" Type="subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="timmins.subject" Member="subjects">
+    <Type Name="subject">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="menu_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="position" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="subject_page" Member="pages" ThisKey="id" OtherKey="subject_id" Type="page" />
+      <Association Name="subject_SiteMap" Member="SiteMaps" ThisKey="id" OtherKey="SubjectID" Type="SiteMap" />
+    </Type>
+  </Table>
+  <Table Name="timmins.AdminSiteMap" Member="AdminSiteMaps">
+    <Type Name="AdminSiteMap">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrdinalPosition" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="timmins.SiteMap" Member="SiteMaps">
+    <Type Name="SiteMap">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrdinalPosition" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="subject_SiteMap" Member="subject" ThisKey="SubjectID" OtherKey="id" Type="subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

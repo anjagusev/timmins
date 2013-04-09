@@ -10,18 +10,18 @@ public class SubjectClass
 {
     public IQueryable<subject> getSubjects()
       {
-      //create an insteance of the data context class called ObjSubjectDC
-       subjectDataContext objSubjectDC = new subjectDataContext();
+      //create an insteance of the data context class called dbDC
+       DataClassesDataContext dbDC = new DataClassesDataContext();
       //creating anonymous variable with value being instance of LINQ object
-       var allSubjects = objSubjectDC.subjects.Select(x => x);
+       var allSubjects = dbDC.subjects.Select(x => x);
         //return IQueryable<product> for databound control to bind to
        return allSubjects;
     }
 
     public IQueryable<subject> getSubjectByID(int _id)
     {
-        subjectDataContext objSubjectDC = new subjectDataContext();
-        var allsubjects = objSubjectDC.subjects.Where(x => x.id == _id).Select(x => x);
+        DataClassesDataContext dbDC = new DataClassesDataContext();
+        var allsubjects = dbDC.subjects.Where(x => x.id == _id).Select(x => x);
         return allsubjects;
     }
 
@@ -29,47 +29,47 @@ public class SubjectClass
 
     public bool commitInsert(int _id, string _menu_name)
     {
-        subjectDataContext objSubjectDC = new subjectDataContext();
+        DataClassesDataContext dbDC = new DataClassesDataContext();
         //to ensure all data will be disposed when finished
-        using (objSubjectDC)
+        using (dbDC)
         {
             //create an instance of the table
             subject objNewSubject = new subject();
             //set table column to new values being passed from *.aspx subject
             objNewSubject.id = _id;
             objNewSubject.menu_name = _menu_name;
-            objSubjectDC.subjects.InsertOnSubmit(objNewSubject);
+            dbDC.subjects.InsertOnSubmit(objNewSubject);
             //commit insert against db
-            objSubjectDC.SubmitChanges();
+            dbDC.SubmitChanges();
             return true;
         }
     }
 
     public bool commitUpdate(int _id, string _menu_name)
     {
-        subjectDataContext objSubjectDC = new subjectDataContext();
-        using (objSubjectDC)
+        DataClassesDataContext dbDC = new DataClassesDataContext();
+        using (dbDC)
         {
-            var objUpSubject = objSubjectDC.subjects.Single(x => x.id == _id);
+            var objUpSubject = dbDC.subjects.Single(x => x.id == _id);
             objUpSubject.id =_id;
             objUpSubject.menu_name = _menu_name;
           
             //commit update against db
-            objSubjectDC.SubmitChanges();
+            dbDC.SubmitChanges();
 
             return true;
         }
     }
     public bool commitDelete(int _id)
     {
-        subjectDataContext objSubjectDC = new subjectDataContext();
-        using (objSubjectDC)
+        DataClassesDataContext dbDC = new DataClassesDataContext();
+        using (dbDC)
         {
-            var objDelSub = objSubjectDC.subjects.Single(x => x.id == _id);
+            var objDelSub = dbDC.subjects.Single(x => x.id == _id);
             //delete command
-            objSubjectDC.subjects.DeleteOnSubmit(objDelSub);
+            dbDC.subjects.DeleteOnSubmit(objDelSub);
             //commit delete aginst  db
-            objSubjectDC.SubmitChanges();
+            dbDC.SubmitChanges();
             return true;
         }
 

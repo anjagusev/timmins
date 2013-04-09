@@ -22,8 +22,11 @@ public partial class Admin_Default5 : System.Web.UI.Page
         //context = new SurveyAppConString();
         if (!IsPostBack)
         {
+
+            ContentPlaceHolder contentPlaceHolder = (ContentPlaceHolder)Master.FindControl("cph_admin_main");
+          
             QuestionsClass objQuestions = new QuestionsClass();
-            ListBox listbox = (ListBox)FindControl("lbSource");
+            ListBox listbox = (ListBox)contentPlaceHolder.FindControl("lbSource");
             //List<Question> questions = context.Questions.ToList();
             List<Question> questions = objQuestions.getQuestions().ToList();
             listbox.DataSource = questions;

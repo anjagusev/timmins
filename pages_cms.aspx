@@ -123,7 +123,7 @@
                     Select="new (id, menu_name)" TableName="subjects">
                 </asp:LinqDataSource>-->
                               
-                            </td>
+                            </td>  <%#Eval("subject_id")%> <%#Eval("menu_name") %>
                             <td>
                                 <asp:TextBox ID="txt_menunameU" runat="server" Text='<%#Eval("menu_name") %>' />
                             </td>

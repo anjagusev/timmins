@@ -1,4 +1,4 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+﻿ @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:700);
 
 #ticker 
@@ -593,17 +593,26 @@ img
      font-size: 2.1em;
     color: Maroon;
     margin-top: .3em;
-    margin-bottom: .3em;
-    text-align: center;
+    margin-bottom: .5em;
+
+ margin-right:auto;
+
+    margin-left:13em;
     
 }
 .subMain 
 {
     margin:1em;
+  
        width: 100%;
-      
        min-height:500px;
       
+}
+
+.subhead h1
+{
+    
+  
 }
 
 .subContent

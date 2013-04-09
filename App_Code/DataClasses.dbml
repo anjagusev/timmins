@@ -46,4 +46,47 @@
       <Column Name="OrdinalPosition" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.SurveyQuestions" Member="SurveyQuestions">
+    <Type Name="SurveyQuestion">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuestionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Survey_SurveyQuestion" Member="Survey" ThisKey="SurveyID" OtherKey="ID" Type="Survey" IsForeignKey="true" />
+      <Association Name="Question_SurveyQuestion" Member="Question" ThisKey="QuestionID" OtherKey="ID" Type="Question" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Surveys" Member="Surveys">
+    <Type Name="Survey">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ExpiresOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Survey_SurveyQuestion" Member="SurveyQuestions" ThisKey="ID" OtherKey="SurveyID" Type="SurveyQuestion" />
+      <Association Name="Survey_SurveyResponse" Member="SurveyResponses" ThisKey="ID" OtherKey="SurveyID" Type="SurveyResponse" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SurveyResponse" Member="SurveyResponses">
+    <Type Name="SurveyResponse">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QuestionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FilledBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Survey_SurveyResponse" Member="Survey" ThisKey="SurveyID" OtherKey="ID" Type="Survey" IsForeignKey="true" />
+      <Association Name="Question_SurveyResponse" Member="Question" ThisKey="QuestionID" OtherKey="ID" Type="Question" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Questions" Member="Questions">
+    <Type Name="Question">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="QuestionType" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Options" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Question_SurveyQuestion" Member="SurveyQuestions" ThisKey="ID" OtherKey="QuestionID" Type="SurveyQuestion" />
+      <Association Name="Question_SurveyResponse" Member="SurveyResponses" ThisKey="ID" OtherKey="QuestionID" Type="SurveyResponse" />
+    </Type>
+  </Table>
 </Database>

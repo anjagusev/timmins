@@ -38,6 +38,18 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertSiteMap(SiteMap instance);
   partial void UpdateSiteMap(SiteMap instance);
   partial void DeleteSiteMap(SiteMap instance);
+  partial void InsertSurveyQuestion(SurveyQuestion instance);
+  partial void UpdateSurveyQuestion(SurveyQuestion instance);
+  partial void DeleteSurveyQuestion(SurveyQuestion instance);
+  partial void InsertSurvey(Survey instance);
+  partial void UpdateSurvey(Survey instance);
+  partial void DeleteSurvey(Survey instance);
+  partial void InsertSurveyResponse(SurveyResponse instance);
+  partial void UpdateSurveyResponse(SurveyResponse instance);
+  partial void DeleteSurveyResponse(SurveyResponse instance);
+  partial void InsertQuestion(Question instance);
+  partial void UpdateQuestion(Question instance);
+  partial void DeleteQuestion(Question instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -99,6 +111,38 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<AdminSiteMap>();
+		}
+	}
+	
+	public System.Data.Linq.Table<SurveyQuestion> SurveyQuestions
+	{
+		get
+		{
+			return this.GetTable<SurveyQuestion>();
+		}
+	}
+	
+	public System.Data.Linq.Table<Survey> Surveys
+	{
+		get
+		{
+			return this.GetTable<Survey>();
+		}
+	}
+	
+	public System.Data.Linq.Table<SurveyResponse> SurveyResponses
+	{
+		get
+		{
+			return this.GetTable<SurveyResponse>();
+		}
+	}
+	
+	public System.Data.Linq.Table<Question> Questions
+	{
+		get
+		{
+			return this.GetTable<Question>();
 		}
 	}
 }
@@ -949,6 +993,890 @@ public partial class AdminSiteMap
 				this._OrdinalPosition = value;
 			}
 		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SurveyQuestions")]
+public partial class SurveyQuestion : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private System.Nullable<int> _QuestionID;
+	
+	private System.Nullable<int> _SurveyID;
+	
+	private EntityRef<Survey> _Survey;
+	
+	private EntityRef<Question> _Question;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnQuestionIDChanging(System.Nullable<int> value);
+    partial void OnQuestionIDChanged();
+    partial void OnSurveyIDChanging(System.Nullable<int> value);
+    partial void OnSurveyIDChanged();
+    #endregion
+	
+	public SurveyQuestion()
+	{
+		this._Survey = default(EntityRef<Survey>);
+		this._Question = default(EntityRef<Question>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuestionID", DbType="Int")]
+	public System.Nullable<int> QuestionID
+	{
+		get
+		{
+			return this._QuestionID;
+		}
+		set
+		{
+			if ((this._QuestionID != value))
+			{
+				if (this._Question.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnQuestionIDChanging(value);
+				this.SendPropertyChanging();
+				this._QuestionID = value;
+				this.SendPropertyChanged("QuestionID");
+				this.OnQuestionIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SurveyID", DbType="Int")]
+	public System.Nullable<int> SurveyID
+	{
+		get
+		{
+			return this._SurveyID;
+		}
+		set
+		{
+			if ((this._SurveyID != value))
+			{
+				if (this._Survey.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnSurveyIDChanging(value);
+				this.SendPropertyChanging();
+				this._SurveyID = value;
+				this.SendPropertyChanged("SurveyID");
+				this.OnSurveyIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Survey_SurveyQuestion", Storage="_Survey", ThisKey="SurveyID", OtherKey="ID", IsForeignKey=true)]
+	public Survey Survey
+	{
+		get
+		{
+			return this._Survey.Entity;
+		}
+		set
+		{
+			Survey previousValue = this._Survey.Entity;
+			if (((previousValue != value) 
+						|| (this._Survey.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Survey.Entity = null;
+					previousValue.SurveyQuestions.Remove(this);
+				}
+				this._Survey.Entity = value;
+				if ((value != null))
+				{
+					value.SurveyQuestions.Add(this);
+					this._SurveyID = value.ID;
+				}
+				else
+				{
+					this._SurveyID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("Survey");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Question_SurveyQuestion", Storage="_Question", ThisKey="QuestionID", OtherKey="ID", IsForeignKey=true)]
+	public Question Question
+	{
+		get
+		{
+			return this._Question.Entity;
+		}
+		set
+		{
+			Question previousValue = this._Question.Entity;
+			if (((previousValue != value) 
+						|| (this._Question.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Question.Entity = null;
+					previousValue.SurveyQuestions.Remove(this);
+				}
+				this._Question.Entity = value;
+				if ((value != null))
+				{
+					value.SurveyQuestions.Add(this);
+					this._QuestionID = value.ID;
+				}
+				else
+				{
+					this._QuestionID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("Question");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Surveys")]
+public partial class Survey : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private string _Title;
+	
+	private string _Description;
+	
+	private System.DateTime _CreatedDate;
+	
+	private System.Nullable<System.DateTime> _ExpiresOn;
+	
+	private System.Nullable<int> _CreatedBy;
+	
+	private string _Status;
+	
+	private EntitySet<SurveyQuestion> _SurveyQuestions;
+	
+	private EntitySet<SurveyResponse> _SurveyResponses;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnCreatedDateChanging(System.DateTime value);
+    partial void OnCreatedDateChanged();
+    partial void OnExpiresOnChanging(System.Nullable<System.DateTime> value);
+    partial void OnExpiresOnChanged();
+    partial void OnCreatedByChanging(System.Nullable<int> value);
+    partial void OnCreatedByChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    #endregion
+	
+	public Survey()
+	{
+		this._SurveyQuestions = new EntitySet<SurveyQuestion>(new Action<SurveyQuestion>(this.attach_SurveyQuestions), new Action<SurveyQuestion>(this.detach_SurveyQuestions));
+		this._SurveyResponses = new EntitySet<SurveyResponse>(new Action<SurveyResponse>(this.attach_SurveyResponses), new Action<SurveyResponse>(this.detach_SurveyResponses));
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string Title
+	{
+		get
+		{
+			return this._Title;
+		}
+		set
+		{
+			if ((this._Title != value))
+			{
+				this.OnTitleChanging(value);
+				this.SendPropertyChanging();
+				this._Title = value;
+				this.SendPropertyChanged("Title");
+				this.OnTitleChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+	public string Description
+	{
+		get
+		{
+			return this._Description;
+		}
+		set
+		{
+			if ((this._Description != value))
+			{
+				this.OnDescriptionChanging(value);
+				this.SendPropertyChanging();
+				this._Description = value;
+				this.SendPropertyChanged("Description");
+				this.OnDescriptionChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime NOT NULL")]
+	public System.DateTime CreatedDate
+	{
+		get
+		{
+			return this._CreatedDate;
+		}
+		set
+		{
+			if ((this._CreatedDate != value))
+			{
+				this.OnCreatedDateChanging(value);
+				this.SendPropertyChanging();
+				this._CreatedDate = value;
+				this.SendPropertyChanged("CreatedDate");
+				this.OnCreatedDateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpiresOn", DbType="DateTime")]
+	public System.Nullable<System.DateTime> ExpiresOn
+	{
+		get
+		{
+			return this._ExpiresOn;
+		}
+		set
+		{
+			if ((this._ExpiresOn != value))
+			{
+				this.OnExpiresOnChanging(value);
+				this.SendPropertyChanging();
+				this._ExpiresOn = value;
+				this.SendPropertyChanged("ExpiresOn");
+				this.OnExpiresOnChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int")]
+	public System.Nullable<int> CreatedBy
+	{
+		get
+		{
+			return this._CreatedBy;
+		}
+		set
+		{
+			if ((this._CreatedBy != value))
+			{
+				this.OnCreatedByChanging(value);
+				this.SendPropertyChanging();
+				this._CreatedBy = value;
+				this.SendPropertyChanged("CreatedBy");
+				this.OnCreatedByChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string Status
+	{
+		get
+		{
+			return this._Status;
+		}
+		set
+		{
+			if ((this._Status != value))
+			{
+				this.OnStatusChanging(value);
+				this.SendPropertyChanging();
+				this._Status = value;
+				this.SendPropertyChanged("Status");
+				this.OnStatusChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Survey_SurveyQuestion", Storage="_SurveyQuestions", ThisKey="ID", OtherKey="SurveyID")]
+	public EntitySet<SurveyQuestion> SurveyQuestions
+	{
+		get
+		{
+			return this._SurveyQuestions;
+		}
+		set
+		{
+			this._SurveyQuestions.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Survey_SurveyResponse", Storage="_SurveyResponses", ThisKey="ID", OtherKey="SurveyID")]
+	public EntitySet<SurveyResponse> SurveyResponses
+	{
+		get
+		{
+			return this._SurveyResponses;
+		}
+		set
+		{
+			this._SurveyResponses.Assign(value);
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_SurveyQuestions(SurveyQuestion entity)
+	{
+		this.SendPropertyChanging();
+		entity.Survey = this;
+	}
+	
+	private void detach_SurveyQuestions(SurveyQuestion entity)
+	{
+		this.SendPropertyChanging();
+		entity.Survey = null;
+	}
+	
+	private void attach_SurveyResponses(SurveyResponse entity)
+	{
+		this.SendPropertyChanging();
+		entity.Survey = this;
+	}
+	
+	private void detach_SurveyResponses(SurveyResponse entity)
+	{
+		this.SendPropertyChanging();
+		entity.Survey = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SurveyResponse")]
+public partial class SurveyResponse : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private int _SurveyID;
+	
+	private int _QuestionID;
+	
+	private string _Value;
+	
+	private System.Nullable<int> _FilledBy;
+	
+	private EntityRef<Survey> _Survey;
+	
+	private EntityRef<Question> _Question;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnSurveyIDChanging(int value);
+    partial void OnSurveyIDChanged();
+    partial void OnQuestionIDChanging(int value);
+    partial void OnQuestionIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnFilledByChanging(System.Nullable<int> value);
+    partial void OnFilledByChanged();
+    #endregion
+	
+	public SurveyResponse()
+	{
+		this._Survey = default(EntityRef<Survey>);
+		this._Question = default(EntityRef<Question>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SurveyID", DbType="Int NOT NULL")]
+	public int SurveyID
+	{
+		get
+		{
+			return this._SurveyID;
+		}
+		set
+		{
+			if ((this._SurveyID != value))
+			{
+				if (this._Survey.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnSurveyIDChanging(value);
+				this.SendPropertyChanging();
+				this._SurveyID = value;
+				this.SendPropertyChanged("SurveyID");
+				this.OnSurveyIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuestionID", DbType="Int NOT NULL")]
+	public int QuestionID
+	{
+		get
+		{
+			return this._QuestionID;
+		}
+		set
+		{
+			if ((this._QuestionID != value))
+			{
+				if (this._Question.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnQuestionIDChanging(value);
+				this.SendPropertyChanging();
+				this._QuestionID = value;
+				this.SendPropertyChanged("QuestionID");
+				this.OnQuestionIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="NVarChar(MAX)")]
+	public string Value
+	{
+		get
+		{
+			return this._Value;
+		}
+		set
+		{
+			if ((this._Value != value))
+			{
+				this.OnValueChanging(value);
+				this.SendPropertyChanging();
+				this._Value = value;
+				this.SendPropertyChanged("Value");
+				this.OnValueChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FilledBy", DbType="Int")]
+	public System.Nullable<int> FilledBy
+	{
+		get
+		{
+			return this._FilledBy;
+		}
+		set
+		{
+			if ((this._FilledBy != value))
+			{
+				this.OnFilledByChanging(value);
+				this.SendPropertyChanging();
+				this._FilledBy = value;
+				this.SendPropertyChanged("FilledBy");
+				this.OnFilledByChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Survey_SurveyResponse", Storage="_Survey", ThisKey="SurveyID", OtherKey="ID", IsForeignKey=true)]
+	public Survey Survey
+	{
+		get
+		{
+			return this._Survey.Entity;
+		}
+		set
+		{
+			Survey previousValue = this._Survey.Entity;
+			if (((previousValue != value) 
+						|| (this._Survey.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Survey.Entity = null;
+					previousValue.SurveyResponses.Remove(this);
+				}
+				this._Survey.Entity = value;
+				if ((value != null))
+				{
+					value.SurveyResponses.Add(this);
+					this._SurveyID = value.ID;
+				}
+				else
+				{
+					this._SurveyID = default(int);
+				}
+				this.SendPropertyChanged("Survey");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Question_SurveyResponse", Storage="_Question", ThisKey="QuestionID", OtherKey="ID", IsForeignKey=true)]
+	public Question Question
+	{
+		get
+		{
+			return this._Question.Entity;
+		}
+		set
+		{
+			Question previousValue = this._Question.Entity;
+			if (((previousValue != value) 
+						|| (this._Question.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Question.Entity = null;
+					previousValue.SurveyResponses.Remove(this);
+				}
+				this._Question.Entity = value;
+				if ((value != null))
+				{
+					value.SurveyResponses.Add(this);
+					this._QuestionID = value.ID;
+				}
+				else
+				{
+					this._QuestionID = default(int);
+				}
+				this.SendPropertyChanged("Question");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Questions")]
+public partial class Question : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private string _Text;
+	
+	private string _QuestionType;
+	
+	private string _Options;
+	
+	private EntitySet<SurveyQuestion> _SurveyQuestions;
+	
+	private EntitySet<SurveyResponse> _SurveyResponses;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTextChanging(string value);
+    partial void OnTextChanged();
+    partial void OnQuestionTypeChanging(string value);
+    partial void OnQuestionTypeChanged();
+    partial void OnOptionsChanging(string value);
+    partial void OnOptionsChanged();
+    #endregion
+	
+	public Question()
+	{
+		this._SurveyQuestions = new EntitySet<SurveyQuestion>(new Action<SurveyQuestion>(this.attach_SurveyQuestions), new Action<SurveyQuestion>(this.detach_SurveyQuestions));
+		this._SurveyResponses = new EntitySet<SurveyResponse>(new Action<SurveyResponse>(this.attach_SurveyResponses), new Action<SurveyResponse>(this.detach_SurveyResponses));
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string Text
+	{
+		get
+		{
+			return this._Text;
+		}
+		set
+		{
+			if ((this._Text != value))
+			{
+				this.OnTextChanging(value);
+				this.SendPropertyChanging();
+				this._Text = value;
+				this.SendPropertyChanged("Text");
+				this.OnTextChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuestionType", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string QuestionType
+	{
+		get
+		{
+			return this._QuestionType;
+		}
+		set
+		{
+			if ((this._QuestionType != value))
+			{
+				this.OnQuestionTypeChanging(value);
+				this.SendPropertyChanging();
+				this._QuestionType = value;
+				this.SendPropertyChanged("QuestionType");
+				this.OnQuestionTypeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Options", DbType="NVarChar(MAX)")]
+	public string Options
+	{
+		get
+		{
+			return this._Options;
+		}
+		set
+		{
+			if ((this._Options != value))
+			{
+				this.OnOptionsChanging(value);
+				this.SendPropertyChanging();
+				this._Options = value;
+				this.SendPropertyChanged("Options");
+				this.OnOptionsChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Question_SurveyQuestion", Storage="_SurveyQuestions", ThisKey="ID", OtherKey="QuestionID")]
+	public EntitySet<SurveyQuestion> SurveyQuestions
+	{
+		get
+		{
+			return this._SurveyQuestions;
+		}
+		set
+		{
+			this._SurveyQuestions.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Question_SurveyResponse", Storage="_SurveyResponses", ThisKey="ID", OtherKey="QuestionID")]
+	public EntitySet<SurveyResponse> SurveyResponses
+	{
+		get
+		{
+			return this._SurveyResponses;
+		}
+		set
+		{
+			this._SurveyResponses.Assign(value);
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_SurveyQuestions(SurveyQuestion entity)
+	{
+		this.SendPropertyChanging();
+		entity.Question = this;
+	}
+	
+	private void detach_SurveyQuestions(SurveyQuestion entity)
+	{
+		this.SendPropertyChanging();
+		entity.Question = null;
+	}
+	
+	private void attach_SurveyResponses(SurveyResponse entity)
+	{
+		this.SendPropertyChanging();
+		entity.Question = this;
+	}
+	
+	private void detach_SurveyResponses(SurveyResponse entity)
+	{
+		this.SendPropertyChanging();
+		entity.Question = null;
 	}
 }
 #pragma warning restore 1591

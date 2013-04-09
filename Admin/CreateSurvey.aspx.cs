@@ -6,10 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
 
-public partial class CreateSurvey : System.Web.UI.Page
+public partial class Admin_Default5 : System.Web.UI.Page
 {
 
-     QuestionsClass objQuestions = new QuestionsClass();
+    QuestionsClass objQuestions = new QuestionsClass();
     SurveyClass dbDC = new SurveyClass();
 
     // DataClassesDataContext dbDC = new DataClassesDataContext();
@@ -22,17 +22,14 @@ public partial class CreateSurvey : System.Web.UI.Page
         //context = new SurveyAppConString();
         if (!IsPostBack)
         {
-            
             QuestionsClass objQuestions = new QuestionsClass();
             ListBox listbox = (ListBox)FindControl("lbSource");
             //List<Question> questions = context.Questions.ToList();
             List<Question> questions = objQuestions.getQuestions().ToList();
-
             listbox.DataSource = questions;
             listbox.DataTextField = "Text";
             listbox.DataValueField = "ID";
             listbox.DataBind();
-
 
             LoadSurveys();
         }
@@ -125,7 +122,7 @@ public partial class CreateSurvey : System.Web.UI.Page
 
     protected void subStatus(object sender, EventArgs e)
     {
-        
+
 
         DataClassesDataContext dbDC = new DataClassesDataContext();
         SurveyClass _survey = new SurveyClass();
@@ -134,7 +131,7 @@ public partial class CreateSurvey : System.Web.UI.Page
         int chosenid = Convert.ToInt32(ddlSurveys.SelectedValue);
 
         _survey.updateStatus(chosenid);
-        
+
 
 
     }

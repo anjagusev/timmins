@@ -11,7 +11,7 @@ public class specialty_doctor
    // Get all doctors from table
     public IQueryable<tbl_doctor> getdoctors()
     {
-        specialties_doctorsDataContext objdocDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objdocDC = new DataClassesDataContext();
         //creating an anonymous variable with its value being the instance of our LINQ object
         var alldoctors = objdocDC.tbl_doctors.Select(x => x);// method syntax //products is the name of the actual table. //==> means goes to, x means column name
         //var allProducts = from x in objProdDC.products select x; //query syntax
@@ -21,7 +21,7 @@ public class specialty_doctor
     // get all specialities
     public IQueryable<tbl_specialty> getspecialities()
     {
-        specialties_doctorsDataContext objspDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objspDC = new DataClassesDataContext();
         //creating an anonymous variable with its value being the instance of our LINQ object
         var allspecialities = objspDC.tbl_specialties.Select(x => x);// method syntax //products is the name of the actual table. //==> means goes to, x means column name
         //var allProducts = from x in objProdDC.products select x; //query syntax
@@ -32,7 +32,7 @@ public class specialty_doctor
     // get doctors by ID
     public IQueryable<tbl_doctor> getdoctorByID(int _id)
     {
-        specialties_doctorsDataContext objdocDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objdocDC = new DataClassesDataContext();
         var doctorID = objdocDC.tbl_doctors.Where(x => x.doctor_id == _id).Select(x => x);
         return doctorID;
     }
@@ -40,7 +40,7 @@ public class specialty_doctor
     // get specialty by ID
     public IQueryable<tbl_specialty> getspecialtyByID(int _id)
     {
-        specialties_doctorsDataContext objspDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objspDC = new DataClassesDataContext();
         var specialtyID = objspDC.tbl_specialties.Where(x => x.specialty_id == _id).Select(x => x);
         return specialtyID;
     }
@@ -49,7 +49,7 @@ public class specialty_doctor
     // specialty dropdown selecting doctors by specialty id
     public IQueryable<tbl_doctor> getdoctorbySpid( int _id)
     {
-        specialties_doctorsDataContext objdocDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objdocDC = new DataClassesDataContext();
         var ret_doc = objdocDC.tbl_doctors.Where(x => x.specialty_id == _id).Select(x => x);
         return ret_doc;
     }
@@ -58,7 +58,7 @@ public class specialty_doctor
 
     public int docCount()
     {
-        specialties_doctorsDataContext objdocDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objdocDC = new DataClassesDataContext();
         var found = ret_doc.Count();
         return found;
     }
@@ -67,7 +67,7 @@ public class specialty_doctor
     //search by name
     public IQueryable<tbl_doctor> docByName(string _fname, string _lname )
     {
-        specialties_doctorsDataContext objdocDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objdocDC = new DataClassesDataContext();
         var names = objdocDC.tbl_doctors.Where(x =>x.first_name.Contains(_fname)).Where (x =>x.last_name.Contains(_lname));
         return names;
     
@@ -80,7 +80,7 @@ public class specialty_doctor
 
     public bool commitInsertInDoc(int _specialtyID, string _firstname, string _lastname, string _gender, string _email, string _bio)
     {
-        specialties_doctorsDataContext objdocDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objdocDC = new DataClassesDataContext();
         using (objdocDC)
         {
             tbl_doctor objNewdoc = new tbl_doctor();
@@ -101,7 +101,7 @@ public class specialty_doctor
 
     public bool commitInsertInSp( string _specialty)
     {
-        specialties_doctorsDataContext objspDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objspDC = new DataClassesDataContext();
         using (objspDC)
         {
             tbl_specialty objNewsp = new tbl_specialty();
@@ -116,7 +116,7 @@ public class specialty_doctor
     // doctors insert
     public bool commitUpdateInDoc(int _specialtyID, string _firstname, string _lastname, string _gender, string _email, string _bio)
     {
-        specialties_doctorsDataContext objdocDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objdocDC = new DataClassesDataContext();
         using (objdocDC)
         {
             var objUpdoc = objdocDC.tbl_doctors.Single(x => x.specialty_id == _specialtyID);
@@ -134,7 +134,7 @@ public class specialty_doctor
 
     public bool commitUpdateInSp(int _specialtyID, string _specialty)
     {
-        specialties_doctorsDataContext objspDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objspDC = new DataClassesDataContext();
         using (objspDC)
         {
             var objUpdoc = objspDC.tbl_specialties.Single(x => x.specialty_id == _specialtyID);
@@ -149,7 +149,7 @@ public class specialty_doctor
 
     public bool commitDeleteInDoc(int _doctorID)
     {
-        specialties_doctorsDataContext objdocDC = new specialties_doctorsDataContext();
+        DataClassesDataContext objdocDC = new DataClassesDataContext();
         using (objdocDC)
         {
             var objDeldoc = objdocDC.tbl_doctors.Single(x => x.doctor_id == _doctorID);
@@ -161,21 +161,41 @@ public class specialty_doctor
 
 
 
+    public bool commitDeleteInSp(int _specialtyID)
+    {
+        DataClassesDataContext objspDC = new DataClassesDataContext();
+        using (objspDC)
+        {
 
-    //public bool commitDeleteInSp(int _specialtyID)
-    //{
-    //    specialties_doctorsDataContext objspDC = new specialties_doctorsDataContext();
-    //    using (objspDC)
-    //    {
-    //        var objDelsp = objspDC.tbl_doctors.Single(x => x.specialty_id == _specialtyID);
-    //        objspDC.tbl_specialties.DeleteOnSubmit(objDelsp);
-    //        objspDC.SubmitChanges();
-    //        return true;
-    //    }
-    //}
 
-    //public bool commitInsertInSp(string p1, string p2)
-    //{
-    //    throw new NotImplementedException();
-    //}
+            var removeRel = (from d in objspDC.GetTable<tbl_doctor>()
+                             where d.specialty_id == _specialtyID
+                             select d);
+            foreach (var doc in removeRel)
+            {
+                objspDC.tbl_doctors.DeleteOnSubmit(doc);
+
+            }
+            if (removeRel.Any())
+            {
+                //var deleteSp = (from s in objspDC.GetTable<tbl_specialty>()
+                //                where s.specialty_id == _specialtyID
+                //                select s).First();
+                //objspDC.tbl_specialties.DeleteOnSubmit(deleteSp);
+
+            }
+            else
+            {
+                var deleteSp = (from s in objspDC.GetTable<tbl_specialty>()
+                                where s.specialty_id == _specialtyID
+                                select s).First();
+                objspDC.tbl_specialties.DeleteOnSubmit(deleteSp);
+
+            }
+
+            objspDC.SubmitChanges();
+            return true;
+
+        }
+    }
 }

@@ -14,14 +14,14 @@ public class subscriberClass
 
         public IQueryable<tbl_subscriber> getsubscriber()
         {
-            subscriberDataContext objlinq = new subscriberDataContext();
+            DataClassesDataContext objlinq = new DataClassesDataContext();
             var allsubscribes = objlinq.tbl_subscribers.Select(x => x);
             return allsubscribes;
         }
 
         public IQueryable<tbl_subscriber> getSubscriberByID(int _id)
         {
-            subscriberDataContext objlinq = new subscriberDataContext();
+            DataClassesDataContext objlinq = new DataClassesDataContext();
             var subscriberByID = objlinq.tbl_subscribers.Where(x => x.subscriber_id == _id).Select(x => x);
             return subscriberByID;
         }
@@ -29,7 +29,7 @@ public class subscriberClass
         // find if email alredy exist 
         public IQueryable<tbl_subscriber> emailExist(string _email)
         {
-            subscriberDataContext objlinq = new subscriberDataContext();
+            DataClassesDataContext objlinq = new DataClassesDataContext();
             var emailcheck = objlinq.tbl_subscribers.Where(u => u.email == _email).Select(u => u);
             return emailcheck;
         }
@@ -37,7 +37,7 @@ public class subscriberClass
         // verify email Used on Confirm_email.aspx 
         public bool verify(int _id)
         {
-            subscriberDataContext objlinq = new subscriberDataContext();
+            DataClassesDataContext objlinq = new DataClassesDataContext();
             using (objlinq)
             {
                 var verify_id = objlinq.tbl_subscribers.Single(x => x.subscriber_id == _id);
@@ -52,7 +52,7 @@ public class subscriberClass
         // for admin check box email
         //public List<string> SendEmailToSubscribers()
         //{
-        //    subscriberDataContext objlinq = new subscriberDataContext();
+        //    DataClassesDataContext objlinq = new DataClassesDataContext();
         //  var   getEmails = objlinq.tbl_subscribers.Where(x => x.valid == "yes").Select(x => new { x.email});
         //    return getEmails;
         //}
@@ -76,7 +76,7 @@ public class subscriberClass
 
         public bool commitUpdate(int _subscribeID, string _name, string _email)
         {
-            subscriberDataContext objlinq = new subscriberDataContext();
+            DataClassesDataContext objlinq = new DataClassesDataContext();
             using (objlinq)
             {
                 var objUpsub = objlinq.tbl_subscribers.Single(x => x.subscriber_id == _subscribeID);
@@ -93,7 +93,7 @@ public class subscriberClass
         public bool commitDelete(int _subscribeID)
         {
 
-            subscriberDataContext objlinq = new subscriberDataContext();
+            DataClassesDataContext objlinq = new DataClassesDataContext();
             using (objlinq)
             {
                 var objDelsub = objlinq.tbl_subscribers.Single(x => x.subscriber_id == _subscribeID);
@@ -106,7 +106,7 @@ public class subscriberClass
 
     public IQueryable<tbl_subscriber> emailExist(string _email)
     {
-        subscriberDataContext objlinq = new subscriberDataContext();
+        DataClassesDataContext objlinq = new DataClassesDataContext();
         var emailcheck = objlinq.tbl_subscribers.Where(u => u.email == _email).Select(u => u);
         return emailcheck;
     }
@@ -124,7 +124,7 @@ public class subscriberClass
 
     public bool CommitInsert(string _name, string _email)
     {
-        subscriberDataContext objlinq = new subscriberDataContext();
+        DataClassesDataContext objlinq = new DataClassesDataContext();
         using (objlinq)
         {
             tbl_subscriber objNewSub = new tbl_subscriber();

@@ -1,10 +1,15 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="subPage.master.cs" Inherits="subPage" %>
-<%--Registering the menu controls--%>\
+<%--Registering the menu controls--%>
 <%@ Register Src="~/Controls/Menu.ascx" TagName="Menu" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/sideMenu.ascx" TagName="sideMenu" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
     <title>
         <%=pp_submasterTitle %>
     </title>
@@ -105,11 +110,11 @@
             <%-----------------------     FOOTER BEGINS        -------------%>
             <div id="footer">
                 <div id="logo_f">
-                    <%-- <asp:Image ID="logo_ft" CssClass="logo_ft" runat="server" ImageUrl="~/img/logo_ft.png" />
+                     <asp:Image ID="logo_ft" CssClass="logo_ft" runat="server" ImageUrl="~/img/logo_ft.png" />
                 <asp:Label ID="phone_ft" CssClass="phone_ft" runat="server" Text="705-267-2131"/>
                 <br />
                 <asp:Label ID="address" CssClass="address_ft" runat="server" Text="700 Ross Avenue East Timmins, ON P4N 8P2" />
-                    --%>
+                    
                 </div>
                  <div id="icons_f">
                         <asp:Label ID="ico_ft" runat="server" CssClass="ic_txt_ft" Text="Follow us on:" />

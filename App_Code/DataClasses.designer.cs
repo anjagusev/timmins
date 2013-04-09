@@ -50,6 +50,9 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertQuestion(Question instance);
   partial void UpdateQuestion(Question instance);
   partial void DeleteQuestion(Question instance);
+  partial void Inserttbl_donation(tbl_donation instance);
+  partial void Updatetbl_donation(tbl_donation instance);
+  partial void Deletetbl_donation(tbl_donation instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -143,6 +146,14 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<AdminSiteMap>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tbl_donation> tbl_donations
+	{
+		get
+		{
+			return this.GetTable<tbl_donation>();
 		}
 	}
 }
@@ -1876,6 +1887,188 @@ public partial class AdminSiteMap
 			{
 				this._OrdinalPosition = value;
 			}
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="timmins.tbl_donations")]
+public partial class tbl_donation : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _id;
+	
+	private string _fname;
+	
+	private string _lname;
+	
+	private string _email;
+	
+	private decimal _amount;
+	
+	private System.DateTime _date;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnfnameChanging(string value);
+    partial void OnfnameChanged();
+    partial void OnlnameChanging(string value);
+    partial void OnlnameChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnamountChanging(decimal value);
+    partial void OnamountChanged();
+    partial void OndateChanging(System.DateTime value);
+    partial void OndateChanged();
+    #endregion
+	
+	public tbl_donation()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int id
+	{
+		get
+		{
+			return this._id;
+		}
+		set
+		{
+			if ((this._id != value))
+			{
+				this.OnidChanging(value);
+				this.SendPropertyChanging();
+				this._id = value;
+				this.SendPropertyChanged("id");
+				this.OnidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fname", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string fname
+	{
+		get
+		{
+			return this._fname;
+		}
+		set
+		{
+			if ((this._fname != value))
+			{
+				this.OnfnameChanging(value);
+				this.SendPropertyChanging();
+				this._fname = value;
+				this.SendPropertyChanged("fname");
+				this.OnfnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lname", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string lname
+	{
+		get
+		{
+			return this._lname;
+		}
+		set
+		{
+			if ((this._lname != value))
+			{
+				this.OnlnameChanging(value);
+				this.SendPropertyChanging();
+				this._lname = value;
+				this.SendPropertyChanged("lname");
+				this.OnlnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string email
+	{
+		get
+		{
+			return this._email;
+		}
+		set
+		{
+			if ((this._email != value))
+			{
+				this.OnemailChanging(value);
+				this.SendPropertyChanging();
+				this._email = value;
+				this.SendPropertyChanged("email");
+				this.OnemailChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="Decimal(18,0) NOT NULL")]
+	public decimal amount
+	{
+		get
+		{
+			return this._amount;
+		}
+		set
+		{
+			if ((this._amount != value))
+			{
+				this.OnamountChanging(value);
+				this.SendPropertyChanging();
+				this._amount = value;
+				this.SendPropertyChanged("amount");
+				this.OnamountChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="DateTime NOT NULL")]
+	public System.DateTime date
+	{
+		get
+		{
+			return this._date;
+		}
+		set
+		{
+			if ((this._date != value))
+			{
+				this.OndateChanging(value);
+				this.SendPropertyChanging();
+				this._date = value;
+				this.SendPropertyChanged("date");
+				this.OndateChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }

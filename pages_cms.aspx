@@ -113,15 +113,12 @@
                             <asp:HiddenField ID="hdf_id" runat="server" Value='<%#Eval("id") %>' />
                             <td>
                             
-           <asp:DropDownList ID="ddl_subjectU" runat="server" DataSourceID="SubjectClass" 
+           <asp:DropDownList ID="ddl_subjectU" runat="server"  
                     DataTextField="menu_name" DataValueField="id" 
                     onselectedindexchanged="DropDownList1_SelectedIndexChanged" AutoPostBack="true" EnableViewState="false">
                    
                 </asp:DropDownList>
-               <!-- <asp:LinqDataSource ID="SubjectClass" runat="server" 
-                    ContextTypeName="subjectDataContext" EntityTypeName="" 
-                    Select="new (id, menu_name)" TableName="subjects">
-                </asp:LinqDataSource>-->
+            
                               
                             </td>  <%#Eval("subject_id")%> <%#Eval("menu_name") %>
                             <td>

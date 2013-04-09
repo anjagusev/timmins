@@ -16,7 +16,7 @@ public partial class pages_cms : System.Web.UI.Page
         {
             _subRebind();
 
-           
+
         }
     }
 
@@ -25,14 +25,14 @@ public partial class pages_cms : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Insert":
-                   int _subject_id = int.Parse(ddl_subject.SelectedValue.ToString());
-        
+                int _subject_id = int.Parse(ddl_subject.SelectedValue.ToString());
+
                 //int.Parse(txt_subjectidI.Text.ToString())
                 _strMessage(objPage.commitInsert(_subject_id, txt_menunameI.Text, txt_titleI.Text, txt_pagecontentI.Text), "insert");
                 _subRebind();
                 break;
             case "Update":
-                 
+
                 _showUpdate(int.Parse(e.CommandArgument.ToString()));
                 break;
             case "Delete":
@@ -47,7 +47,7 @@ public partial class pages_cms : System.Web.UI.Page
         {
             case "Update":
                 DropDownList ddl = (DropDownList)e.Item.FindControl("ddl_subjectU");
-               
+
                 TextBox txtSubjectID = (TextBox)e.Item.FindControl("txt_subjectidU");
                 TextBox txtMenuName = (TextBox)e.Item.FindControl("txt_menunameU");
                 TextBox txtTitle = (TextBox)e.Item.FindControl("txt_titleU");
@@ -60,17 +60,17 @@ public partial class pages_cms : System.Web.UI.Page
 
                 int selectedid = int.Parse(selected);
 
-                
+
                 _strMessage(objPage.commitUpdate(pageID, selectedid, txtMenuName.Text, txtTitle.Text, txtPageContent.Text), "update");
-                
-               // ddl.SelectedValue = pageID.ToString();
-               // _strMessage(objPage.commitUpdate(pageID, int.Parse(txtSubjectID.Text.ToString()), txtMenuName.Text, txtTitle.Text, txtPageContent.Text), "update");
+
+                // ddl.SelectedValue = pageID.ToString();
+                // _strMessage(objPage.commitUpdate(pageID, int.Parse(txtSubjectID.Text.ToString()), txtMenuName.Text, txtTitle.Text, txtPageContent.Text), "update");
                 _subRebind();
                 break;
             case "Delete":
                 int _id = int.Parse(((HiddenField)e.Item.FindControl("hdf_id")).Value);
-                _strMessage(objPage.commitDelete(_id),"delete");
-                    _subRebind();
+                _strMessage(objPage.commitDelete(_id), "delete");
+                _subRebind();
                 break;
             case "Cancel":
                 _subRebind();
@@ -81,16 +81,22 @@ public partial class pages_cms : System.Web.UI.Page
     protected void subChange(object sender, EventArgs e)
     {
         int _id = int.Parse(ddl_subject.SelectedValue.ToString());
-       
+
     }
     protected void repeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
     {
 
         var ddl = (DropDownList)e.Item.FindControl("ddl_subjectU");
-       HiddenField hdfid = (HiddenField)e.Item.FindControl("hdf_id");
-       string stringid = hdfid.ToString();
+        HiddenField hdfid = (HiddenField)e.Item.FindControl("hdf_id");
+        string stringid = hdfid.ToString();
 
-     //  ddl.SelectedValue = ddl.Items.IndexOf(ddl.Items.FindByValue("Selecteren")); stringid;
+  //   int id =  Convert.ToInt32(stringid);
+
+        //  ddl.SelectedValue = ddl.Items.IndexOf(ddl.Items.FindByValue("Selecteren")); stringid;
+        ddl.DataSource = objSub.getSubjects();
+        ddl.DataTextField = "menu_name";
+      ddl.DataValueField = "id";
+
         ddl.DataBind();
 
     }
@@ -100,39 +106,34 @@ public partial class pages_cms : System.Web.UI.Page
         _panelControl(pnl_update);
 
         //attempt
-        
-        //attempt end
-  
 
-        PageClass _page = new PageClass();
-        rpt_update.DataSource = _page.getPageByID(id);
-        rpt_update.DataBind();
-        
+        //attempt end
+         PageClass _page = new PageClass();
+          rpt_update.DataSource = _page.getPageByID(id);
+          rpt_update.DataBind();
+          
 
        // SubjectClass _subject = new SubjectClass();
-      //  rpt_update.DataSource = _subject.getSubjectByID(id);
-       // rpt_update.DataBind();
-
-        
+        //rpt_update.DataSource = _subject.getSubjectByID(id);
+        //rpt_update.DataBind();
 
 
-        //ddl_subjectU.DataSource = objSub.getSubjects();
-        //ddl_subjectU.DataTextField = "menu_name";
-        //ddl_subjectU.DataValueField = "id";
-        //ddl_subjectU.DataBind();
 
-     
+
+   
+
+
     }
 
-   /* protected void subject_DataBinding(object sender, System.EventArgs e)
-    {
-        DropDownList ddl = (DropDownList)(sender);
-        HiddenField hdfID = (HiddenField)FindControl("hdf_id");
-        string pageID = hdfID.Value.ToString();
+    /* protected void subject_DataBinding(object sender, System.EventArgs e)
+     {
+         DropDownList ddl = (DropDownList)(sender);
+         HiddenField hdfID = (HiddenField)FindControl("hdf_id");
+         string pageID = hdfID.Value.ToString();
 
-        ddl.SelectedValue = Eval("pageID").ToString();
+         ddl.SelectedValue = Eval("pageID").ToString();
 
-       }*/
+        }*/
 
 
     private void _showDelete(int id)
@@ -153,7 +154,7 @@ public partial class pages_cms : System.Web.UI.Page
     private void _subRebind()
     {
         txt_subjectidI.Text = string.Empty;
-        txt_menunameI.Text= string.Empty;
+        txt_menunameI.Text = string.Empty;
         txt_titleI.Text = string.Empty;
         txt_pagecontentI.Text = string.Empty;
         rpt_all.DataSource = objPage.getPages();
@@ -166,19 +167,19 @@ public partial class pages_cms : System.Web.UI.Page
         ddl_subject.DataValueField = "id"; // "ID"
         ddl_subject.DataBind();
 
-      
+
     }
 
     private void _strMessage(bool flag, string str)
     {
-        if(flag)
+        if (flag)
             lbl_message.Text = "Product " + str + " was successful";
         else
             lbl_message.Text = "Sorry unable to " + str + " product";
-    
-        
 
-        }
+
+
+    }
     protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
     {
         DropDownList ddl = sender as DropDownList;

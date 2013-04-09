@@ -41,7 +41,7 @@
                 </asp:Menu>
                 <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="AdminSiteMapDataSource1"
                     CssClass="mobilemenu" />
-                <asp:SiteMapDataSource ID="AdminSiteMapDataSource1" runat="server" ShowStartingNode="false" SiteMapProvider="AdminSqlSiteMapProvider" />
+                <asp:SiteMapDataSource ID="AdminSiteMapDataSource1" runat="server" ShowStartingNode="false"  />
             </div>
             <%-- <div id="submenu-slider-container">
                 <div id="img-slider">

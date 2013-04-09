@@ -24,16 +24,6 @@
       <Association Name="subject_SiteMap" Member="SiteMaps" ThisKey="id" OtherKey="SubjectID" Type="SiteMap" />
     </Type>
   </Table>
-  <Table Name="timmins.AdminSiteMap" Member="AdminSiteMaps">
-    <Type Name="AdminSiteMap">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Url" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OrdinalPosition" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="timmins.SiteMap" Member="SiteMaps">
     <Type Name="SiteMap">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -44,6 +34,16 @@
       <Column Name="OrdinalPosition" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SubjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="subject_SiteMap" Member="subject" ThisKey="SubjectID" OtherKey="id" Type="subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="timmins.AdminSiteMap" Member="AdminSiteMaps">
+    <Type Name="AdminSiteMap">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrdinalPosition" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

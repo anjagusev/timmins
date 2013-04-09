@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-///Anja's Class for the CMS, not currently in use
+///Anja's Class for the CMS, in use
 /// </summary>
 public class PageClass
 {

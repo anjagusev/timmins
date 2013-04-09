@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="pages_cms.aspx.cs" Inherits="pages_cms" %>
-
+  <%--CMS for the site -- a bit broken right now, please don't touch! --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -30,7 +30,7 @@
         <asp:TextBox ID="txt_titleI" runat="server" />
         <br />
         <asp:Label ID="lbl_pagecontentI" runat="server" Text="Content" AssociatedControlID="txt_pagecontentI" />
-        <asp:TextBox ID="txt_pagecontentI" runat="server" />
+        <asp:TextBox ID="txt_pagecontentI" TextMode="MultiLine" Rows="20" Columns="80" runat="server" />
         <br />
         <asp:Button ID="btn_insert" runat="server" Text="Insert" CommandName="Insert" OnCommand="subAdmin" />
         <br />

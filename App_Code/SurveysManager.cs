@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for SurveysManager
+/// Anja's class for the survey feature
 /// </summary>
 public class SurveysManager
 {

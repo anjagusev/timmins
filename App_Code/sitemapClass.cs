@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for SiteMapClass
+/// This is Anja's class for the sitemap feature
 /// </summary>
 public class SiteMapClass
 {

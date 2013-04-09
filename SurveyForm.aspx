@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/subPage.master" AutoEventWireup="true" CodeFile="SurveyForm.aspx.cs" Inherits="Default2" %>
-
+  <%-- Survey Form, Public side -- will delete later, needs to be implemented on the master --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="cph_sideNav" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_main" Runat="Server">

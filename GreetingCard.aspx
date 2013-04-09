@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GreetingCard.aspx.cs"
     Inherits="GreetingCardMakerRevisited" %>
-
+      <%-- Anja's Greeting Card Feature -- Currently not in use --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/adminSubPage.master" AutoEventWireup="true" CodeFile="CreateSurvey.aspx.cs" Inherits="Admin_Default5" %>
-
+  <%-- Anja's admin side for the Survey Feature--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
 </asp:Content>

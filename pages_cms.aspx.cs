@@ -83,7 +83,7 @@ public partial class pages_cms : System.Web.UI.Page
         int _id = int.Parse(ddl_subject.SelectedValue.ToString());
 
     }
-  /*  protected void repeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
+    protected void repeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
     {
 
         var ddl = (DropDownList)e.Item.FindControl("ddl_subjectU");
@@ -99,7 +99,7 @@ public partial class pages_cms : System.Web.UI.Page
 
         ddl.DataBind();
 
-    }*/
+    }
 
     private void _showUpdate(int id)
     {

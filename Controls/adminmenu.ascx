@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" EnableViewState="false" CodeFile="adminmenu.ascx.cs"
     Inherits="adminMenu" %>
+  <%--  User Control for the Main Menu Admin Side -- By Anja--%>
+
 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
     DataSourceID="AdminSiteMapDataSource1" StaticEnableDefaultPopOutImage="false" StaticMenuStyle-CssClass="top-nav-bar">
     <DynamicMenuStyle CssClass="dynamicMenu" />

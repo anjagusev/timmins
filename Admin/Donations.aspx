@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/adminSubPage.master" AutoEventWireup="true" CodeFile="Donations.aspx.cs" Inherits="Admin_Default2" %>
-
+  <%--  Anja's Page for the Admin Donations --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" Runat="Server">

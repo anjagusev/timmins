@@ -11,7 +11,7 @@ using System.Data.Common;
 using System.Web.Configuration;
 
 /// <summary>
-/// Summary description for SqlSiteMapProvider
+/// This is anja's class for the SiteMap feature
 /// </summary>
 public class SqlSiteMapProvider : StaticSiteMapProvider 
 {

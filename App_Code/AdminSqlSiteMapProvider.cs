@@ -11,7 +11,7 @@ using System.Data.Common;
 using System.Web.Configuration;
 
 /// <summary>
-/// Summary description for SqlSiteMapProvider
+/// Anja's Admin Site Map Provider Feature
 /// </summary>
 public class AdminSqlSiteMapProvider : StaticSiteMapProvider 
 {

@@ -2,6 +2,8 @@
     CodeFile="DonationCancel.aspx.cs" Inherits="subPage1" %>
    <%-- Access exposed elements from the master page--%>
     <%@ MasterType VirtualPath="~/subPage.master" %>
+
+      <%-- Anja's Donation Feature --%>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_sideNav" runat="Server">
 
 </asp:Content>

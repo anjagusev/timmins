@@ -2,8 +2,11 @@
     CodeFile="Card.aspx.cs" Inherits="subPage1" %>
    <%-- Access exposed elements from the master page--%>
     <%@ MasterType VirtualPath="~/subPage.master" %>
+
+      <%-- Anja's Greeting Card Feature -- Currently In Use --%>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_sideNav" runat="Server">
-    CPH_NEWS_LIST
+
 </asp:Content>
 <asp:Content ID="cnt_main" ContentPlaceHolderID="cph_main" runat="server">
    <asp:ScriptManager ID="ScriptManager1" runat="server">

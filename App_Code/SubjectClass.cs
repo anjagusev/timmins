@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-///Anja'S Class for the CMS, not currently in use
+///Anja's Class for the cns
 /// </summary>
 public class SubjectClass
 {

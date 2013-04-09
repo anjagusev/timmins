@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/adminSubPage.master" AutoEventWireup="true"
     CodeFile="adminGreetingCard.aspx.cs" Inherits="Admin_Default" %>
 
+  <%-- Anja's Admin Feature for the Greeting Card Maker --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" runat="Server">

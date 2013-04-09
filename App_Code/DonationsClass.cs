@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for DonationsClass
+///This is Anja's Donation Class 
 /// </summary>
 public class DonationsClass
 {

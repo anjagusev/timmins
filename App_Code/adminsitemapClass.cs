@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for AdminSiteMapClass
+/// Allows for inserting updating and deleting from the AdminSiteMap table
+/// Feature By Anja Gusev
 /// </summary>
 public class AdminSiteMapClass
 {

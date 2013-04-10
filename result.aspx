@@ -10,6 +10,7 @@
             <ItemTemplate>
                 <h2><%#Eval("heading") %></h2>
                 <p><%#Eval("paragraph") %></p>
+                <br />
             </ItemTemplate>
         </asp:Repeater>
     </div>

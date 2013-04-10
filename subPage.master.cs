@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class subPage : System.Web.UI.MasterPage
 {
+    DataClassesDataContext dbDC = new DataClassesDataContext();
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -36,6 +37,37 @@ public partial class subPage : System.Web.UI.MasterPage
     {
         Session["test"] = searchbox.Text;
         Response.Redirect("result.aspx");//sends the text to result.aspx and opens it
+    }
+
+
+    public void subMobile(object sender, EventArgs e)
+    {
+        //   SiteMap objSM = new SiteMap();
+        string title = ddl_menu.SelectedItem.ToString();
+
+
+        List<SiteMap> getUrl = (from s in dbDC.SiteMaps where s.Title == title select s).ToList();
+
+        foreach (SiteMap s in getUrl)
+        {
+            Response.Redirect(s.Url);
+        }
+
+    }
+
+    public void subMobileSide(object sender, EventArgs e)
+    {
+        //   SiteMap objSM = new SiteMap();
+        string title = ddl_sideMenu.SelectedItem.ToString();
+
+
+        List<SiteMap> getUrl = (from s in dbDC.SiteMaps where s.Title == title select s).ToList();
+
+        foreach (SiteMap s in getUrl)
+        {
+            Response.Redirect(s.Url);
+        }
+
     }
 
 }

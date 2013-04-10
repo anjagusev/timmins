@@ -9,6 +9,8 @@ using System.Net.Mail;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
+
+    DataClassesDataContext dbDC = new DataClassesDataContext();
     private string _title = "Timmins and District Hospital";
     public string pp_masterTitle
     {
@@ -30,6 +32,21 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             _subRebind();
         }
+    }
+
+    public void subMobile(object sender, EventArgs e)
+    {
+        //   SiteMap objSM = new SiteMap();
+        string title = ddl_menu.SelectedItem.ToString();
+
+        List<SiteMap> getUrl = (from s in dbDC.SiteMaps where s.Title == title select s).ToList();
+
+        foreach (SiteMap s in getUrl)
+        {
+            Response.Redirect(s.Url);
+        }
+
+
     }
     
 

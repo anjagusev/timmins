@@ -8,8 +8,8 @@
     <DynamicMenuItemStyle CssClass="dynamicMenu"></DynamicMenuItemStyle>
     <StaticMenuItemStyle CssClass="menuItem" HorizontalPadding="1em"></StaticMenuItemStyle>
 </asp:Menu>
-<asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource2"
-    CssClass="mobilemenu" />
+<%--<asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource2"
+    CssClass="mobilemenu" />--%>
 <asp:SiteMapDataSource ID="SiteMapDataSource2" SiteMapProvider="SqlSiteMapProvider" runat="server" ShowStartingNode="false" />
 <%-- <asp:Menu ID="menu1" Orientation="Horizontal"  runat="server"
                     StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="main_nav" >

@@ -42,6 +42,16 @@
             <div id="top-nav-bar">
             <%--new menu user control --%>
             <uc:Menu ID="Menu" runat="server"></uc:Menu>
+              <%--    Mobile Menu  --%>
+                <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource2"
+                    CssClass="mobilemenu" AutoPostBack="true" OnSelectedIndexChanged="subMobile" />
+                <asp:SiteMapDataSource ID="SiteMapDataSource2" SiteMapProvider="SqlSiteMapProvider"
+                    runat="server" ShowStartingNode="false" />
+                <!--responsive submenu-->
+                <asp:DropDownList ID="ddl_sideMenu" runat="server" CssClass="mobilemenu mobileSide"
+                    AutoPostBack="true" OnSelectedIndexChanged="subMobileSide" />
+                <asp:SiteMapDataSource ID="SiteMapDataSource3" SiteMapProvider="SqlSiteMapProvider"
+                    runat="server" ShowStartingNode="false" StartFromCurrentNode="true" />
             <%--OLD MENU ---- CAN BE DELETED -------------------- %>
             
                 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"

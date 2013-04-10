@@ -1,6 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminSubPage.master.cs" Inherits="adminSubPage" %>
 
 <%@ Register Src="~/Controls/adminmenu.ascx" TagName="adminMenu" TagPrefix="uc2" %>
+<%--<%@ Register Src="~/Controls/sideAdmin.acsx" TagName="sideAdmin" TagPrefix="uc"  %>--%>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -37,7 +38,8 @@
 
 
                 <div id="top-nav-bar">
-                    <uc2:adminMenu ID="sideMenu" runat="server"></uc2:adminMenu>
+                    <uc2:adminMenu ID="adminMenu" runat="server"></uc2:adminMenu>
+                   
                     <%--
                 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
                     StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="AdminSiteMapDataSource1" StaticEnableDefaultPopOutImage="false">
@@ -68,6 +70,8 @@
                 </div>
                 <div id="link-container">
                     <h1>Main Links</h1>
+
+<%--                     <uc:sideAdmin ID="sideAdmin" runat="server" ></uc:sideAdmin>--%>
                 </div>
 
                 <asp:ContentPlaceHolder ID="cph_admin_main" runat="server">

@@ -81,9 +81,7 @@ public partial class tbl_patient : INotifyPropertyChanging, INotifyPropertyChang
 	
 	private int _id;
 	
-	private string _firstname;
-	
-	private string _lastname;
+	private string _name;
 	
 	private string _email;
 	
@@ -93,10 +91,8 @@ public partial class tbl_patient : INotifyPropertyChanging, INotifyPropertyChang
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
-    partial void OnfirstnameChanging(string value);
-    partial void OnfirstnameChanged();
-    partial void OnlastnameChanging(string value);
-    partial void OnlastnameChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
     partial void OnemailChanging(string value);
     partial void OnemailChanged();
     #endregion
@@ -126,42 +122,22 @@ public partial class tbl_patient : INotifyPropertyChanging, INotifyPropertyChang
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string firstname
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string name
 	{
 		get
 		{
-			return this._firstname;
+			return this._name;
 		}
 		set
 		{
-			if ((this._firstname != value))
+			if ((this._name != value))
 			{
-				this.OnfirstnameChanging(value);
+				this.OnnameChanging(value);
 				this.SendPropertyChanging();
-				this._firstname = value;
-				this.SendPropertyChanged("firstname");
-				this.OnfirstnameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string lastname
-	{
-		get
-		{
-			return this._lastname;
-		}
-		set
-		{
-			if ((this._lastname != value))
-			{
-				this.OnlastnameChanging(value);
-				this.SendPropertyChanging();
-				this._lastname = value;
-				this.SendPropertyChanged("lastname");
-				this.OnlastnameChanged();
+				this._name = value;
+				this.SendPropertyChanged("name");
+				this.OnnameChanged();
 			}
 		}
 	}

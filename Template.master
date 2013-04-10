@@ -35,8 +35,8 @@
                     </div>
                 </div>
             </div>
-            <div class="clearfloat">
-            </div>
+            <div class="clearfloat"/>
+            
             <div id="top-nav-bar">
             <%--new menu user control --%>
             <uc:Menu ID="Menu" runat="server"></uc:Menu>
@@ -79,8 +79,8 @@
                     </div>
                 </div>
             </div>--%>
-            <div class="clearfloat">
-            </div>
+            <div class="clearfloat"/>
+            
             <div id="link-container">
                 <h1>
                     Quick Links</h1>
@@ -119,7 +119,7 @@
             </asp:ContentPlaceHolder>
             
              </div>
-            </div>
+           
             <%-- 
   
   This is unnecessary Anja April 4 --

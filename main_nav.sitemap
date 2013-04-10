@@ -4,12 +4,12 @@
     <siteMapNode url="~/default.aspx" title="Home"  description="Home Page" >
       <siteMapNode url="~/about.aspx" title="About Us"  description="About Us" />
     </siteMapNode>
-    <siteMapNode url="~/PatientsVisitors.aspx" title="Patients Visitors"  description="Patients and Visitors" >
+    <siteMapNode url="~/PatientsVisitors.aspx" title="Patients &amp; Visitors"  description="Patients and Visitors" >
       <siteMapNode url="~/Card.aspx" title="Card.aspx" description="Send a greeting card"/>
       <siteMapNode url="~/PlanaVisit.aspx" title="Plan a visit" description="Plan a Visit"/>
       <siteMapNode url="~/imagegallery.aspx" title="Image Gallery" description="Image Gallery"/>
     </siteMapNode>
-    <siteMapNode url="~/ProgramsServices.aspx" title="Programs and Services"  description="Programs and Services">
+    <siteMapNode url="~/ProgramsServices.aspx" title="Programs &amp; Services"  description="Programs and Services">
       <siteMapNode url="~/FindA_Doctor.aspx" title="Find A Doctor" description="Find A Doctor"/>
       <siteMapNode url="~/services.aspx" title="Services" description="Services"/>
       <siteMapNode url="~/Doctor/mail.aspx" title="Doctor Mail" description="Doctor"/>

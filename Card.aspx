@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/subPage.master" AutoEventWireup="true"
     CodeFile="Card.aspx.cs" Inherits="subPage1" %>
-
 <%-- Access exposed elements from the master page--%>
 <%@ MasterType VirtualPath="~/subPage.master" %>
 <%-- Anja's Greeting Card Feature -- Currently In Use --%>
@@ -10,14 +9,15 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:Label ID="lbl_emailmessage" runat="server"></asp:Label>
+    <br />
     <div id="greetingcard" style="float: left; border-right: thin ridge; padding-right: 1em;
         border-top: thin ridge; padding-left: 2em; font-size: .6em; padding-bottom: 2em;
         border-left: thin ridge; width: 293px; padding-top: 10px; border-bottom: thin ridge;
         font-family: Verdana; height: 408px; background-color: #99CCFF">
-        <table>
+        <table id="cardtable" style="font-size: 1.1em">
             <tr>
                 <td>
-                    <asp:Label ID="lbl_name" runat="server">Enter your name:
+                    <asp:Label ID="lbl_name" runat="server" SkinID="card">Enter your name:
                     </asp:Label>
                 </td>
                 <td>
@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_sender" runat="server">Enter your email:
+                    <asp:Label ID="lbl_sender" runat="server" SkinID="card">Enter your email:
                     </asp:Label>
                 </td>
                 <td>
@@ -47,7 +47,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_patient" runat="server">Enter the patient's email:
+                    <asp:Label ID="lbl_patient" runat="server" SkinID="card">Enter the patient's email:
                     </asp:Label>
                 </td>
                 <td>
@@ -62,7 +62,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_bckground" runat="server">Choose 
+                    <asp:Label ID="lbl_bckground" runat="server" SkinID="card">Choose 
 		 a background Image:
                     </asp:Label>
                 </td>
@@ -73,7 +73,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_backgroundColor" runat="server">Background Color:</asp:Label>
+                    <asp:Label ID="lbl_backgroundColor" runat="server" SkinID="card">Background Color:</asp:Label>
                 <td>
                     <asp:DropDownList ID="BackgroundColour" runat="server" Height="2em" Width="13em"
                         AutoPostBack="True">
@@ -82,7 +82,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_color" runat="server">
+                    <asp:Label ID="lbl_color" runat="server" SkinID="card">
             Choose a foreground (text) color:</asp:Label>
                 </td>
                 <td>
@@ -92,7 +92,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_font" runat="server">Choose a font name:</asp:Label>
+                    <asp:Label ID="lbl_font" runat="server" SkinID="card">Choose a font name:</asp:Label>
                 </td>
                 <td>
                     <asp:DropDownList ID="lstFontName" runat="server" Height="22px" Width="194px" AutoPostBack="True">
@@ -101,16 +101,16 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_fontsize" runat="server">
+                    <asp:Label ID="lbl_fontsize" runat="server" SkinID="card">
             Specify a font size:</asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtFontSize" runat="server" AutoPostBack="True"></asp:TextBox>
+                    <asp:TextBox ID="txtFontSize" runat="server" SkinID="card" AutoPostBack="True"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_border" runat="server">
+                    <asp:Label ID="lbl_border" runat="server" SkinID="card">
             Choose a border style:</asp:Label>
                 </td>
                 <td>
@@ -121,7 +121,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lbl_message" runat="server">
+                    <asp:Label ID="lbl_message" runat="server" SkinID="card">
             Enter your message:</asp:Label>
                 </td>
                 <td>

@@ -28,7 +28,7 @@ public class emailClass
     public bool sendEmail(string _conName, string background, string _conEmail, string _conReason, string _conMessage)
     {
         MailMessage objMail = new MailMessage(_conEmail, _conEmail, _conReason, _conMessage);
-        NetworkCredential objNC = new NetworkCredential("timminshospital@gmail.com", "_timmins");
+        NetworkCredential objNC = new NetworkCredential("timminshospital@gmail.com", "group_four");
         SmtpClient objSMTP = new SmtpClient("smtp.gmail.com", 587); // smptp server for gmail
 
 

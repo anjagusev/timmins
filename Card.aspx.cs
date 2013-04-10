@@ -163,13 +163,18 @@ public partial class subPage1 : System.Web.UI.Page
 
     protected void subClick(object sender, EventArgs e)
     {
-        TextBox txtName = (TextBox)FindControl("txt_name");
-        TextBox txtPatient = (TextBox)FindControl("txt_patient");
-        TextBox txtMessage = (TextBox)FindControl("txt_message");
+
+        ContentPlaceHolder contentPlaceHolder = (ContentPlaceHolder)Master.FindControl("cph_main"); //
+
+       
+        TextBox txtName = (TextBox)contentPlaceHolder.FindControl("txt_name");
+        TextBox txtPatient = (TextBox)contentPlaceHolder.FindControl("txt_patient");
+        TextBox txtMessage = (TextBox)contentPlaceHolder.FindControl("txt_message");
         string txtReason = "Greetings from " + txtName.Text;
-        Panel pnlCard = (Panel)FindControl("pnlCard");
+        Panel pnlCard = (Panel)contentPlaceHolder.FindControl("pnlCard");
         string panel_html = RenderControl(pnlCard);
         string background = "img/" + lstBackColor.SelectedValue.ToString();
+
 
         string mappath = Server.MapPath(@background); // my image is placed in images folder
 
@@ -193,7 +198,7 @@ public partial class subPage1 : System.Web.UI.Page
     {
         if (flag)
         {
-            lbl_emailmessage.Text = "<span style='color:green;'>Email sent successfully</span>";
+            lbl_emailmessage.Text = "<span style='color:green;'>Your email was sent successfully!!!</span>";
         }
         else
         {

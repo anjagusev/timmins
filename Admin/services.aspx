@@ -21,7 +21,7 @@
                     <td><asp:TextBox ID="txt_title" runat="server" TextMode="MultiLine" /></td>
                     <td><asp:TextBox ID="txt_desc" runat="server" TextMode="MultiLine" /></td>
                     <td><asp:TextBox ID="txt_date" runat="server"  /></td>
-                    <AJAXTOOLKIT:CalendarExtender ID="ex_cal" runat="server" Format="dd/MMMM/yy"  TargetControlID="txt_date" />
+                    <AJAX:CalendarExtender ID="ex_cal" runat="server" Format="dd/MMMM/yy"  TargetControlID="txt_date" />
                     <td><asp:Button ID="txt_submit" runat="server" Text="Submit" OnClick="SubSubmit" /></td>
                   
                 </tr>
@@ -52,7 +52,7 @@
                     <asp:hiddenField ID="hdf_service" runat="server" value='<%#Eval ("service_id") %>' /> 
                     <td><asp:Label ID="lbl_title" runat="server" Text='<%#Eval ("title") %>' /></td>
                     <td><asp:Label ID="lbl_desc" runat="server" Text='<%#Eval ("description") %>' /></td>                    
-                    <td><asp:Label ID="lbl_date" runat="server" Text='<%#Eval ("date") %>' /></td>
+                    <td><asp:Label ID="lbl_date" runat="server" Text='<%#Eval ("date","{0:dd/MM/yyyy}") %>' /></td>
                     <td><asp:Button ID="btn_edit" runat="server" Text="EDIT" CommandName="Edit" /></td>
                     <td><asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return confirm('Are you sure?');" /></td>
                 </tr>
@@ -76,8 +76,8 @@
                     </td>
 
                   <td> <%--style="width: 165px">--%>
-                      <asp:Textbox ID="txt_dateU" runat="server"  Text='<%#Bind ("date") %>' /> 
-                      <AJAXTOOLKIT:CalendarExtender ID="Ext_celU" runat="server" Format="dd/MM/yy"  TargetControlID="txt_dateU" />       
+                      <asp:Textbox ID="txt_dateU" runat="server"  Text='<%#Bind ("date","{0:dd/MM/yyyy}") %>' /> 
+                      <AJAX:CalendarExtender ID="Ext_celU" runat="server" Format="dd/MM/yy"  TargetControlID="txt_dateU" />       
                   </td>
 
                   <td> <%--style="width: 240px">--%>

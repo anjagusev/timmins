@@ -6,7 +6,7 @@
     DataSourceID="main_nav" StaticEnableDefaultPopOutImage="false" StaticMenuStyle-CssClass="top-nav-bar">
     <DynamicMenuStyle CssClass="dynamicMenu" />
     <DynamicMenuItemStyle CssClass="dynamicMenu"></DynamicMenuItemStyle>
-    <StaticMenuItemStyle CssClass="menuItem" HorizontalPadding="1em"></StaticMenuItemStyle>
+    <StaticMenuItemStyle CssClass="menuItem" HorizontalPadding=".9em"></StaticMenuItemStyle>
 </asp:Menu>
   <asp:SiteMapDataSource ID="main_nav" runat="server" SiteMapProvider="main_nav" ShowStartingNode="false"   />
 <%--<asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="SiteMapDataSource2"

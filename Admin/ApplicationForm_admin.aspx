@@ -120,7 +120,7 @@ Job Postings Feature--%>
                     </HeaderTemplate>
                     <ItemTemplate>
                         <%--Link to open resume--%>
-                        <asp:HyperLink ID="hlk_resume" runat="server" Text='<%#Eval("resume") %>' NavigateUrl='<%#"Resumes/"+Eval("resume") %>'
+                        <asp:HyperLink ID="hlk_resume" runat="server" Text='<%#Eval("resume") %>' NavigateUrl='<%#"../Resumes/"+Eval("resume") %>'
                             Target="_blank" />
                     </ItemTemplate>
                 </asp:TemplateField>

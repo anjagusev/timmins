@@ -10,6 +10,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
+using System.IO;
 
 public partial class Admin_Default : System.Web.UI.Page
 {
@@ -47,6 +49,7 @@ public partial class Admin_Default : System.Web.UI.Page
         Label lblName = (Label)e.Item.FindControl("lbl_name");
         Label lblEmail = (Label)e.Item.FindControl("lbl_email");
         Label lblDepartment = (Label)e.Item.FindControl("lbl_department");
+        Label lblResume = (Label)e.Item.FindControl("lbl_resume");
         HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_id");
 
         int id = Int32.Parse(hdfID.Value.ToString());
@@ -74,6 +77,17 @@ public partial class Admin_Default : System.Web.UI.Page
             case "subDelete":
                 // delete user
                 _strMessage(objLinq.deleteUser(id), "delete");
+
+                // set file path for resume
+                string resumePath = Server.MapPath("~/Resumes/") + lblResume.Text;
+
+                // check if file exists
+                if (File.Exists(resumePath))
+                {
+                    // delete resume file from server
+                    File.Delete(resumePath);
+                }
+
                 _subBind();
                 break;
         }

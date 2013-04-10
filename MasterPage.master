@@ -10,11 +10,57 @@
 <script type="text/javascript" src="js/query.js"></script>
 <script type="text/javascript" src="js/news.js"></script>
 <script type="text/javascript" src="js/feed.js"></script>
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">        google.load("jquery", "1.3.2")</script>
+    <script type="text/javascript">        google.load("jqueryui", "1.7.2")</script>
+    <link rel="stylesheet" type="text/css" media="screen, projection, handheld" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/start/jquery-ui.css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                $("#MsgBox").dialog({
+                    autoOpen: false,
+                    modal: true,
+                    width: "auto",
+                    height: "auto"
+                });
+            });
+        });
+        function showjQueryDialog() {
+            //check to see how many checkboxes there are and how many of those are checked.
+            $("#MsgBox").dialog("open");
+        }
+        function closejQueryDialog() {
+            $("#MsgBox").dialog("close");
+        }
+    </script>
 <style type="text/css">
         .dynamicMenu li
         {
             display:none;
             
+        }
+         .dynamicMenu li
+        {
+            display:none;
+            
+        }
+            .style1
+        {
+            width: 100%;
+        }
+        
+        #MsgBox
+        {
+            width: 500px;
+            height: 500px;
+            font-size: .6em;
+        }
+        
+        .pnlFeedback
+        {
+            background-color: Aqua;
+            width: 6em;
+            height: 4em;
         }
         </style>
 <head runat="server">
@@ -29,6 +75,56 @@
 
     <%--required to make the news feed page work --%>
     <asp:ScriptManager ID="scm" runat="server" />
+
+  <%--  BEGIN SURVEY FEATURE--%>
+ <asp:HiddenField ID="MsgBoxContinue" runat="server" />
+    <p>
+        <AJAX:AlwaysVisibleControlExtender ID="avc_feedback" VerticalSide="Bottom" VerticalOffset="300" runat="server"
+            TargetControlID="pnl_feedback" HorizontalSide="right" />
+        <asp:Panel ID="pnl_feedback" runat="server">
+            <asp:Button ID="ShowSurvey" runat="server" Text="Feedback" OnClientClick="showjQueryDialog();return false;"
+                CssClass="pnlFeedback" /></asp:Panel>
+        <div id="MsgBox" title="Feedback Survey">
+            <table cellpadding="2" class="style1">
+                <tr>
+                    <td style="width: 25%; text-align: left;">
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 25%; text-align: left;">
+                    </td>
+                    <td>
+                        <%--      <asp:DropDownList ID="ddlSurveys" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlSurveys_SelectedIndexChanged" 
+                        Width="41%">
+                    </asp:DropDownList>--%>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: left;">
+                        <asp:Label ID="lblYes" runat="server" />
+                        <asp:Panel ID="pnlSurvey" runat="server">
+                        </asp:Panel>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 25%; text-align: left;">
+                        &nbsp;
+                    </td>
+                    <td>
+                        <asp:Button ID="btnSubmit" runat="server" UseSubmitBehavior="false" OnClick="btnSubmit_Click"
+                            Text="Submit" />
+                        <asp:Button ID="btnCancel" runat="server" CausesValidation="False" Text="Cancel"
+                            OnClientClick="closejQueryDialog();return false;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+<%--END SURVEY FEATURE--%>
+
 
     <div id="maxcontainer">
         <div id="container">

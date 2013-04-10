@@ -3,8 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" Runat="Server">
-    <%--it has error--%>
-    <div>
+    <%--i<div>
         <asp:Label ID="lbl_message" runat="server" />
    
                 <table cellpadding="6">
@@ -53,7 +52,7 @@
         <%--?????????????????????????? DATAList Update and DELETE??????????????????--%>
 
         <asp:DataList ID="dt_main" runat="server" RepeatColumns="2" CellSpacing="2" GridLines="Both" DataKeyField="subscribe_id"
-            OnEditCommand="subShowEditTemplate" OnUpdateCommand="subCommitUpdate" OnDeleteCommand="subCommitDelete" OnCancelCommand="subCancel">
+            OnEditCommand="subShowEditTemplate" OrnUpdateCommand="subCommitUpdate" OnDeleteCommand="subCommitDelete" OnCancelCommand="subCancel">
             <ItemTemplate>
                 <table>
                 <tbody>

@@ -9,15 +9,15 @@ public partial class Admin_editsubscribe_tbl : System.Web.UI.Page
 {
     subscriberClass objsub = new subscriberClass();
 
-    protected void Page_Load(object sender, EventArgs e)
+    protectcted void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
         {
             _subRebind();
 
 
-            //dt_main.DataSource = objsub.getsubscriber();
-            //dt_main.DataBind();
+            //dt_main.DataSourdt_main.DataSource = objsub.getsubscriber();
+            
         }
 
     }
@@ -27,8 +27,7 @@ public partial class Admin_editsubscribe_tbl : System.Web.UI.Page
 
         dt_main.DataSource = objsub.getsubscriber();
 
-        dt_main.DataBind();
-    }
+        dt_main.DataBind();   }
 
 
 

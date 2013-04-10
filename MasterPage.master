@@ -20,6 +20,7 @@
 <head runat="server">
     <title>
         <%=pp_masterTitle %></title>
+        <link rel="Stylesheet" href="css/style.css" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -37,6 +38,8 @@
                 </div>
                 <div id="header-right">
                     <div id="textsize">
+                        <asp:LoginStatus ID="lgs_main" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/Default.aspx" CssClass="login" />
+                        <br /><br />
                         <asp:Label ID="lbl_bigt" runat="server" Text="A++ | " />
                         <asp:Label ID="lbl_smallt" runat="server" Text="--A" />
                     </div>

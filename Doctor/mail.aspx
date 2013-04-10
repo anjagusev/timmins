@@ -17,6 +17,8 @@
                 </div>
                 <div id="header-right">
                     <div id="textsize">
+                        <asp:LoginStatus ID="lgs_main" runat="server" LogoutAction="Redirect" LogoutPageUrl="../Default.aspx" CssClass="login" />
+                        <br /><br />
                         <asp:Label ID="lbl_bigt" runat="server" Text="A++ | " />
                         <asp:Label ID="lbl_smallt" runat="server" Text="--A" />
                     </div>

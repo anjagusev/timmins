@@ -42,7 +42,7 @@ Job Postings Feature--%>
     <br />
     <br />
     <%-- Grid view of Job Postings --%>
-    <asp:GridView ID="grv_jobpostings" runat="server" AutoGenerateColumns="false" HeaderStyle-BackColor="Gold"
+    <asp:GridView ID="grv_jobpostings" runat="server" AutoGenerateColumns="false" HeaderStyle-BackColor="SteelBlue"
         CellPadding="5">
         <Columns>
             <%--Title Column--%>

@@ -1,8 +1,9 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="subPage.master.cs" Inherits="subPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Template.master.cs" Inherits="Template" %>
 <%--Registering the menu controls--%>
 <%@ Register Src="~/Controls/Menu.ascx" TagName="Menu" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/sideMenu.ascx" TagName="sideMenu" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
@@ -10,14 +11,8 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
-    <title>
-        <%=pp_submasterTitle %>
-    </title>
+    <title><%=pp_submasterTitle %></title>
     <link rel="Stylesheet" href="css/style.css" type="text/css" />
-    <%--  This is unnecessary - April 4 Anja ------
-
-  <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>--%>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -105,14 +100,20 @@
             
                 
                 <asp:ContentPlaceHolder ID="cph_main" runat="server">
+                <asp:Repeater ID="rpt_ctn" runat="server">
+                <ItemTemplate>
                 <div class="subhead">
                     <h1>
-                        <%=pp_submasterSubHeading %>
+                        <%--<%=pp_submasterSubHeading %>--%>
+                        <%#Eval("title") %>
                     </h1>
                 </div>
                 <div class="subContent">
-                <p>Fill this section with all your content</p>
+                <%--<p>Fill this section with all your content</p>--%>
+                <%#Eval("page_content") %>
                 </div>
+                    </ItemTemplate>
+                </asp:Repeater>
            
             </asp:ContentPlaceHolder>
             

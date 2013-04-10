@@ -5,13 +5,22 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class subPage : System.Web.UI.MasterPage
+public partial class Template : System.Web.UI.MasterPage
 {
     DataClassesDataContext dbDC = new DataClassesDataContext();
+    PageClass objPag = new PageClass();
 
+    private int _content;
+    public int pp_submasterContent
+    {
+        get { return _content; }
+        set { _content = value; }
+    }
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        rpt_ctn.DataSource = objPag.getPageByID(pp_submasterContent);
+        rpt_ctn.DataBind();
     }
 
     private string _title = "Timmins and District Hospital";
@@ -70,6 +79,4 @@ public partial class subPage : System.Web.UI.MasterPage
         }
 
     }
-
 }
-

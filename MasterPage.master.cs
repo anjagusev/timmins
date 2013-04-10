@@ -95,7 +95,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     // code for submit button
     protected void subsubmit(object sender, EventArgs e)
     {
-        
+
 
         string Username = txt_name.Text;
         string Useremail = txt_email.Text;
@@ -112,17 +112,19 @@ public partial class MasterPage : System.Web.UI.MasterPage
             _strMessage(objsubscribe.CommitInsert(Username, Useremail), "subscribed");
             _subRebind();
 
-            // test last inserted id
-            // lbl_lastid.Text = objsubClass.last_id().ToString();
 
-            int lastID = Convert.ToInt16(objsubscribe .last_id().ToString());
+            // lasID is getting last inserted id
+            int lastID = Convert.ToInt16(objsubscribe.last_id().ToString());
+            string subject_email = "Confirm Your Registration with Timmins and District Hospital";
+            string body_email = "<a href='http://timmins.sidhusweb.com/confirm_email.aspx?id=" + lastID + "'>Click here act your service.</a>";
 
             // send mail which will carry last inserted id
             email objemail = new email();
 
-            objemail.emailMethod(Useremail, lastID);
-        }
+           // using email class object and calling emailconfig method, passing argrument
+            objemail.emailconFig(Useremail, subject_email, body_email);
 
+        }
     }
 
     //sends the search text to "results.aspx" to perform search function and display the results

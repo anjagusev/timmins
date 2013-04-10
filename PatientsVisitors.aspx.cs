@@ -9,7 +9,7 @@ public partial class subPage1 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Master.pp_submasterSubHeading = "Fill This with The appropriate Subheading";
+        Master.pp_submasterContent = 3;
 
     }
 }

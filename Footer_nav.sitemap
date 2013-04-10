@@ -6,5 +6,6 @@
       <siteMapNode url="" title="Privacy Policy"  description="" />
       <siteMapNode url="" title="Legal"  description="" />
       <siteMapNode url="" title="Contact Us"  description="" />
+      <siteMapNode url="~/Admin/addPages.aspx" title="Admin"  description="" />
     </siteMapNode>
 </siteMap>

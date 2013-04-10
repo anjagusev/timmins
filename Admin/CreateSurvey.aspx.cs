@@ -22,7 +22,7 @@ public partial class Admin_Default5 : System.Web.UI.Page
         //context = new SurveyAppConString();
         if (!IsPostBack)
         {
-
+            
             ContentPlaceHolder contentPlaceHolder = (ContentPlaceHolder)Master.FindControl("cph_admin_main");
           
             QuestionsClass objQuestions = new QuestionsClass();
@@ -37,6 +37,23 @@ public partial class Admin_Default5 : System.Web.UI.Page
             LoadSurveys();
         }
     }
+
+
+    //private void _subRebind()
+    //{
+    //    ContentPlaceHolder cph = (ContentPlaceHolder)Master.FindControl("cph_admin_main");
+    //    ListBox listbox = (ListBox)cph.FindControl("lbSource");
+    //    TextBox txtTitle = (TextBox)cph.FindControl("txtTitle");
+    //    TextBox txtDescription = (TextBox)cph.FindControl("txtDesc");
+    //    TextBox txtDate = (TextBox)cph.FindControl("txtDate");
+    //    ListBox Target = (ListBox)cph.FindControl("lbTarget");
+    //    Target.SelectedIndex = -1;
+    //    txtTitle.Text = "";
+    //    txtDescription.Text = "";
+    //    txtDate.Text = "";
+        
+
+    //}
 
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
@@ -69,16 +86,10 @@ public partial class Admin_Default5 : System.Web.UI.Page
             foreach (ListItem li in Target.Items)
             {
 
-                // SurveyQuestionClass quest = new SurveyQuestionClass();
+                
                 _surveyquestion.QuestionID = Convert.ToInt32(li.Value);
                 int sqquestionid = Convert.ToInt32(_surveyquestion.QuestionID);
-                // SurveyQuestionClass surveyq = new SurveyQuestionClass();
-
-                // surveyq.commitUpdate(1, _surveyquestion.QuestionID, survey.ID);
-                //_survey.commitInsert(_surveyquestion); 
-
-                //objSurvey.commitInsert(
-                //objSurvey.questions.Add(quest);
+               
                 questions.Add(_surveyquestion);
 
 
@@ -88,24 +99,18 @@ public partial class Admin_Default5 : System.Web.UI.Page
                 StringBuilder id_builder = new StringBuilder();
                 foreach (string s in survey_ID)
                 {
-                    // Append each int to the StringBuilder overload.
+                   
                     id_builder.Append(s);
                 }
 
                 string result = id_builder.ToString();
 
-                // int sq_id;
-                // SQ.commitInsert(sqquestionid, surveyID, out sq_id);
-
-                //to make it null Convert.ToInt32(num)
                 SQ.commitInsert(sqquestionid, surveyID);
-                //int qID = SurveyQuestion.qID ; 
-                //lblTest.Text = qID.ToString();
-                // hdf_sq_id.Value = sq_id.ToString();
+                _subRebind();
 
             }
             lbl_output.Text = "You have added a new survey";
-            _subRebind();
+            
 
         }
     }
@@ -114,7 +119,7 @@ public partial class Admin_Default5 : System.Web.UI.Page
     {
         SurveyClass objSurvey = new SurveyClass();
         List<Survey> surveys = objSurvey.getSurveys().ToList();
-        //List<Survey> surveys = context.Surveys.ToList();
+      
         ddlSurveys.DataSource = surveys;
         ddlSurveys.DataTextField = "Title";
         ddlSurveys.DataValueField = "ID";
@@ -146,6 +151,13 @@ public partial class Admin_Default5 : System.Web.UI.Page
 
     private void _subRebind()
     {
+        ContentPlaceHolder cph = (ContentPlaceHolder)Master.FindControl("cph_admin_main");
+        ListBox listbox = (ListBox)cph.FindControl("lbSource");
+        TextBox txtTitle = (TextBox)cph.FindControl("txtTitle");
+        TextBox txtDescription = (TextBox)cph.FindControl("txtDesc");
+        TextBox txtDate = (TextBox)cph.FindControl("txtDate");
+        ListBox Target = (ListBox)cph.FindControl("lbTarget");
+
         txtDesc.Text = string.Empty;
         txtTitle.Text = string.Empty;
         txtDate.Text = string.Empty;

@@ -140,15 +140,6 @@ public partial class subPage1 : System.Web.UI.Page
     /// </summary>
     private string RenderControl(Panel pnlCard)
     {
-        //Page page = new Page();
-
-        ////create the runat="server" from that must host asp.net controls
-        //HtmlForm form = new HtmlForm();
-        //form.Name = "form1";
-        //page.Controls.Add(form);
-        //form.Controls.Add(pnlCard);
-        ////call RenderControl method to get the generated HTML
-        //string html = RenderControl(pnlCard);
 
         StringBuilder sb = new StringBuilder();
         StringWriter sw = new StringWriter(sb);

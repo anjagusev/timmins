@@ -4,9 +4,12 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" Runat="Server">
+
 <div style="width:53em; border:1px solid black; float:right;">
  <h1>
         <asp:Label ID="lbl_header" runat="server" Text="Add A Survey" /></h1>
+
+        <asp:Label ID="lbl_output" runat="server" />
     <table cellpadding="2" class="style1">
         <tr>
             <td style="width: 2em; text-align: left;">
@@ -119,7 +122,7 @@
                 <td class="style2">
                     <asp:ListBox ID="lbTarget" runat="server" Rows="6" Width="100%"></asp:ListBox>
                     <%--<asp:RequiredFieldValidator ID="rfv_target" runat="server" ControlToValidate="lbTarget" Text="*Required" InitalValue="-1" Display="Dynamic" />--%>
-                    <asp:CustomValidator ID="ctv_target" runat="server" Text="*You must add at least 3 questions"
+                    <asp:CustomValidator ID="ctv_target" runat="server" Text="*You must add more than 3 questions"
                         ControlToValidate="lbTarget" ValidateEmptyText="true" ClientValidationFunction="subCheck"
                         OnServerValidate="subCheck" />
                 </td>
@@ -145,8 +148,8 @@
     </tr>
     </table>
     <div>
-        <asp:Label ID="lbl_output" runat="server" />
-        <asp:Label ID="lblTest" runat="server" />
+        
+        <%--<asp:Label ID="lblTest" runat="server" />--%>
         <asp:HiddenField ID="hdf_sq_id" runat="server" />
         <h2>
             <asp:Label ID="lbl_active" runat="server" Text="Select a Feedback Survey to make active" /></h2>

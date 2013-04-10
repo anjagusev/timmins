@@ -5,8 +5,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="cph_sideNav" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_main" runat="Server">
-    <div>
-        <table cellpadding="2" class="style1">
+   
+    <div style="float:right; border:1px solid black; width:65em;">
+        <table cellpadding="2">
             <tr>
                 <td style="width: 25%; text-align: left;">
                     &nbsp;
@@ -36,9 +37,9 @@
                     &nbsp;
                 </td>
                 <td>
-                    <asp:Button ID="Button1" runat="server" UseSubmitBehavior="false" OnClick="btnSubmit_Click"
+           <%--         <asp:Button ID="Button1" runat="server" UseSubmitBehavior="false" OnClick="btnSubmit_Click"
                         Text="Submit" />
-                    <asp:Button ID="Button2" runat="server" CausesValidation="False" Text="Cancel" OnClientClick="closejQueryDialog();return false;" />
+                    <asp:Button ID="Button2" runat="server" CausesValidation="False" Text="Cancel" OnClientClick="closejQueryDialog();return false;" />--%>
                 </td>
             </tr>
         </table>

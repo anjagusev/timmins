@@ -32,11 +32,15 @@
             </td>
         </tr>
         </table>
-        <br /><br />
-        
-        
+        <br />
+        <asp:CheckBox ID="chk_newsletter" runat="server" Text="Send email to subscribers"  />
+        <br />
         <asp:Button ID="btn_insert" runat="server" Text="Insert" CommandName="Insert" OnCommand="subAdmin" ValidationGroup="insert" />
-        <br /><br />
+        <br />
+        <asp:Label ID="sent_success" runat="server" />
+        <br />
+        
+        <br />
         <asp:Panel ID="pnl_all" runat="server" GroupingText="All Products">
             <table cellpadding="3" cellspacing="5">
                 <thead style="font-weight:bolder;background-color:#d3d3d3;">
@@ -135,6 +139,9 @@
     </div>
 </asp:Content>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="cph_main" Runat="Server">
-</asp:Content>
+
+
+<%--commited by harry, not working --%>
+<%--<asp:Content ID="Content1" ContentPlaceHolderID="cph_main" Runat="Server">
+</asp:Content>--%>
 

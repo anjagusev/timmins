@@ -43,7 +43,7 @@ Career Alert Feature--%>
             <%--Name--%>
             <asp:Label ID="lbl_name" runat="server" Text="*Name: " AssociatedControlID="txt_name" />
             <br />
-            <asp:TextBox ID="txt_name" runat="server" />
+            <asp:TextBox ID="txt_name" runat="server" CssClass="textbox"  />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_name" runat="server" Text="Empty value" ErrorMessage="Please enter your name."
                 ControlToValidate="txt_name" Display="Dynamic" SetFocusOnError="true" ValidationGroup="alert_form" />
@@ -56,7 +56,7 @@ Career Alert Feature--%>
             <%--Email--%>
             <asp:Label ID="lbl_email" runat="server" Text="*Email: " AssociatedControlID="txt_email" />
             <br />
-            <asp:TextBox ID="txt_email" runat="server" />
+            <asp:TextBox ID="txt_email" runat="server" CssClass="textbox"  />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="Empty value" ErrorMessage="Please enter your email."
                 ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ValidationGroup="alert_form" />

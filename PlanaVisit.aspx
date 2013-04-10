@@ -38,7 +38,7 @@ Plan a Visit Feature--%>
             <%--Name--%>
             <asp:Label ID="lbl_name" runat="server" Text="*Name: " AssociatedControlID="txt_name" />
             <br />
-            <asp:TextBox ID="txt_name" runat="server" />
+            <asp:TextBox ID="txt_name" runat="server" CssClass="textbox" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_name" runat="server" Text="Empty value" ErrorMessage="Please enter your name."
                 ControlToValidate="txt_name" Display="Dynamic" SetFocusOnError="true" ValidationGroup="visit_form" />
@@ -51,7 +51,7 @@ Plan a Visit Feature--%>
             <%--Email--%>
             <asp:Label ID="lbl_email" runat="server" Text="*Email: " AssociatedControlID="txt_email" />
             <br />
-            <asp:TextBox ID="txt_email" runat="server" />
+            <asp:TextBox ID="txt_email" runat="server" CssClass="textbox"  />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="Empty value" ErrorMessage="Please enter your email."
                 ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ValidationGroup="visit_form" />
@@ -63,7 +63,7 @@ Plan a Visit Feature--%>
             <%--Patient Name--%>
             <asp:Label ID="lbl_pname" runat="server" Text="*Patient Name: " AssociatedControlID="txt_pname" />
             <br />
-            <asp:TextBox ID="txt_pname" runat="server" />
+            <asp:TextBox ID="txt_pname" runat="server" CssClass="textbox"  />
             <%-- checking if empty  --%>
             <asp:RequiredFieldValidator ID="rfv_pname" runat="server" Text="Empty value" ErrorMessage="Please enter the patient's name."
                 ControlToValidate="txt_pname" Display="Dynamic" SetFocusOnError="true" ValidationGroup="visit_form" />
@@ -77,7 +77,7 @@ Plan a Visit Feature--%>
             <asp:Label ID="lbl_number" runat="server" Text="*Phone Number: " AssociatedControlID="txt_number"
                 EnableTheming="true" />
             <br />
-            <asp:TextBox ID="txt_number" runat="server" />
+            <asp:TextBox ID="txt_number" runat="server" CssClass="textbox"  />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_number" runat="server" Text="Empty value" ErrorMessage="Please enter your phone number."
                 ControlToValidate="txt_number" Display="Dynamic" SetFocusOnError="true" ValidationGroup="visit_form" />
@@ -91,7 +91,7 @@ Plan a Visit Feature--%>
             <asp:Label ID="lbl_visitors" runat="server" Text="*Number of Visitors (Max 5): "
                 AssociatedControlID="txt_visitors" />
             <br />
-            <asp:TextBox ID="txt_visitors" runat="server" />
+            <asp:TextBox ID="txt_visitors" runat="server" CssClass="textbox"  />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_visitors" runat="server" Text="Empty value" ErrorMessage="Please enter the number of visitors."
                 ControlToValidate="txt_visitors" Display="Dynamic" SetFocusOnError="true" ValidationGroup="visit_form" />
@@ -103,7 +103,7 @@ Plan a Visit Feature--%>
             <%--Date of Visit--%>
             <asp:Label ID="lbl_dateofvisit" runat="server" Text="*Date of Visit: " AssociatedControlID="txt_dateofvisit" />
             <br />
-            <asp:TextBox ID="txt_dateofvisit" runat="server" />
+            <asp:TextBox ID="txt_dateofvisit" runat="server" CssClass="textbox"  />
             <asp:Label ID="lbl_calerror" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_dateofvisit" runat="server" Text="Empty value"
@@ -125,7 +125,7 @@ Plan a Visit Feature--%>
                 <asp:ListItem>Minutes</asp:ListItem>
                 <asp:ListItem>Hours</asp:ListItem>
             </asp:DropDownList>
-            <asp:TextBox ID="txt_duration" runat="server" />
+            <asp:TextBox ID="txt_duration" runat="server" CssClass="textbox"  />
             <br /><br />
             <%-- Google's reCaptcha Control --%>
             <recaptcha:RecaptchaControl ID="recaptcha" runat="server" PublicKey="6LfFiN8SAAAAABop6Oc_WgwO8KKqGS3pFxmXmYpe"

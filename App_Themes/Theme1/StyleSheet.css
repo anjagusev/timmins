@@ -620,14 +620,15 @@ img
     width:76%;
     float:left;
 }
-/******PHONG THIS IS WHERE I DID THE STYLING IN THE DYNAMIC MENU*******/
-.dynamicMenu li
-        {
-         background-color:lightBlue; 
-         text-align:center;
-         padding:1em;
-            
-        }
+
+.textbox
+{
+    margin-bottom: 5px;
+}
+
+
+
+
 /* MEDIA SCREENS BELOW*/
 
 @media only screen and (min-width: 768px) and (max-width: 959px)

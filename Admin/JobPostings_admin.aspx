@@ -60,14 +60,6 @@ Job Postings Feature--%>
                                 CommandName="department" PostBackUrl="#pnl_all" />
                         </th>
                         <th>
-                            <asp:LinkButton ID="lnk_description" runat="server" Text="Description" OnCommand="subSort"
-                                CommandName="description" PostBackUrl="#pnl_all" />
-                        </th>
-                        <th>
-                            <asp:LinkButton ID="lnk_qualifications" runat="server" Text="Qualifications" OnCommand="subSort"
-                                CommandName="qualifications" PostBackUrl="#pnl_all" />
-                        </th>
-                        <th>
                             <asp:LinkButton ID="lnk_salary" runat="server" Text="Salary" OnCommand="subSort"
                                 CommandName="salary" PostBackUrl="#pnl_all" />
                         </th>
@@ -95,12 +87,6 @@ Job Postings Feature--%>
                                 </td>
                                 <td>
                                     <%#Eval("department") %>
-                                </td>
-                                <td>
-                                    <%#Eval("description") %>
-                                </td>
-                                <td>
-                                    <%#Eval("qualifications") %>
                                 </td>
                                 <td>
                                     <%#Eval("salary") %>

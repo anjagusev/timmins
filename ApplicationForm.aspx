@@ -29,7 +29,7 @@ Job Postings Feature--%>
             <%--Name--%>
             <asp:Label ID="lbl_name" runat="server" Text="*Name: " AssociatedControlID="txt_name" />
             <br />
-            <asp:TextBox ID="txt_name" runat="server" />
+            <asp:TextBox ID="txt_name" runat="server" CssClass="textbox" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_name" runat="server" Text="Empty value" ErrorMessage="Please enter your name."
                 ControlToValidate="txt_name" Display="Dynamic" SetFocusOnError="true" ValidationGroup="app_form" />
@@ -42,7 +42,7 @@ Job Postings Feature--%>
             <%--Email--%>
             <asp:Label ID="lbl_email" runat="server" Text="*Email: " AssociatedControlID="txt_email" />
             <br />
-            <asp:TextBox ID="txt_email" runat="server" />
+            <asp:TextBox ID="txt_email" runat="server" CssClass="textbox"  />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="Empty value" ErrorMessage="Please enter your email."
                 ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ValidationGroup="app_form" />
@@ -55,7 +55,7 @@ Job Postings Feature--%>
             <asp:Label ID="lbl_number" runat="server" Text="*Phone Number: " AssociatedControlID="txt_number"
                 EnableTheming="true" />
             <br />
-            <asp:TextBox ID="txt_number" runat="server" />
+            <asp:TextBox ID="txt_number" runat="server" CssClass="textbox"  />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_number" runat="server" Text="Empty value" ErrorMessage="Please enter your phone number."
                 ControlToValidate="txt_number" Display="Dynamic" SetFocusOnError="true" ValidationGroup="app_form" />
@@ -68,7 +68,7 @@ Job Postings Feature--%>
             <%--Address--%>
             <asp:Label ID="lbl_address" runat="server" Text="Address: " AssociatedControlID="txt_address" />
             <br />
-            <asp:TextBox ID="txt_address" runat="server" />
+            <asp:TextBox ID="txt_address" runat="server" CssClass="textbox"  />
             <%-- checking if value entered is text format  --%>
             <asp:RegularExpressionValidator ID="rfv_address" runat="server" Text="Invalid address, Format: ### Fake Street"
                 ErrorMessage="Please enter the correct address." ControlToValidate="txt_address"
@@ -78,7 +78,7 @@ Job Postings Feature--%>
             <%--City--%>
             <asp:Label ID="lbl_city" runat="server" Text="City: " AssociatedControlID="txt_city" />
             <br />
-            <asp:TextBox ID="txt_city" runat="server" />
+            <asp:TextBox ID="txt_city" runat="server" CssClass="textbox"  />
             <%-- checking if value entered is text format  --%>
             <asp:RegularExpressionValidator ID="rev_city" runat="server" Text="Invalid city"
                 ErrorMessage="Please enter the correct patient name." ControlToValidate="txt_city"
@@ -88,7 +88,7 @@ Job Postings Feature--%>
             <%--Postal Code--%>
             <asp:Label ID="lbl_postalcode" runat="server" Text="Postal Code: " AssociatedControlID="txt_postalcode" />
             <br />
-            <asp:TextBox ID="txt_postalcode" runat="server" />
+            <asp:TextBox ID="txt_postalcode" runat="server" CssClass="textbox"  />
             <%-- checking if value entered is text format  --%>
             <asp:RegularExpressionValidator ID="rfv_postalcode" runat="server" Text="Invalid postal code, Format: A1A 1A1"
                 ErrorMessage="Please enter the correct postal code." ControlToValidate="txt_postalcode"

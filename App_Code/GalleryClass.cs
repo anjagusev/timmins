@@ -10,7 +10,7 @@ public class GalleryClass
     public IQueryable<Gallery> getgallery()
     {
         //create an insteance of the data context class called objCardImageDC
-        galleryDataContext objGalleryImageDC = new galleryDataContext();
+        DataClassesDataContext objGalleryImageDC = new DataClassesDataContext();
         //creating anonymous variable with value being instance of LINQ object
         var allgallery = objGalleryImageDC.Galleries.Select(x => x);
         //return IQueryable<product> for databound control to bind to
@@ -19,14 +19,14 @@ public class GalleryClass
 
     public IQueryable<Gallery> GetGalleryByID(int _Id)
     {
-        galleryDataContext objGalleryImageDC = new galleryDataContext();
+        DataClassesDataContext objGalleryImageDC = new DataClassesDataContext();
         var allgallery = objGalleryImageDC.Galleries.Where(x => x.Id == _Id).Select(x => x);
         return allgallery;
     }
 
     public bool commitInsert(string _MainImage, string _ThumbNail)
     {
-        galleryDataContext objGalleryImageDC = new galleryDataContext();
+        DataClassesDataContext objGalleryImageDC = new DataClassesDataContext();
         //to ensure all data will be disposed when finished
         using (objGalleryImageDC)
         {
@@ -46,7 +46,7 @@ public class GalleryClass
 
     public bool commitUpdate(int _Id, string _MainImage, string _ThumbNail)
     {
-        galleryDataContext objGalleryImageDC = new galleryDataContext();
+        DataClassesDataContext objGalleryImageDC = new DataClassesDataContext();
         using (objGalleryImageDC)
         {
             var objUGallery = objGalleryImageDC.Galleries.Single(x => x.Id == _Id);
@@ -61,7 +61,7 @@ public class GalleryClass
     }
     public bool commitDelete(int _Id)
     {
-        galleryDataContext objGalleryImageDC = new galleryDataContext();
+        DataClassesDataContext objGalleryImageDC = new DataClassesDataContext();
         using (objGalleryImageDC)
         {
             var objDelGallery = objGalleryImageDC.Galleries.Single(x => x.Id == _Id);

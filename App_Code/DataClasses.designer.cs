@@ -83,6 +83,9 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void Inserttbl_patient(tbl_patient instance);
   partial void Updatetbl_patient(tbl_patient instance);
   partial void Deletetbl_patient(tbl_patient instance);
+  partial void InsertGallery(Gallery instance);
+  partial void UpdateGallery(Gallery instance);
+  partial void DeleteGallery(Gallery instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -264,6 +267,14 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<tbl_patient>();
+		}
+	}
+	
+	public System.Data.Linq.Table<Gallery> Galleries
+	{
+		get
+		{
+			return this.GetTable<Gallery>();
 		}
 	}
 	
@@ -4151,6 +4162,116 @@ public partial class tbl_patient : INotifyPropertyChanging, INotifyPropertyChang
 				this._email = value;
 				this.SendPropertyChanged("email");
 				this.OnemailChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="timmins.Gallery")]
+public partial class Gallery : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _MainImage;
+	
+	private string _ThumbNail;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnMainImageChanging(string value);
+    partial void OnMainImageChanged();
+    partial void OnThumbNailChanging(string value);
+    partial void OnThumbNailChanged();
+    #endregion
+	
+	public Gallery()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainImage", DbType="VarChar(50)")]
+	public string MainImage
+	{
+		get
+		{
+			return this._MainImage;
+		}
+		set
+		{
+			if ((this._MainImage != value))
+			{
+				this.OnMainImageChanging(value);
+				this.SendPropertyChanging();
+				this._MainImage = value;
+				this.SendPropertyChanged("MainImage");
+				this.OnMainImageChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThumbNail", DbType="VarChar(MAX)")]
+	public string ThumbNail
+	{
+		get
+		{
+			return this._ThumbNail;
+		}
+		set
+		{
+			if ((this._ThumbNail != value))
+			{
+				this.OnThumbNailChanging(value);
+				this.SendPropertyChanging();
+				this._ThumbNail = value;
+				this.SendPropertyChanged("ThumbNail");
+				this.OnThumbNailChanged();
 			}
 		}
 	}

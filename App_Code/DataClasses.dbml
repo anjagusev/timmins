@@ -203,6 +203,13 @@
       <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="timmins.Gallery" Member="Galleries">
+    <Type Name="Gallery">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MainImage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ThumbNail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="timmins.careeralert" Method="careeralert">
     <ElementType Name="careeralertResult">
       <Column Name="careeralert_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

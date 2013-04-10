@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/subPage.master" AutoEventWireup="true"
     CodeFile="SurveyForm.aspx.cs" Inherits="Default2" %>
-
+       <%@ MasterType VirtualPath="~/subPage.master" %>
 <%-- Survey Form, Public side -- will delete later, needs to be implemented on the master --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="cph_sideNav" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_main" runat="Server">
    
-    <div style="float:right; border:1px solid black; width:65em;">
+    <div>
         <table cellpadding="2">
             <tr>
                 <td style="width: 25%; text-align: left;">
@@ -76,8 +76,10 @@
         <tr>
             <td style="width: 25%; text-align: left;">
                 &nbsp;
-            </td>
-            <td>
+            </td></tr>
+            <tr></tr><tr><td></td>
+            <td style="padding:1em;">
+            
                 <asp:Button ID="btnSubmit" runat="server" Enabled="false" OnClick="btnSubmit_Click"
                     Text="Submit" />
                 <asp:Button ID="btnCancel" runat="server" CausesValidation="False" Text="Cancel" />

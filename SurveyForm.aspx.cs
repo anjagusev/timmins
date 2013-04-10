@@ -35,6 +35,8 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        Master.pp_submasterSubHeading = "Feedback Survey";
         getActive();
         //context = new SurveyAppConString();
         if (!Page.IsPostBack)

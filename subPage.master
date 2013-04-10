@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="subPage.master.cs" Inherits="subPage" %>
-
 <%--Registering the menu controls--%>
 <%@ Register Src="~/Controls/Menu.ascx" TagName="Menu" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/sideMenu.ascx" TagName="sideMenu" TagPrefix="uc1" %>

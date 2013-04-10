@@ -38,7 +38,7 @@ Job Postings Feature--%>
         <asp:Panel ID="pnl_all" runat="server" GroupingText="All Job Postings">
             <%--View Panel--%>
             <table cellpadding="3" border="1">
-                <thead style="background-color: SteelBlue;">
+                <thead style="background-color:steelblue;">
                     <tr>
                         <th>
                             <asp:LinkButton ID="lnk_titleH" runat="server" Text="Job Title" OnCommand="subSort"

@@ -24,10 +24,11 @@ Job Postings Feature--%>
             <asp:Label ID="lbl_info" runat="server" Text="Please fill out the form below to apply for this job opportunity." />
             <br />
             <br />
-            <asp:Label ID="lbl_required" runat="server" Text="*Required" ForeColor="Maroon" />
-            <br />
+            <asp:Label ID="lbl_required" runat="server" Text="* = Required" ForeColor="Maroon" />
+            <br /><br />
             <%--Name--%>
             <asp:Label ID="lbl_name" runat="server" Text="*Name: " AssociatedControlID="txt_name" />
+            <br />
             <asp:TextBox ID="txt_name" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_name" runat="server" Text="Empty value" ErrorMessage="Please enter your name."
@@ -40,6 +41,7 @@ Job Postings Feature--%>
             <br />
             <%--Email--%>
             <asp:Label ID="lbl_email" runat="server" Text="*Email: " AssociatedControlID="txt_email" />
+            <br />
             <asp:TextBox ID="txt_email" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="Empty value" ErrorMessage="Please enter your email."
@@ -52,6 +54,7 @@ Job Postings Feature--%>
             <%--Phone Number--%>
             <asp:Label ID="lbl_number" runat="server" Text="*Phone Number: " AssociatedControlID="txt_number"
                 EnableTheming="true" />
+            <br />
             <asp:TextBox ID="txt_number" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_number" runat="server" Text="Empty value" ErrorMessage="Please enter your phone number."
@@ -64,6 +67,7 @@ Job Postings Feature--%>
             <br />
             <%--Address--%>
             <asp:Label ID="lbl_address" runat="server" Text="Address: " AssociatedControlID="txt_address" />
+            <br />
             <asp:TextBox ID="txt_address" runat="server" />
             <%-- checking if value entered is text format  --%>
             <asp:RegularExpressionValidator ID="rfv_address" runat="server" Text="Invalid address, Format: ### Fake Street"
@@ -73,6 +77,7 @@ Job Postings Feature--%>
             <br />
             <%--City--%>
             <asp:Label ID="lbl_city" runat="server" Text="City: " AssociatedControlID="txt_city" />
+            <br />
             <asp:TextBox ID="txt_city" runat="server" />
             <%-- checking if value entered is text format  --%>
             <asp:RegularExpressionValidator ID="rev_city" runat="server" Text="Invalid city"
@@ -82,6 +87,7 @@ Job Postings Feature--%>
             <br />
             <%--Postal Code--%>
             <asp:Label ID="lbl_postalcode" runat="server" Text="Postal Code: " AssociatedControlID="txt_postalcode" />
+            <br />
             <asp:TextBox ID="txt_postalcode" runat="server" />
             <%-- checking if value entered is text format  --%>
             <asp:RegularExpressionValidator ID="rfv_postalcode" runat="server" Text="Invalid postal code, Format: A1A 1A1"
@@ -95,14 +101,15 @@ Job Postings Feature--%>
             <br />
             <%--Resume--%>
             <asp:Label ID="lbl_resume" runat="server" Text="*Resume: " />
+            <br />
             <asp:FileUpload ID="fu_resume" runat="server" />
             <%-- checking if empty --%>
             <asp:Label ID="lbl_rfvresume" runat="server" />
-            <br />
+            <br /><br />
             <%--Cover Letter--%>
             <asp:Label ID="lbl_coverletter" runat="server" Text="Cover Letter: " AssociatedControlID="txt_coverletter" />
-            <asp:TextBox ID="txt_coverletter" runat="server" TextMode="MultiLine" Height="100" />
             <br />
+            <asp:TextBox ID="txt_coverletter" runat="server" TextMode="MultiLine" Height="100" Width="300" />
             <br />
             <br />
             <%-- Validation Summary for plan a visit form --%>

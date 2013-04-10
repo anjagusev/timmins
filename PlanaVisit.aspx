@@ -32,10 +32,11 @@ Plan a Visit Feature--%>
             <asp:Label ID="lbl_info" runat="server" Text="Plan a visit to Timmins and District Hospital by filling out the form below. We will notify the patient you are visiting and then email you to confirm.<br /> You can also enter the duration of the visit to calculate your parking fee." />
             <br />
             <br />
-            <asp:Label ID="lbl_required" runat="server" Text="*Required" ForeColor="Maroon" />
-            <br />
+            <asp:Label ID="lbl_required" runat="server" Text="* = Required" ForeColor="Maroon" />
+            <br /><br />
             <%--Name--%>
             <asp:Label ID="lbl_name" runat="server" Text="*Name: " AssociatedControlID="txt_name" />
+            <br />
             <asp:TextBox ID="txt_name" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_name" runat="server" Text="Empty value" ErrorMessage="Please enter your name."
@@ -48,6 +49,7 @@ Plan a Visit Feature--%>
             <br />
             <%--Email--%>
             <asp:Label ID="lbl_email" runat="server" Text="*Email: " AssociatedControlID="txt_email" />
+            <br />
             <asp:TextBox ID="txt_email" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="Empty value" ErrorMessage="Please enter your email."
@@ -59,6 +61,7 @@ Plan a Visit Feature--%>
             <br />
             <%--Patient Name--%>
             <asp:Label ID="lbl_pname" runat="server" Text="*Patient Name: " AssociatedControlID="txt_pname" />
+            <br />
             <asp:TextBox ID="txt_pname" runat="server" />
             <%-- checking if empty  --%>
             <asp:RequiredFieldValidator ID="rfv_pname" runat="server" Text="Empty value" ErrorMessage="Please enter the patient's name."
@@ -72,6 +75,7 @@ Plan a Visit Feature--%>
             <%--Phone Number--%>
             <asp:Label ID="lbl_number" runat="server" Text="*Phone Number: " AssociatedControlID="txt_number"
                 EnableTheming="true" />
+            <br />
             <asp:TextBox ID="txt_number" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_number" runat="server" Text="Empty value" ErrorMessage="Please enter your phone number."
@@ -85,6 +89,7 @@ Plan a Visit Feature--%>
             <%--Visitors--%>
             <asp:Label ID="lbl_visitors" runat="server" Text="*Number of Visitors (Max 5): "
                 AssociatedControlID="txt_visitors" />
+            <br />
             <asp:TextBox ID="txt_visitors" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_visitors" runat="server" Text="Empty value" ErrorMessage="Please enter the number of visitors."
@@ -96,6 +101,7 @@ Plan a Visit Feature--%>
             <br />
             <%--Date of Visit--%>
             <asp:Label ID="lbl_dateofvisit" runat="server" Text="*Date of Visit: " AssociatedControlID="txt_dateofvisit" />
+            <br />
             <asp:TextBox ID="txt_dateofvisit" runat="server" />
             <asp:Label ID="lbl_calerror" runat="server" />
             <%-- checking if empty --%>
@@ -113,12 +119,13 @@ Plan a Visit Feature--%>
             <br />
             <%--Duration of Visit: not required, calculate for parking fees--%>
             <asp:Label ID="lbl_duration" runat="server" Text="Duration of Visit: " AssociatedControlID="txt_duration" />
+            <br />
             <asp:DropDownList ID="ddl_duration" runat="server">
                 <asp:ListItem>Minutes</asp:ListItem>
                 <asp:ListItem>Hours</asp:ListItem>
             </asp:DropDownList>
             <asp:TextBox ID="txt_duration" runat="server" />
-            <br />
+            <br /><br />
             <%-- Google's reCaptcha Control --%>
             <recaptcha:RecaptchaControl ID="recaptcha" runat="server" PublicKey="6LfFiN8SAAAAABop6Oc_WgwO8KKqGS3pFxmXmYpe"
                 PrivateKey="6LfFiN8SAAAAACEWa2mLiz9_fi4MEZbn3EjhUIL0" />

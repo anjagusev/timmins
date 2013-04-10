@@ -21,7 +21,7 @@ Career Alert Feature--%>
         <asp:ListView ID="ltv_alerts" runat="server" OnItemCommand="subAdmin">
             <LayoutTemplate>
                 <table cellpadding="5" cellspacing="5">
-                    <thead>
+                    <thead style="background-color:steelblue">
                         <tr>
                             <th>
                                 Name

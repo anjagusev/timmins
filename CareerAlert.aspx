@@ -15,10 +15,12 @@ Career Alert Feature--%>
             <asp:Label ID="lbl_info" runat="server" Text="Use our career alert if you want to be notified when job postings matching your qualifications become available.<br /><br />Select the department of the job you are looking for, and submit your name and email in the fields below.<br />For your <strong>resume</strong> please upload a .doc, .docx, or a .pdf file. " />
             <br />
             <br />
-            <asp:Label ID="lbl_required" runat="server" Text="*Required" ForeColor="Maroon" />
+            <asp:Label ID="lbl_required" runat="server" Text="* = Required" ForeColor="Maroon" />
+            <br />
             <br />
             <%--Department--%>
             <asp:Label ID="lbl_department" runat="server" Text="Department*" AssociatedControlID="ddl_department" />
+            <br />
             <%--Default dropdownlist for departments --%>
             <asp:DropDownList ID="ddl_department" runat="server">
                 <asp:ListItem>Finance</asp:ListItem>
@@ -40,6 +42,7 @@ Career Alert Feature--%>
             <br />
             <%--Name--%>
             <asp:Label ID="lbl_name" runat="server" Text="*Name: " AssociatedControlID="txt_name" />
+            <br />
             <asp:TextBox ID="txt_name" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_name" runat="server" Text="Empty value" ErrorMessage="Please enter your name."
@@ -52,6 +55,7 @@ Career Alert Feature--%>
             <br />
             <%--Email--%>
             <asp:Label ID="lbl_email" runat="server" Text="*Email: " AssociatedControlID="txt_email" />
+            <br />
             <asp:TextBox ID="txt_email" runat="server" />
             <%-- checking if empty --%>
             <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="Empty value" ErrorMessage="Please enter your email."
@@ -60,17 +64,18 @@ Career Alert Feature--%>
             <asp:RegularExpressionValidator ID="rev_email" runat="server" Text="Invalid email format, Format: name@email.com"
                 ControlToValidate="txt_email" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
                 ErrorMessage="Please enter a correct email address." ValidationGroup="alert_form" />
-            <br />
+            <br /><br />
             <%--Resume--%>
             <asp:Label ID="lbl_resume" runat="server" Text="*Resume: " />
+            <br />
             <asp:FileUpload ID="fu_resume" runat="server" />
             <%-- checking if empty --%>
             <asp:Label ID="lbl_rfvresume" runat="server" />
-            <br />
+            <br /><br />
             <%-- Validation Summary for career alert form --%>
             <asp:ValidationSummary ID="vds_alert" runat="server" HeaderText="Form Errors:" DisplayMode="List"
                 ValidationGroup="alert_form" />
-            <br />
+            <br /><br />
             <%-- Submit and Clear Buttons --%>
             <asp:Button ID="btn_submit" runat="server" Text="Submit" OnClick="subSubmit" ValidationGroup="alert_form" />
             <asp:Button ID="btn_clear" runat="server" Text="Clear" OnClick="subClear" />

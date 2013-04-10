@@ -26,9 +26,10 @@ Job Postings Feature: Advanced Search--%>
     </script>
     <div>
         <ajax:toolkitscriptmanager id="tsm_main" runat="server" />
-        <asp:Label ID="lbl_required" runat="server" Text="*Required" ForeColor="Maroon" />
-        <br />
+        <asp:Label ID="lbl_required" runat="server" Text="* = Required" ForeColor="Maroon" />
+        <br /><br />
         <asp:Label ID="lbl_department" runat="server" Text="Department" />
+        <br />
         <%--Default dropdownlist for department--%>
         <asp:DropDownList ID="ddl_department" runat="server">
             <asp:ListItem>Any</asp:ListItem>
@@ -49,6 +50,7 @@ Job Postings Feature: Advanced Search--%>
         </asp:DropDownList>
         <br />
         <asp:Label ID="lbl_hours" runat="server" Text="Hours" />
+        <br />
         <%--Default dropdownlist for hours--%>
         <asp:DropDownList ID="ddl_hours" runat="server">
             <asp:ListItem>Any</asp:ListItem>
@@ -58,6 +60,7 @@ Job Postings Feature: Advanced Search--%>
         </asp:DropDownList>
         <br />
         <asp:Label ID="lbl_deadline" runat="server" Text="*Deadline" />
+        <br />
         <asp:TextBox ID="txt_deadline" runat="server" />
         <asp:Label ID="lbl_calerror" runat="server" />
         <%-- checking if empty --%>
@@ -74,8 +77,7 @@ Job Postings Feature: Advanced Search--%>
         <br />
         <%--Search Bar--%>
         <asp:TextBox ID="txt_search" runat="server" Text="" placeholder="Search Job Title" />
-        <br />
+        <br /><br />
         <asp:Button ID="btn_search" runat="server" Text="Search" OnClick="subSearch" />
-        <asp:Label ID="lbl_test" runat="server" />
     </div>
 </asp:Content>

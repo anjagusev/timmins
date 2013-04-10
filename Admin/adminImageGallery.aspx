@@ -6,6 +6,7 @@
 <h1>Image Gallery administration</h1>
 <br />
 <br />
+
 <asp:GridView ID="rpt_imgs" runat="server" Width="650px" AutoGenerateColumns="false"
         Font-Names="Arial" Font-Size="14pt" HeaderStyle-BackColor="lightblue"
         ShowFooter="true" OnRowEditing="EditCustomer" OnRowUpdating="UpdateCustomer"
@@ -54,6 +55,7 @@
         </Columns>
         <AlternatingRowStyle BackColor="#b0dce4" />
     </asp:GridView>
+    <div id="imageupload" style="margin-left:25%;">
     <asp:FileUpload ID="Uploader" runat="server" Height="24px" />
     <br />
     <asp:Label ID="lblThumbNailI" runat="server" Text="Name your file" />
@@ -62,7 +64,7 @@
         Text="Add" OnClick="cmdUpload_Click" />
         <br />
     <asp:Label ID="lblInfo" runat="server" />
-
+    </div>
 
 </asp:Content>
 

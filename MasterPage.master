@@ -10,6 +10,7 @@
 <script type="text/javascript" src="js/query.js"></script>
 <script type="text/javascript" src="js/news.js"></script>
 <script type="text/javascript" src="js/feed.js"></script>
+
 <style type="text/css">
         .dynamicMenu li
         {

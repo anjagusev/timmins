@@ -50,11 +50,12 @@
                     CssClass="mobilemenu" AutoPostBack="true" OnSelectedIndexChanged="subMobile" />
                 <asp:SiteMapDataSource ID="SiteMapDataSource2" SiteMapProvider="SqlSiteMapProvider"
                     runat="server" ShowStartingNode="false" />
-                <!--responsive submenu-->
-                <asp:DropDownList ID="ddl_sideMenu" runat="server" CssClass="mobilemenu mobileSide"
+
+                      <asp:DropDownList ID="ddl_sideMenu" runat="server" CssClass="mobilemenu mobileSide"
                     AutoPostBack="true" OnSelectedIndexChanged="subMobileSide" />
                 <asp:SiteMapDataSource ID="SiteMapDataSource3" SiteMapProvider="SqlSiteMapProvider"
                     runat="server" ShowStartingNode="false" StartFromCurrentNode="true" />
+               
             <%--OLD MENU ---- CAN BE DELETED -------------------- %>
             
                 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
@@ -91,6 +92,8 @@
                     <!--SIDE MENU CONTROL-->
                      <!-- MENU CONTROL HERE -->
                 <uc1:sideMenu ID="sideMenu" runat="server"></uc1:sideMenu>
+                 <!--responsive submenu-->
+              
                 <asp:ContentPlaceHolder ID="cph_sideNav" runat="server">
                     <ul class="side-nav">
                         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>

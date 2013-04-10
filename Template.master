@@ -105,10 +105,11 @@
                 <div class="subhead">
                     <h1>
                         <%--<%=pp_submasterSubHeading %>--%>
-                        <%#Eval("title") %>
+                        <%#Eval("menu_name") %>
                     </h1>
                 </div>
                 <div class="subContent">
+                <h3><%#Eval("title") %></h3>
                 <%--<p>Fill this section with all your content</p>--%>
                 <%#Eval("page_content") %>
                 </div>

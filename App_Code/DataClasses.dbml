@@ -188,6 +188,21 @@
       <Column Name="reasonOfunsub" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="timmins.tbl_article" Member="tbl_articles">
+    <Type Name="tbl_article">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="heading" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="intro" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="paragraph" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="timmins.tbl_patients" Member="tbl_patients">
+    <Type Name="tbl_patient">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="timmins.careeralert" Method="careeralert">
     <ElementType Name="careeralertResult">
       <Column Name="careeralert_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

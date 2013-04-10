@@ -10,7 +10,7 @@ using System.Data.Linq.SqlClient;//needed to perform the sql search query
 public class articleClass
 {
     //creating an instance of our LINQ object
-    articlesDataContext objNewsDC = new articlesDataContext();//reference the LINQ object
+    DataClassesDataContext objNewsDC = new DataClassesDataContext();//reference the LINQ object
 
     public IQueryable<tbl_article> getArticles()
     {
@@ -33,7 +33,7 @@ public class articleClass
 
     public IQueryable<tbl_article> getLastFiveArticles()
     {
-        articlesDataContext objNewsDC = new articlesDataContext();
+        DataClassesDataContext objNewsDC = new DataClassesDataContext();
 
         /*var latestArticles = (from a in objNewsDC.tbl_articles
                              select a).OrderByDescending(r => r.id);*/
@@ -48,7 +48,7 @@ public class articleClass
     //doing insert
     public bool commitInsert(string _heading, string _intro, string _para)
     {
-        articlesDataContext objNewsDC = new articlesDataContext();
+        DataClassesDataContext objNewsDC = new DataClassesDataContext();
         //to ensure all data will be disposed when finished
         using (objNewsDC)
         {
@@ -81,7 +81,7 @@ public class articleClass
 
     public bool commitDelete(int _id)
     {
-        articlesDataContext objNewsDC = new articlesDataContext();
+        DataClassesDataContext objNewsDC = new DataClassesDataContext();
         using (objNewsDC)
         {
 
@@ -103,7 +103,7 @@ public class articleClass
     //public IQueryable<tbl_article> searchArticles(string _input)
     public IQueryable searchArticles(string _input)// function used to search the database
     {
-        articlesDataContext objNewsDC = new articlesDataContext();
+        DataClassesDataContext objNewsDC = new DataClassesDataContext();
 
         var result = from a in objNewsDC.tbl_articles
                      where SqlMethods.Like(a.paragraph, "%" + _input + "%")

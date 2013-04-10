@@ -77,6 +77,12 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void Inserttbl_subscriber(tbl_subscriber instance);
   partial void Updatetbl_subscriber(tbl_subscriber instance);
   partial void Deletetbl_subscriber(tbl_subscriber instance);
+  partial void Inserttbl_article(tbl_article instance);
+  partial void Updatetbl_article(tbl_article instance);
+  partial void Deletetbl_article(tbl_article instance);
+  partial void Inserttbl_patient(tbl_patient instance);
+  partial void Updatetbl_patient(tbl_patient instance);
+  partial void Deletetbl_patient(tbl_patient instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -242,6 +248,22 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<tbl_subscriber>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tbl_article> tbl_articles
+	{
+		get
+		{
+			return this.GetTable<tbl_article>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tbl_patient> tbl_patients
+	{
+		get
+		{
+			return this.GetTable<tbl_patient>();
 		}
 	}
 	
@@ -3885,6 +3907,250 @@ public partial class tbl_subscriber : INotifyPropertyChanging, INotifyPropertyCh
 				this._reasonOfunsub = value;
 				this.SendPropertyChanged("reasonOfunsub");
 				this.OnreasonOfunsubChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="timmins.tbl_article")]
+public partial class tbl_article : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _id;
+	
+	private string _heading;
+	
+	private string _intro;
+	
+	private string _paragraph;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnheadingChanging(string value);
+    partial void OnheadingChanged();
+    partial void OnintroChanging(string value);
+    partial void OnintroChanged();
+    partial void OnparagraphChanging(string value);
+    partial void OnparagraphChanged();
+    #endregion
+	
+	public tbl_article()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int id
+	{
+		get
+		{
+			return this._id;
+		}
+		set
+		{
+			if ((this._id != value))
+			{
+				this.OnidChanging(value);
+				this.SendPropertyChanging();
+				this._id = value;
+				this.SendPropertyChanged("id");
+				this.OnidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_heading", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string heading
+	{
+		get
+		{
+			return this._heading;
+		}
+		set
+		{
+			if ((this._heading != value))
+			{
+				this.OnheadingChanging(value);
+				this.SendPropertyChanging();
+				this._heading = value;
+				this.SendPropertyChanged("heading");
+				this.OnheadingChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_intro", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string intro
+	{
+		get
+		{
+			return this._intro;
+		}
+		set
+		{
+			if ((this._intro != value))
+			{
+				this.OnintroChanging(value);
+				this.SendPropertyChanging();
+				this._intro = value;
+				this.SendPropertyChanged("intro");
+				this.OnintroChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paragraph", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string paragraph
+	{
+		get
+		{
+			return this._paragraph;
+		}
+		set
+		{
+			if ((this._paragraph != value))
+			{
+				this.OnparagraphChanging(value);
+				this.SendPropertyChanging();
+				this._paragraph = value;
+				this.SendPropertyChanged("paragraph");
+				this.OnparagraphChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="timmins.tbl_patients")]
+public partial class tbl_patient : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _id;
+	
+	private string _name;
+	
+	private string _email;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    #endregion
+	
+	public tbl_patient()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int id
+	{
+		get
+		{
+			return this._id;
+		}
+		set
+		{
+			if ((this._id != value))
+			{
+				this.OnidChanging(value);
+				this.SendPropertyChanging();
+				this._id = value;
+				this.SendPropertyChanged("id");
+				this.OnidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string name
+	{
+		get
+		{
+			return this._name;
+		}
+		set
+		{
+			if ((this._name != value))
+			{
+				this.OnnameChanging(value);
+				this.SendPropertyChanging();
+				this._name = value;
+				this.SendPropertyChanged("name");
+				this.OnnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string email
+	{
+		get
+		{
+			return this._email;
+		}
+		set
+		{
+			if ((this._email != value))
+			{
+				this.OnemailChanging(value);
+				this.SendPropertyChanging();
+				this._email = value;
+				this.SendPropertyChanged("email");
+				this.OnemailChanged();
 			}
 		}
 	}

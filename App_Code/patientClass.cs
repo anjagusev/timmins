@@ -18,7 +18,7 @@ public class patientClass
 
     public IQueryable<tbl_patient> getPatients()
     {
-        patientsDataContext objPatDC = new patientsDataContext();
+        DataClassesDataContext objPatDC = new DataClassesDataContext();
 
         var allPatients = objPatDC.tbl_patients.Select(x => x);//method
 
@@ -29,7 +29,7 @@ public class patientClass
     public IQueryable<tbl_patient> getPatientByID(int _id)
     {
         //creating an instance of our LINQ object
-        patientsDataContext objPatDC = new patientsDataContext();//reference the LINQ object
+        DataClassesDataContext objPatDC = new DataClassesDataContext();//reference the LINQ object
 
         var patientID = objPatDC.tbl_patients.Where(x => x.id == _id).Select(x => x);//retrieve the row with the id being _id
         //sql command for "SELECT * FROM patients WHERE id = _id"
@@ -42,7 +42,7 @@ public class patientClass
     //doing insert
     public bool commitInsert(string _name, string _email)
     {
-        patientsDataContext objPatDC = new patientsDataContext();
+        DataClassesDataContext objPatDC = new DataClassesDataContext();
 
         using (objPatDC)
         {
@@ -60,7 +60,7 @@ public class patientClass
 
     public bool commitUpdate(int _id, string _name, string _email)
     {
-        patientsDataContext objPatDC = new patientsDataContext();
+        DataClassesDataContext objPatDC = new DataClassesDataContext();
 
         using (objPatDC)
         {
@@ -74,7 +74,7 @@ public class patientClass
 
     public bool commitDelete(int _id)
     {
-        patientsDataContext objPatDC = new patientsDataContext();
+        DataClassesDataContext objPatDC = new DataClassesDataContext();
 
         using (objPatDC)
         {

@@ -62,9 +62,6 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void Inserttbl_doctor(tbl_doctor instance);
   partial void Updatetbl_doctor(tbl_doctor instance);
   partial void Deletetbl_doctor(tbl_doctor instance);
-  partial void Inserttbl_subscriber(tbl_subscriber instance);
-  partial void Updatetbl_subscriber(tbl_subscriber instance);
-  partial void Deletetbl_subscriber(tbl_subscriber instance);
   partial void Inserttbl_application(tbl_application instance);
   partial void Updatetbl_application(tbl_application instance);
   partial void Deletetbl_application(tbl_application instance);
@@ -77,6 +74,9 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void Inserttbl_visitor(tbl_visitor instance);
   partial void Updatetbl_visitor(tbl_visitor instance);
   partial void Deletetbl_visitor(tbl_visitor instance);
+  partial void Inserttbl_subscriber(tbl_subscriber instance);
+  partial void Updatetbl_subscriber(tbl_subscriber instance);
+  partial void Deletetbl_subscriber(tbl_subscriber instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -205,14 +205,6 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<tbl_subscriber> tbl_subscribers
-	{
-		get
-		{
-			return this.GetTable<tbl_subscriber>();
-		}
-	}
-	
 	public System.Data.Linq.Table<tbl_application> tbl_applications
 	{
 		get
@@ -242,6 +234,14 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<tbl_visitor>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tbl_subscriber> tbl_subscribers
+	{
+		get
+		{
+			return this.GetTable<tbl_subscriber>();
 		}
 	}
 	
@@ -2691,164 +2691,6 @@ public partial class tbl_doctor : INotifyPropertyChanging, INotifyPropertyChange
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="timmins.tbl_subscribers")]
-public partial class tbl_subscriber : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _subscriber_id;
-	
-	private string _name;
-	
-	private string _email;
-	
-	private string _valid;
-	
-	private string _reseanOfunsub;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onsubscriber_idChanging(int value);
-    partial void Onsubscriber_idChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    partial void OnvalidChanging(string value);
-    partial void OnvalidChanged();
-    partial void OnreseanOfunsubChanging(string value);
-    partial void OnreseanOfunsubChanged();
-    #endregion
-	
-	public tbl_subscriber()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_subscriber_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int subscriber_id
-	{
-		get
-		{
-			return this._subscriber_id;
-		}
-		set
-		{
-			if ((this._subscriber_id != value))
-			{
-				this.Onsubscriber_idChanging(value);
-				this.SendPropertyChanging();
-				this._subscriber_id = value;
-				this.SendPropertyChanged("subscriber_id");
-				this.Onsubscriber_idChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50)")]
-	public string name
-	{
-		get
-		{
-			return this._name;
-		}
-		set
-		{
-			if ((this._name != value))
-			{
-				this.OnnameChanging(value);
-				this.SendPropertyChanging();
-				this._name = value;
-				this.SendPropertyChanged("name");
-				this.OnnameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-	public string email
-	{
-		get
-		{
-			return this._email;
-		}
-		set
-		{
-			if ((this._email != value))
-			{
-				this.OnemailChanging(value);
-				this.SendPropertyChanging();
-				this._email = value;
-				this.SendPropertyChanged("email");
-				this.OnemailChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_valid", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-	public string valid
-	{
-		get
-		{
-			return this._valid;
-		}
-		set
-		{
-			if ((this._valid != value))
-			{
-				this.OnvalidChanging(value);
-				this.SendPropertyChanging();
-				this._valid = value;
-				this.SendPropertyChanged("valid");
-				this.OnvalidChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reseanOfunsub", DbType="VarChar(MAX)")]
-	public string reseanOfunsub
-	{
-		get
-		{
-			return this._reseanOfunsub;
-		}
-		set
-		{
-			if ((this._reseanOfunsub != value))
-			{
-				this.OnreseanOfunsubChanging(value);
-				this.SendPropertyChanging();
-				this._reseanOfunsub = value;
-				this.SendPropertyChanged("reseanOfunsub");
-				this.OnreseanOfunsubChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="timmins.tbl_applications")]
 public partial class tbl_application : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -3885,6 +3727,164 @@ public partial class tbl_visitor : INotifyPropertyChanging, INotifyPropertyChang
 				this._email = value;
 				this.SendPropertyChanged("email");
 				this.OnemailChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="timmins.tbl_subscribers")]
+public partial class tbl_subscriber : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _subscriber_id;
+	
+	private string _name;
+	
+	private string _email;
+	
+	private string _valid;
+	
+	private string _reasonOfunsub;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onsubscriber_idChanging(int value);
+    partial void Onsubscriber_idChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnvalidChanging(string value);
+    partial void OnvalidChanged();
+    partial void OnreasonOfunsubChanging(string value);
+    partial void OnreasonOfunsubChanged();
+    #endregion
+	
+	public tbl_subscriber()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_subscriber_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int subscriber_id
+	{
+		get
+		{
+			return this._subscriber_id;
+		}
+		set
+		{
+			if ((this._subscriber_id != value))
+			{
+				this.Onsubscriber_idChanging(value);
+				this.SendPropertyChanging();
+				this._subscriber_id = value;
+				this.SendPropertyChanged("subscriber_id");
+				this.Onsubscriber_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50)")]
+	public string name
+	{
+		get
+		{
+			return this._name;
+		}
+		set
+		{
+			if ((this._name != value))
+			{
+				this.OnnameChanging(value);
+				this.SendPropertyChanging();
+				this._name = value;
+				this.SendPropertyChanged("name");
+				this.OnnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+	public string email
+	{
+		get
+		{
+			return this._email;
+		}
+		set
+		{
+			if ((this._email != value))
+			{
+				this.OnemailChanging(value);
+				this.SendPropertyChanging();
+				this._email = value;
+				this.SendPropertyChanged("email");
+				this.OnemailChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_valid", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+	public string valid
+	{
+		get
+		{
+			return this._valid;
+		}
+		set
+		{
+			if ((this._valid != value))
+			{
+				this.OnvalidChanging(value);
+				this.SendPropertyChanging();
+				this._valid = value;
+				this.SendPropertyChanged("valid");
+				this.OnvalidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reasonOfunsub", DbType="VarChar(MAX)")]
+	public string reasonOfunsub
+	{
+		get
+		{
+			return this._reasonOfunsub;
+		}
+		set
+		{
+			if ((this._reasonOfunsub != value))
+			{
+				this.OnreasonOfunsubChanging(value);
+				this.SendPropertyChanging();
+				this._reasonOfunsub = value;
+				this.SendPropertyChanged("reasonOfunsub");
+				this.OnreasonOfunsubChanged();
 			}
 		}
 	}

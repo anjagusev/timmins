@@ -31,6 +31,11 @@
                             <asp:RequiredFieldValidator ID="rfv_email" runat="server" Text="Required" ControlToValidate="txt_emailI"
                                 validationGroup="Insert" />
                         </td>
+                        
+                    </tr>
+                    <tr>
+                    <td><asp:Label ID="lbl_reaI" runat="server" Text="Comment" /></td>
+                    <td><asp:TextBox ID="txt_reaI" runat="server" /></td>
                     </tr>
                     <tr>
                             <td>
@@ -46,13 +51,14 @@
                                 <asp:Button ID="btn_insert" runat="server" Text="insert" OnClick="subInsert" />
                             </td>
                     </tr>
+                    
                        
                 </table>
 
 
         <%--?????????????????????????? DATAList Update and DELETE??????????????????--%>
 
-        <asp:DataList ID="dt_main" runat="server" RepeatColumns="2" CellSpacing="2" GridLines="Both" DataKeyField="subscribe_id"
+        <asp:DataList ID="dt_main" runat="server" RepeatColumns="2" CellSpacing="2" GridLines="Both" DataKeyField="subscriber_id"
             OnEditCommand="subShowEditTemplate" OrnUpdateCommand="subCommitUpdate" OnDeleteCommand="subCommitDelete" OnCancelCommand="subCancel">
             <ItemTemplate>
                 <table>
@@ -61,6 +67,7 @@
                 <th>Name|</th>
                 <th>Email|</th>
                 <th>Validation</th>
+                <th>Comment</th>
                 </tr>
                     <tr>
                         
@@ -71,6 +78,7 @@
                         <td><asp:Label ID="lbl_emial2" runat="server" Text='<%#Eval("email") %>' />|</td>
                    
                         <td><asp:Label ID="lbl_valid2" runat="server" Text='<%#Eval("valid") %>' /></td>
+                        <td><asp:Label ID="lbl_reason" runat="server" Text='<%#Eval("reasonOfunsub") %>' /></td>
                  
                
                         <td><asp:Button ID="btn_edit" runat="server" Text="Edit" CommandName="Edit" /></td>
@@ -92,10 +100,14 @@
                     
                         <td><asp:Label ID="lbl_validE" runat="server" Text="Validate" /></td>
                         <td><asp:label ID="lbl_valid" runat="server" Text='<%#Bind("valid") %>' /></td>
+
                         <td><asp:DropDownList ID="ddl_listE" runat="server"> 
                                     <asp:ListItem value="no" Text="NO" />
                                     <asp:ListItem value="yes" Text="YES" />
-                            </asp:DropDownList></td>
+                            </asp:DropDownList>
+                          <asp:Label ID="lbl_reasonE" runat="server" Text="Comment:" />
+                       <asp:TextBox ID="txt_reasonE" runat="server" Text='<%#Bind("reasonOfunsub") %>' /></td>
+
                     </tr>
                     
                     <tr>

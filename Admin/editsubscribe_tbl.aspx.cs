@@ -9,7 +9,7 @@ public partial class Admin_editsubscribe_tbl : System.Web.UI.Page
 {
     subscriberClass objsub = new subscriberClass();
 
-    protectcted void Page_Load(object sender, EventArgs e)
+    protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
         {
@@ -48,7 +48,7 @@ public partial class Admin_editsubscribe_tbl : System.Web.UI.Page
 
     protected void subInsert(object sender, EventArgs e)
     {
-        _strMessage(objsub.CommitInsertByAdmin(txt_nameI.Text, txt_emailI.Text, ddl_list.SelectedValue.ToString()), "insert");
+        _strMessage(objsub.CommitInsertByAdmin(txt_nameI.Text, txt_emailI.Text, ddl_list.SelectedValue.ToString(),txt_reaI.Text), "insert");
 
         dt_main.DataSource = objsub.getsubscriber();
         dt_main.DataBind();
@@ -78,12 +78,13 @@ public partial class Admin_editsubscribe_tbl : System.Web.UI.Page
         TextBox txtname = (TextBox)e.Item.FindControl("txt_nameE");
         TextBox txtemail = (TextBox)e.Item.FindControl("txt_emailE");
         TextBox txtvalid = (TextBox)e.Item.FindControl("txt_validE");
+        TextBox txtComm = (TextBox)e.Item.FindControl("txt_reasonE");
         DropDownList selectedValidation = (DropDownList)e.Item.FindControl("ddl_listE");
         //string SelectedValid =  ddl_listE.SelectedValue.ToString();
 
         HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
         int proID = int.Parse(hdfID.Value.ToString());
-        _strMessage(objsub.commitUpdate(proID, txtname.Text, txtemail.Text, selectedValidation.Text), "update");
+        _strMessage(objsub.commitUpdate(proID, txtname.Text, txtemail.Text, selectedValidation.Text,txtComm.Text), "update");
 
         dt_main.EditItemIndex = -1;
 

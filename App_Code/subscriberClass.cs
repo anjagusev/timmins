@@ -53,7 +53,7 @@ public class subscriberClass
         return lastid;
     }
 
-    // Inser method to insert in subscriber table. for valid coloum it will insert no 
+    // Insert method to insert in subscriber table. for valid coloum it will insert no 
     public bool CommitInsert(string _name, string _email)
     {
         DataClassesDataContext objlinq = new DataClassesDataContext();
@@ -63,6 +63,7 @@ public class subscriberClass
             objNewSub.name = _name;
             objNewSub.email = _email;
             objNewSub.valid = "no";
+            objNewSub.reasonOfunsub = "no Comment";
             objlinq.tbl_subscribers.InsertOnSubmit(objNewSub);
             objlinq.SubmitChanges();
             _lastid = objNewSub.subscriber_id;
@@ -71,7 +72,7 @@ public class subscriberClass
     }
 
     // Adminside side insert
-    public bool CommitInsertByAdmin(string _name, string _email, string _valid)
+    public bool CommitInsertByAdmin(string _name, string _email, string _valid, string _comm)
     {
         DataClassesDataContext objlinq = new DataClassesDataContext();
         using (objlinq)
@@ -80,6 +81,7 @@ public class subscriberClass
             objNewSub.name = _name;
             objNewSub.email = _email;
             objNewSub.valid = _valid;
+            objNewSub.reasonOfunsub = _comm;
             objlinq.tbl_subscribers.InsertOnSubmit(objNewSub);
             objlinq.SubmitChanges();
             _lastid = objNewSub.subscriber_id;
@@ -121,7 +123,7 @@ public class subscriberClass
         using (objlinq)
         {
             var objRea = objlinq.tbl_subscribers.Single(x => x.email == _email);
-            objRea.reseanOfunsub = _reason;
+            objRea.reasonOfunsub = _reason;
             objlinq.SubmitChanges();
             return true;
 
@@ -139,7 +141,7 @@ public class subscriberClass
     //}
 
 
-    public bool commitUpdate(int _subscribeID, string _name, string _email, string _valid)
+    public bool commitUpdate(int _subscribeID, string _name, string _email, string _valid, string _comm)
     {
         DataClassesDataContext objlinq = new DataClassesDataContext();
         using (objlinq)
@@ -148,6 +150,7 @@ public class subscriberClass
             objUpsub.name = _name;
             objUpsub.email = _email;
             objUpsub.valid = _valid;
+            objUpsub.reasonOfunsub = _comm;
             objlinq.SubmitChanges();
 
             return true;

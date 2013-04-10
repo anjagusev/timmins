@@ -6,14 +6,15 @@
 <head runat="server">
     <%--<meta http-equiv="Refresh" content="5; url=http://timmins.sidhusweb.com/" />--%>
     <title>Timmins Hospital</title>
-    <link href="App_Themes/Theme1/scon_firm_h/style_harry.css" rel="stylesheet" />
+    <link href="App_Themes/con_firm_h/style_harry.css" rel="stylesheet" type="text/css" />
+   </head> 
     
 <body>
     <form id="form1" runat="server">
     <div id="container">
         <div id="header">
             <asp:Label ID="lbl_header" runat="server" Text="<strong>Tadh.com</strong>" />
-            <asp:ImageMap ID="header_logo" runat="server" ImageUrl="images/logo_ft.png" ImageAlign="Left" />
+            <asp:ImageMap ID="header_logo" runat="server" ImageUrl="img/logo_ft.png" ImageAlign="Left" />
         </div>
         <div id="content">
             <br />

@@ -126,15 +126,6 @@
       <Association Name="tbl_specialty_tbl_doctor" Member="tbl_specialty" ThisKey="specialty_id" OtherKey="specialty_id" Type="tbl_specialty" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="timmins.tbl_subscribers" Member="tbl_subscribers">
-    <Type Name="tbl_subscriber">
-      <Column Name="subscriber_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="valid" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="reseanOfunsub" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="timmins.tbl_applications" Member="tbl_applications">
     <Type Name="tbl_application">
       <Column Name="application_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -186,6 +177,15 @@
       <Column Name="duration" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="timmins.tbl_subscribers" Member="tbl_subscribers">
+    <Type Name="tbl_subscriber">
+      <Column Name="subscriber_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="valid" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="reasonOfunsub" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="timmins.careeralert" Method="careeralert">

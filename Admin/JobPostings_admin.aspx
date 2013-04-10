@@ -25,11 +25,14 @@ Job Postings Feature--%>
         }
     </script>
     <div>
-        <ajax:toolkitscriptmanager id="tsm_main" runat="server" />
-        <h1>
-            Job Postings - Admin</h1>
+        <AJAX:ToolkitScriptManager ID="tsm_main" runat="server" />
+        <h1>Job Postings - Admin</h1>
+        <%--Link to view page--%>
+        <asp:HyperLink ID="hlk_view" runat="server" Text="View Page" NavigateUrl="../JobPostings.aspx" Target="_blank" />
+        <br />
         <%--Confirmation Message --%>
-        <asp:Label ID="lbl_msg" runat="server" /><br />
+        <asp:Label ID="lbl_msg" runat="server" />
+        <br />
         <br />
         <%--Anchor for insert--%>
         <asp:LinkButton ID="lnk_insertanc" runat="server" PostBackUrl="#insert" Text="Add new job posting" /><br />
@@ -38,7 +41,7 @@ Job Postings Feature--%>
         <asp:Panel ID="pnl_all" runat="server" GroupingText="All Job Postings">
             <%--View Panel--%>
             <table cellpadding="3" border="1">
-                <thead style="background-color:steelblue;">
+                <thead style="background-color: steelblue;">
                     <tr>
                         <th>
                             <asp:LinkButton ID="lnk_titleH" runat="server" Text="Job Title" OnCommand="subSort"
@@ -72,10 +75,8 @@ Job Postings Feature--%>
                             <asp:LinkButton ID="lnk_deadline" runat="server" Text="Deadline" OnCommand="subSort"
                                 CommandName="deadline" PostBackUrl="#pnl_all" />
                         </th>
-                        <th>
-                        </th>
-                        <th>
-                        </th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -244,8 +245,8 @@ Job Postings Feature--%>
                                         ValidationGroup="update" />
                                     <br />
                                     <%--Uses AJAX for calendar--%>
-                                    <ajax:calendarextender id="ce_deadlineU" runat="server" targetcontrolid="txt_deadlineU"
-                                        format="dd/MM/yyyy" />
+                                    <AJAX:CalendarExtender ID="ce_deadlineU" runat="server" TargetControlID="txt_deadlineU"
+                                        Format="dd/MM/yyyy" />
                                 </td>
                             </tr>
                             <tr>
@@ -406,8 +407,8 @@ Job Postings Feature--%>
             Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\d{1,2}\/\d{1,2}\/\d{4}$"
             ValidationGroup="insert" />
         <%--Uses AJAX for calendar--%>
-        <ajax:calendarextender id="ce_deadline" runat="server" targetcontrolid="txt_deadlineI"
-            format="dd/MM/yyyy" onclientdateselectionchanged="checkDate" />
+        <AJAX:CalendarExtender ID="ce_deadline" runat="server" TargetControlID="txt_deadlineI"
+            Format="dd/MM/yyyy" OnClientDateSelectionChanged="checkDate" />
         <br />
         <br />
         <%-- Validation Summary for job postings insert --%>

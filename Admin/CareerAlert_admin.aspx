@@ -9,43 +9,37 @@ Career Alert Feature--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" runat="Server">
     <div>
-        <h1>
-            Career Alert - Admin</h1>
+        <h1>Career Alert - Admin</h1>
         <asp:Label ID="lbl_info" runat="server" Text="Pending statuses mean the user has not been notified about any job postings yet. <br />Click on notify when you would like send an alert email to the user." />
         <br />
         <br />
-        <asp:Label ID="lbl_msg" runat="server" /><br />
+        <%--Link to view page--%>
+        <asp:HyperLink ID="hlk_view" runat="server" Text="View Page" NavigateUrl="../CareerAlert.aspx" Target="_blank" />
+        <br />
+        <asp:Label ID="lbl_msg" runat="server" />
         <br />
         <br />
         <%--Listview of users for Career Alert--%>
         <asp:ListView ID="ltv_alerts" runat="server" OnItemCommand="subAdmin">
             <LayoutTemplate>
                 <table cellpadding="5" cellspacing="5">
-                    <thead style="background-color:steelblue">
+                    <thead style="background-color: steelblue">
                         <tr>
-                            <th>
-                                Name
+                            <th>Name
                             </th>
-                            <th>
-                                Department
+                            <th>Department
                             </th>
-                            <th>
-                                Email
+                            <th>Email
                             </th>
-                            <th>
-                                Resume
+                            <th>Resume
                             </th>
-                            <th>
-                                Status
+                            <th>Status
                             </th>
-                            <th>
-                                Option
+                            <th>Option
                             </th>
-                            <th>
-                                Option
+                            <th>Option
                             </th>
-                            <th>
-                                Option
+                            <th>Option
                             </th>
                         </tr>
                     </thead>

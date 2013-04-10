@@ -14,6 +14,9 @@ Plan a Visit Admin--%>
         <asp:Label ID="lbl_info" runat="server" Text="Pending statuses mean the patient has not been notified about the visit yet. <br />Click on notify when you have notified the patient about the visit, and would like send a confirmation email to the visitor." />
         <br />
         <br />
+         <%--Link to view page--%>
+        <asp:HyperLink ID="hlk_view" runat="server" Text="View Page" NavigateUrl="../PlanaVisit.aspx" Target="_blank" />
+        <br />
         <asp:Label ID="lbl_msg" runat="server" />
         <br />
         <br />

@@ -20,9 +20,9 @@ using System.Web.UI.HtmlControls;
 public partial class subPage1 : System.Web.UI.Page
 {
     CardImageClass objCard = new CardImageClass();
-   
 
-     
+
+
     protected void Page_Load(object sender, System.EventArgs e)
     {
 
@@ -34,13 +34,16 @@ public partial class subPage1 : System.Web.UI.Page
 
             lstBackColor.DataSource = objCard.getcard_images();
             lstBackColor.DataTextField = "name";
-           lstBackColor.DataValueField = "src";
+            lstBackColor.DataValueField = "src";
             lstBackColor.DataBind();
             //string[] colorArray = Enum.GetNames(typeof(System.Drawing.KnownColor));
             //lstBackColor.DataSource = colorArray;
             //lstBackColor.DataBind();
-
             string[] colorArray = Enum.GetNames(typeof(System.Drawing.KnownColor));
+            BackgroundColour.DataSource = colorArray;
+            BackgroundColour.DataBind();
+
+            // string[] colorArray = Enum.GetNames(typeof(System.Drawing.KnownColor));
             lstForeColor.DataSource = colorArray;
             lstForeColor.DataBind();
             lstForeColor.SelectedIndex = 34;
@@ -153,7 +156,7 @@ public partial class subPage1 : System.Web.UI.Page
 
         pnlCard.RenderControl(writer);
         return sb.ToString();
-       
+
     }
 
     emailClass objEmail = new emailClass();
@@ -166,11 +169,11 @@ public partial class subPage1 : System.Web.UI.Page
         string txtReason = "Greetings from " + txtName.Text;
         Panel pnlCard = (Panel)FindControl("pnlCard");
         string panel_html = RenderControl(pnlCard);
-      string  background = "img/" + lstBackColor.SelectedValue.ToString();
+        string background = "img/" + lstBackColor.SelectedValue.ToString();
 
-      string mappath = Server.MapPath(@background); // my image is placed in images folder
+        string mappath = Server.MapPath(@background); // my image is placed in images folder
 
-      Response.Write(mappath);
+        Response.Write(mappath);
         _strMessage(objEmail.sendEmail(txtName.Text, background, txtPatient.Text.ToString(), txtReason, panel_html));// name, email, subject, message
     }
 
@@ -182,7 +185,7 @@ public partial class subPage1 : System.Web.UI.Page
         lblPatient.Text = string.Empty;
         lblSubject.Text = string.Empty;
     }
-       
+
 
     //this code returns true if it was a success, so you can use this to check if it was success:
 

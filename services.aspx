@@ -11,7 +11,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_main" Runat="Server">
-
+<div style=" margin-left:21%;">
     <script>
         $(function () {
             $("#accordion").accordion({
@@ -43,7 +43,7 @@
                   </div>
          </ItemTemplate>
   </asp:ListView>
-
+  </div>
 
 </asp:Content>
 

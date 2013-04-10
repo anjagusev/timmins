@@ -49,13 +49,13 @@ public class phong_jobpostingsLinq
         DataClassesDataContext objJobPostingsDC = new DataClassesDataContext();
 
         // convert deadline string to date
-        DateTime deadline = DateTime.Parse(_deadline);
+        DateTime deadline = DateTime.ParseExact(_deadline, "dd/MM/yyyy", null);
         // get current date
         DateTime currentdate = DateTime.Now;
 
         // query for records with same department, hours, deadline
         var jobpostingASearch = objJobPostingsDC.tbl_jobpostings.Where(x => x.department == _department && x.hours == _hours && x.deadline.CompareTo(currentdate) >= 0 && x.deadline.CompareTo(deadline) <= 0).Select(x => x);
-        
+
         // check if hours and departments are set to any
         // set appropriate query string
         if (_department == "Any" && _hours == "Any")
@@ -87,13 +87,13 @@ public class phong_jobpostingsLinq
         DataClassesDataContext objJobPostingsDC = new DataClassesDataContext();
 
         // convert deadline string to date
-        DateTime deadline = DateTime.Parse(_deadline);
+        DateTime deadline = DateTime.ParseExact(_deadline, "dd/MM/yyyy", null);
         // get current date
         DateTime currentdate = DateTime.Now;
 
         // query for records with similar title, same department, same hours, deadline between now and selected deadline
         var jobpostingASearch = objJobPostingsDC.tbl_jobpostings.Where(x => x.title.Contains(_search) && x.department == _department && x.hours == _hours && x.deadline.CompareTo(currentdate) >= 0 && x.deadline.CompareTo(deadline) <= 0).Select(x => x);
-        
+
         // check if hours and departments are set to any
         // set appropriate query string
         if (_department == "Any" && _hours == "Any")
@@ -114,7 +114,7 @@ public class phong_jobpostingsLinq
         {
             jobpostingASearch = objJobPostingsDC.tbl_jobpostings.Where(x => x.title.Contains(_search) && x.department == _department && x.hours == _hours && x.deadline.CompareTo(currentdate) >= 0 && x.deadline.CompareTo(deadline) <= 0).Select(x => x);
         }
-        
+
         return jobpostingASearch;
     }
 
@@ -134,7 +134,7 @@ public class phong_jobpostingsLinq
         DataClassesDataContext objJobPostingsDC = new DataClassesDataContext();
         // default to no sorting
         var columnSort = objJobPostingsDC.tbl_jobpostings.Select(x => x);
-        
+
         // check which sorting the user clicked
         switch (_column)
         {

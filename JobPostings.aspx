@@ -17,8 +17,9 @@ Job Postings Feature--%>
         Text="Advanced Search" />
     <br />
     <br />
+    <br />
     <%-- Sort by Department --%>
-    <asp:Label ID="lbl_department" runat="server" Text="Sort by Department" />
+    <asp:Label ID="lbl_department" runat="server" Text="Filter by Department" />
     <asp:DropDownList ID="ddl_department" runat="server" OnSelectedIndexChanged="subDDLChange"
         AutoPostBack="true">
         <asp:ListItem></asp:ListItem>
@@ -81,7 +82,7 @@ Job Postings Feature--%>
                         CommandName="dateposted" />
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="lbl_dateposted" runat="server" Text='<%#Eval("date_posted", "{0:d}")%>' />
+                    <asp:Label ID="lbl_dateposted" runat="server" Text='<%#Eval("date_posted", "{0:dd/MM/yyyy}")%>' />
                 </ItemTemplate>
             </asp:TemplateField>
             <%--Deadline Column--%>
@@ -91,7 +92,7 @@ Job Postings Feature--%>
                         CommandName="deadline" />
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="lbl_deadline" runat="server" Text='<%#Eval("deadline", "{0:d}")%>' />
+                    <asp:Label ID="lbl_deadline" runat="server" Text='<%#Eval("deadline", "{0:dd/MM/yyyy}")%>' />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

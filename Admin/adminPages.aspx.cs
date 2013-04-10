@@ -31,6 +31,8 @@ public partial class Admin_Default2 : System.Web.UI.Page
 
     protected void subAdmin(object sender, CommandEventArgs e)
     {
+        ContentPlaceHolder cph = (ContentPlaceHolder)Master.FindControl("cph_admin_main");
+             
         switch (e.CommandName)
         {
             //case "Insert":
@@ -44,14 +46,14 @@ public partial class Admin_Default2 : System.Web.UI.Page
             //    _subRebind();
             //    break;
             case "Update":
-                         
-                DropDownList ddl_subjectU = (DropDownList)FindControl("ddl_subjectU");
-                  int _subject_id = int.Parse(ddl_subjectU.SelectedValue.ToString());
+             
+              //  DropDownList ddl_subjectU = (DropDownList)cph.FindControl("ddl_subjectU");
+                //  int _subject_id = int.Parse(ddl_subjectU.SelectedValue.ToString());
 
                 //    string txtDesc = "moo";
 
 
-                switch (_subject_id)
+                switch (subID)
                 {
                     case 1:
                         _parentid = 2;
@@ -94,7 +96,6 @@ public partial class Admin_Default2 : System.Web.UI.Page
             case "Update":
 
 
-             
                 //  DropDownList ddlU = (DropDownList)e.Item.FindControl("ddl_subjectU");
                 int pageID = int.Parse(((HiddenField)e.Item.FindControl("hdf_id")).Value);
                 TextBox txtSubjectID = (TextBox)e.Item.FindControl("txt_subjectidU");
@@ -157,8 +158,9 @@ public partial class Admin_Default2 : System.Web.UI.Page
 
     protected void bindDropdown(int id)
     {
-
-        var ddlU = (DropDownList)FindControl("ddl_subjectU");
+        ContentPlaceHolder cph = (ContentPlaceHolder)Master.FindControl("cph_admin_main");
+             
+        var ddlU = (DropDownList)cph.FindControl("ddl_subjectU");
 
         List<page> subID = (from p in dbDC.pages
                              join s in dbDC.GetTable<subject>() on p.subject_id equals s.id

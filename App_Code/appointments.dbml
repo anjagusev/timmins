@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Timmins" Class="appointmentsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=snare.arvixe.com;Initial Catalog=Timmins;Persist Security Info=True;User ID=timmins" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TimminsConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="timmins.tbl_appointment" Member="tbl_appointments">
+    <Type Name="tbl_appointment">
+      <Column Name="appointment_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="appointment_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="appointment_email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="appointment_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="appointment_time" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="appointment_confirmation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

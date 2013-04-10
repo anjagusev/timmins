@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminSubPage.master.cs" Inherits="adminSubPage" %>
+
 <%@ Register Src="~/Controls/adminmenu.ascx" TagName="adminMenu" TagPrefix="uc2" %>
 
 
@@ -9,33 +10,35 @@
     <title>
         <%=pp_masterTitle %>
     </title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="maxcontainer">
-        <div id="container">
-            <div id="header-container">
-                <div id="logo">
-                    <asp:ImageButton ID="img_logo" runat="server" CssClass="img-logo" ImageUrl="../img/timminsadminlogo.png" OnClick="imgClick" />
-                </div>
-                <div id="header-right">
-                    <div id="textsize">
-                        <asp:Label ID="lbl_bigt" runat="server" Text="A++ | " />
-                        <asp:Label ID="lbl_smallt" runat="server" Text="--A" />
+        <div id="maxcontainer">
+            <div id="container">
+                <div id="header-container">
+                    <div id="logo">
+                        <asp:ImageButton ID="img_logo" runat="server" CssClass="img-logo" ImageUrl="../img/timminsadminlogo.png" OnClick="imgClick" />
                     </div>
-                    <div id="search">
-                        <asp:TextBox ID="searchbox" CssClass="search-bar" runat="server" />
-                        <asp:Button ID="btn_search" runat="server" CssClass="search-button" Text="Search" />
+                    <div id="header-right">
+                        <div id="textsize">
+                            <asp:Label ID="lbl_bigt" runat="server" Text="A++ | " />
+                            <asp:Label ID="lbl_smallt" runat="server" Text="--A" />
+                        </div>
+                        <div id="search">
+                            <asp:TextBox ID="searchbox" CssClass="search-bar" runat="server" />
+                            <asp:Button ID="btn_search" runat="server" CssClass="search-button" Text="Search" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="clearfloat">
-            </div>
-            <div id="top-nav-bar">
-            <uc2:adminMenu ID="sideMenu" runat="server"></uc2:adminMenu>
-            <%--
+                <div class="clearfloat">
+                </div>
+
+
+                <div id="top-nav-bar">
+                    <uc2:adminMenu ID="sideMenu" runat="server"></uc2:adminMenu>
+                    <%--
                 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
                     StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="AdminSiteMapDataSource1" StaticEnableDefaultPopOutImage="false">
                     <DynamicMenuItemStyle CssClass="menuItem"></DynamicMenuItemStyle>
@@ -44,8 +47,8 @@
                 <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="AdminSiteMapDataSource1"
                     CssClass="mobilemenu" />
                 <asp:SiteMapDataSource ID="AdminSiteMapDataSource1" runat="server" ShowStartingNode="false"  />--%>
-            </div>
-            <%-- <div id="submenu-slider-container">
+                </div>
+                <%-- <div id="submenu-slider-container">
                 <div id="img-slider">
                 </div>
                 <div id="side-nav">
@@ -61,31 +64,36 @@
                     </div>
                 </div>
             </div>--%>
-            <div class="clearfloat">
-            </div>
-           
-            <asp:ContentPlaceHolder ID="cph_admin_main" runat="server">
-            <div id="main-container">
-                <h1>Main Content</h1>
-                <div class="award-text">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus, diam in
+                <div class="clearfloat">
+                </div>
+                <div id="link-container">
+                    <h1>Main Links</h1>
+                </div>
+
+                <asp:ContentPlaceHolder ID="cph_admin_main" runat="server">
+                    <div id="main-container">
+                        <h1>Main Content</h1>
+                        <div class="award-text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus, diam in
                         cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum. Lorem ipsum dolor
                         sit amet, consectetur adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui
                         nibh ullamcorper augue, sit amet condimentum>Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue,
-                        sit amet condimentum</p>
-                    <p>
-                        Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum.
+                        sit amet condimentum
+                            </p>
+                            <p>
+                                Vivamus luctus, diam in cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum.
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus, diam in
                         cursus aliquam, dui nibh ullamcorper augue, sit amet condimentum>Lorem ipsum dolor
                         sit amet, consectetur adipiscing elit. Vivamus luctus, diam in cursus aliquam, dui
-                        nibh ullamcorper augue, sit amet condimentum</p>
-                </div>
-                
-            </div>
-            </asp:ContentPlaceHolder>
-            <%--<div id="main-quick-links">
+                        nibh ullamcorper augue, sit amet condimentum
+                            </p>
+                        </div>
+
+                    </div>
+                </asp:ContentPlaceHolder>
+                <%--<div id="main-quick-links">
                 <div class="quicklink">
                     <h4>
                         Patient Mail</h4>
@@ -112,10 +120,10 @@
                 </div>
             </div>
         </div>--%>
-     <%--   <asp:ContentPlaceHolder ID="cph_main" runat="server">
+                <%--   <asp:ContentPlaceHolder ID="cph_main" runat="server">
             HELLO
         </asp:ContentPlaceHolder>--%>
-    </div>
+            </div>
     </form>
 </body>
 </html>

@@ -38,7 +38,7 @@ public class emailClass
         //LinkedResource backgroundimg = new LinkedResource(imgdisplay);
         //backgroundimg.ContentId = "background";
         // done HTML formatting in the next line to display my logo
-        AlternateView av1 = AlternateView.CreateAlternateViewFromString("<html><body><img src='timmins.sidhusweb.com/" + background + "' width='368px' height='400px' Style='z-index: position: absolute;''/><br>" + _conMessage + "</body></html>", null, MediaTypeNames.Text.Html);
+        AlternateView av1 = AlternateView.CreateAlternateViewFromString("<html><body><br>" + _conMessage + "</body></html>", null, MediaTypeNames.Text.Html);
 
         using (objSMTP)
         {

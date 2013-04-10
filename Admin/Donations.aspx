@@ -3,12 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" Runat="Server">
- <div style="width:40em">
+
 <%-- 
     Donation Feature by Anja Gusev--
     Donations Gridview On Admin
     
 --%>
+ <div style="width:50em; padding-top:2em; margin:0 auto;">
+<asp:Label ID="lbl_header" runat="server" SkinID="head" Text="List of Donors" Width="40em" />
       <asp:GridView ID="grd_donations" runat="server" AutoGenerateColumns="False" CellPadding="10" DataKeyNames="id"
             Font-Names="Verdana" Font-Size="Small" ForeColor="#333333" GridLines="None" AllowPaging="True">
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

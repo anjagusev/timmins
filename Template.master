@@ -13,6 +13,13 @@
 
     <title><%=pp_submasterTitle %></title>
     <link rel="Stylesheet" href="css/style.css" type="text/css" />
+      <style type="text/css">
+        .dynamicMenu li
+        {
+            display:none;
+            
+        }
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">

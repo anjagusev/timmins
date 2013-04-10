@@ -66,9 +66,8 @@
                     </div>
                 </div>
             </div>--%>
-            <div class="clearfloat">
-            </div>
-           
+            <div class="clearfloat"/>
+        
             <asp:ContentPlaceHolder ID="cph_admin_main" runat="server">
                 <div id="main-container">
                     <h1>

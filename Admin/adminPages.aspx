@@ -6,11 +6,7 @@
 
    <div>
         <asp:Label ID="lbl_message" runat="server" />
-        <br />
-        <br />
-
-        <br />
-        <br />
+       
         <asp:Panel ID="pnl_all" runat="server" GroupingText="All Products">
             <table>
                 <thead>

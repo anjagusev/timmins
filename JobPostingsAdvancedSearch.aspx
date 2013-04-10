@@ -25,9 +25,10 @@ Job Postings Feature: Advanced Search--%>
         }
     </script>
     <div>
-        <ajax:toolkitscriptmanager id="tsm_main" runat="server" />
+        <AJAX:ToolkitScriptManager ID="tsm_main" runat="server" />
         <asp:Label ID="lbl_required" runat="server" Text="* = Required" ForeColor="Maroon" />
-        <br /><br />
+        <br />
+        <br />
         <asp:Label ID="lbl_department" runat="server" Text="Department" />
         <br />
         <%--Default dropdownlist for department--%>
@@ -71,13 +72,15 @@ Job Postings Feature: Advanced Search--%>
             ErrorMessage="Please enter the correct date." ControlToValidate="txt_deadline"
             Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\d{1,2}\/\d{1,2}\/\d{4}$" />
         <%--Uses AJAX for calendar--%>
-        <ajax:calendarextender id="ce_deadline" runat="server" targetcontrolid="txt_deadline"
-            format="dd/MM/yyyy" onclientdateselectionchanged="checkDate" />
+        <AJAX:CalendarExtender ID="ce_deadline" runat="server" TargetControlID="txt_deadline"
+            Format="dd/MM/yyyy" OnClientDateSelectionChanged="checkDate" />
         <br />
         <br />
+        <asp:Label ID="lbl_keywords" runat="server" Text="Keyword(s)" /><br />
         <%--Search Bar--%>
         <asp:TextBox ID="txt_search" runat="server" Text="" placeholder="Search Job Title" />
-        <br /><br />
+        <br />
+        <br />
         <asp:Button ID="btn_search" runat="server" Text="Search" OnClick="subSearch" />
     </div>
 </asp:Content>

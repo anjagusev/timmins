@@ -20,11 +20,11 @@
         });
 </script>
 
-    
+    <div style="margin-left:25%;">
     <div id="container" style="padding:125px,125px,125px,125px;">
     <div id="divgallery" runat="server"></div>
     
     </div>
-
+    </div>
 </asp:Content>
 

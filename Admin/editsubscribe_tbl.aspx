@@ -3,7 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" Runat="Server">
-    <%--i<div>
+    <%--have to fix styling--%>
+    <div>
         <asp:Label ID="lbl_message" runat="server" />
    
                 <table cellpadding="6">

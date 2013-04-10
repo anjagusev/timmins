@@ -6,8 +6,8 @@
 <head runat="server">
      <%-- this will direct automatic to timmins--%>
    <meta http-equiv="Refresh" content="5; url=http://timmins.sidhusweb.com/" />
-    <link href="App_Themes/Theme1/style_harry.css" rel="stylesheet" />
-    <title>Confirm for subscribe</title>
+    <link href="App_Themes/Theme1/scon_firm_h/style_harry.css" rel="stylesheet" />
+    tle>Confirm for subscribe</title>
 </head>
 <body>
     <form id="form1" runat="server">

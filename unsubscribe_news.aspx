@@ -6,8 +6,8 @@
 <head runat="server">
     <%--<meta http-equiv="Refresh" content="5; url=http://timmins.sidhusweb.com/" />--%>
     <title>Timmins Hospital</title>
-    <link href="App_Themes/Theme1/style_harry.css" rel="stylesheet" />
-</head>
+    <link href="App_Themes/Theme1/scon_firm_h/style_harry.css" rel="stylesheet" />
+    
 <body>
     <form id="form1" runat="server">
     <div id="container">

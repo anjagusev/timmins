@@ -1,9 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminSubPage.master.cs"
     Inherits="adminSubPage" %>
-    <%@ Register Src="~/Controls/sideAdmin.ascx" TagName="side" TagPrefix="UCA" %>
-  
-<%@ Register Src="~/Controls/adminmenu.ascx" TagName="adminMenu" TagPrefix="uc2" %>
 
+<%@ Register Src="~/Controls/sideAdmin.ascx" TagName="side" TagPrefix="UCA" %>
+<%@ Register Src="~/Controls/adminmenu.ascx" TagName="adminMenu" TagPrefix="uc2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -16,7 +15,6 @@
 <body>
     <form id="form1" runat="server">
     <div id="maxcontainer">
-
         <div id="container">
             <div id="header-container">
                 <div id="logo">
@@ -25,8 +23,10 @@
                 </div>
                 <div id="header-right">
                     <div id="textsize">
-                        <asp:LoginStatus ID="lgs_main" runat="server" LogoutAction="Redirect" LogoutPageUrl="../Default.aspx" CssClass="login" />
-                        <br /><br />
+                        <asp:LoginStatus ID="lgs_main" runat="server" LogoutAction="Redirect" LogoutPageUrl="../Default.aspx"
+                            CssClass="login" />
+                        <br />
+                        <br />
                         <asp:Label ID="lbl_bigt" runat="server" Text="A++ | " />
                         <asp:Label ID="lbl_smallt" runat="server" Text="--A" />
                     </div>
@@ -40,7 +40,6 @@
             </div>
             <div id="top-nav-bar">
                 <uc2:adminMenu ID="adminMenu" runat="server"></uc2:adminMenu>
-              
                 <%--
                 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
                     StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="AdminSiteMapDataSource1" StaticEnableDefaultPopOutImage="false">
@@ -69,11 +68,7 @@
             </div>--%>
             <div class="clearfloat">
             </div>
-            <div id="link-container">
-                <h1>
-                    Main Links</h1>
-                        <UCA:side ID="adminSide" runat="server" />
-            </div>
+           
             <asp:ContentPlaceHolder ID="cph_admin_main" runat="server">
                 <div id="main-container">
                     <h1>

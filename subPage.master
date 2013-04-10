@@ -68,28 +68,11 @@
                     CssClass="mobilemenu" />
                 <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />--%>
             </div><%--/end top-nav-bar--%>
-            <%-- <div id="submenu-slider-container">
-                <div id="img-slider">
-                </div>
-                <div id="side-nav">
-                    <div class="side-nav-box">
-                        <asp:HyperLink ID="pnv" runat="server" NavigateUrl="~/patientsandvisitors.aspx" CssClass="text"
-                            Text="Patients & Visitors" />
-                    </div>
-                    <div class="side-nav-box second">
-                        Give Back
-                    </div>
-                    <div class="side-nav-box third">
-                        Staff & Students
-                    </div>
-                </div>
-            </div>--%>
+        
      
         <div id="link-container">
-            <h1>
-                Quick Links</h1>
+            <h1><%=pp_masterLink %>Quick Links</h1>
             <!--SIDE MENU CONTROL-->
-            <!-- MENU CONTROL HERE -->
             <uc1:sideMenu ID="sideMenu" runat="server"></uc1:sideMenu>
             <!--responsive submenu-->
             <asp:ContentPlaceHolder ID="cph_sideNav" runat="server">

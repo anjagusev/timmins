@@ -621,10 +621,12 @@ img
     width:76%;
     float:left;
 }
-
+/******PHONG THIS IS WHERE I DID THE STYLING IN THE DYNAMIC MENU*******/
 .dynamicMenu li
         {
-            display:none;
+         background-color:lightBlue; 
+         text-align:center;
+         padding:1em;
             
         }
 /* MEDIA SCREENS BELOW*/

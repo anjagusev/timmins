@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/subPage.master" AutoEventWireup="true" CodeFile="services.aspx.cs" Inherits="services" %>
 
+<%@ MasterType VirtualPath="~/subPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cph_sideNav" Runat="Server">
 
       <asp:linkbutton ID="btn_date" runat="server"  OnClick="btn_date_Click" Text="Sort by New Services" />

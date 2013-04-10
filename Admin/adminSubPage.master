@@ -63,10 +63,7 @@
             </div>--%>
             <div class="clearfloat">
             </div>
-            <div id="link-container">
-                <h1>Main Links</h1>
-              
-            </div>
+           
             <asp:ContentPlaceHolder ID="cph_admin_main" runat="server">
             <div id="main-container">
                 <h1>Main Content</h1>

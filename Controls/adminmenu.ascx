@@ -4,8 +4,9 @@
 
 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
     DataSourceID="AdminSiteMapDataSource1" StaticEnableDefaultPopOutImage="false" StaticMenuStyle-CssClass="top-nav-bar">
-    <DynamicMenuStyle CssClass="dynamicMenu" />
-    <DynamicMenuItemStyle CssClass="dynamicMenu"></DynamicMenuItemStyle>
+    <DynamicMenuStyle BackColor="#318DD8"/>
+    <DynamicMenuItemStyle />
+    <DynamicHoverStyle />
     <StaticMenuItemStyle CssClass="menuItem" HorizontalPadding="1em"></StaticMenuItemStyle>
 </asp:Menu>
 <asp:DropDownList ID="ddl_menu" runat="server" DataSourceID="AdminSiteMapDataSource1"

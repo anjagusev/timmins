@@ -7,8 +7,8 @@
 <head runat="server">
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
     <title>
         <%=pp_submasterTitle %>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </div>--%>
-            <div class="clearfloat">
+          
             </div>
             <div id="link-container">
                 <h1>
@@ -103,19 +103,17 @@
             </div>
             <div class="subMain">
             
-                
-                <asp:ContentPlaceHolder ID="cph_main" runat="server">
                 <div class="subhead">
                     <h1>
                         <%=pp_submasterSubHeading %>
                     </h1>
                 </div>
                 <div class="subContent">
-                <p>Fill this section with all your content</p>
-                </div>
+                <asp:ContentPlaceHolder ID="cph_main" runat="server">
+                <p>
+                    Fill this section with all your content
            
             </asp:ContentPlaceHolder>
-            
              </div>
             </div>
             <%-- 

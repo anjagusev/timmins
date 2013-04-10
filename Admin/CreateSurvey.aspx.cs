@@ -46,20 +46,20 @@ public partial class Admin_Default5 : System.Web.UI.Page
             SurveyClass _survey = new SurveyClass();
             Survey survey = new Survey();
 
-
+            ContentPlaceHolder cph = (ContentPlaceHolder)Master.FindControl("cph_admin_main");
             SurveyQuestion _surveyquestion = new SurveyQuestion();
             SurveyQuestionClass SQ = new SurveyQuestionClass();
             //get the controls
-            ListBox listbox = (ListBox)FindControl("lbSource");
-            TextBox txtTitle = (TextBox)FindControl("txtTitle");
-            TextBox txtDescription = (TextBox)FindControl("txtDesc");
-            TextBox txtDate = (TextBox)FindControl("txtDate");
+            ListBox listbox = (ListBox)cph.FindControl("lbSource");
+            TextBox txtTitle = (TextBox)cph.FindControl("txtTitle");
+            TextBox txtDescription = (TextBox)cph.FindControl("txtDesc");
+            TextBox txtDate = (TextBox)cph.FindControl("txtDate");
             DateTime later = DateTime.Today.AddDays(12);
             DateTime ExpiresOn = later;
             DateTime CreatedOn = CreatedOn = Convert.ToDateTime(DateTime.Now);
             //   int? num = null;
-            ListBox Target = (ListBox)FindControl("lbTarget");
-            string status = null;
+            ListBox Target = (ListBox)cph.FindControl("lbTarget");
+            string status = "Inactive";
 
             int surveyID;
             _survey.commitInsert(txtTitle.Text, txtDescription.Text, CreatedOn, ExpiresOn, status, out surveyID);
@@ -168,8 +168,9 @@ public partial class Admin_Default5 : System.Web.UI.Page
 
     protected void btnAddOne_Click(object sender, EventArgs e)
     {
-        ListBox lbSource = (ListBox)FindControl("lbSource");
-        ListBox lbTarget = (ListBox)FindControl("lbTarget");
+        ContentPlaceHolder cph = (ContentPlaceHolder)Master.FindControl("cph_admin_main");
+        ListBox lbSource = (ListBox)cph.FindControl("lbSource");
+        ListBox lbTarget = (ListBox)cph.FindControl("lbTarget");
 
         foreach (ListItem li in lbSource.Items)
             if (li.Selected)

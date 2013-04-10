@@ -4,7 +4,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" Runat="Server">
-
+<div style="width:53em; border:1px solid black; float:right;">
  <h1>
         <asp:Label ID="lbl_header" runat="server" Text="Add A Survey" /></h1>
     <table cellpadding="2" class="style1">
@@ -154,6 +154,7 @@
             Width="21%">
         </asp:DropDownList>
         <asp:Button ID="btn_status" runat="server" ValidationGroup="status" OnClick="subStatus" Text="Make Active" />
+    </div>
     </div>
 </asp:Content>
 

@@ -12,9 +12,6 @@ public partial class ManageSurvey : System.Web.UI.Page
     QuestionsClass objQuestions = new QuestionsClass();
     SurveyClass dbDC = new SurveyClass();
 
-    // DataClassesDataContext dbDC = new DataClassesDataContext();
-
-
     //SurveyAppConString context;
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -23,8 +20,8 @@ public partial class ManageSurvey : System.Web.UI.Page
         if (!IsPostBack)
         {
             QuestionsClass objQuestions = new QuestionsClass();
+            //gets the lblSource
             ListBox listbox = (ListBox)FindControl("lbSource");
-            //List<Question> questions = context.Questions.ToList();
             List<Question> questions = objQuestions.getQuestions().ToList();
 
             listbox.DataSource = questions;

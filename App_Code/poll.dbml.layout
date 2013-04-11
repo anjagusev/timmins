@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="poll">
+  <DataContextMoniker Name="/pollDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cbfb625c-5f9b-4bf6-88f4-7e1d3bd3f04c" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/pollDataContext/poll_answer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20e1994a-1353-41dc-89c9-86bdae01a7dd" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68910d05-59f0-4b6b-b4b5-a8633e060cab" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/pollDataContext/poll_choice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d6bf0e5-d8ed-4b59-9c01-f37db2282097" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa61a44d-f16d-454b-b36d-71ef3092d8ff" absoluteBounds="3.75, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/pollDataContext/poll_question" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65a340c1-e048-4ec8-a3bb-09dbd0c5b369" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

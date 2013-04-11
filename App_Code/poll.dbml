@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Timmins" Class="pollDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=snare.arvixe.com;Initial Catalog=Timmins;Persist Security Info=True;User ID=timmins" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TimminsConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="timmins.poll_answer" Member="poll_answers">
+    <Type Name="poll_answer">
+      <Column Name="answer_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="answer" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="timmins.poll_choice" Member="poll_choices">
+    <Type Name="poll_choice">
+      <Column Name="IDpc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[option]" Member="option" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="timmins.poll_question" Member="poll_questions">
+    <Type Name="poll_question">
+      <Column Name="IDq" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="question" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="live" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

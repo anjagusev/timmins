@@ -91,7 +91,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
 
 
-    // this code is for newsletter feature
+    //((((((((((((((((( newsletter feature ))))))))))))))))
     subscriberClass objsubscribe = new subscriberClass();
 
     MailMessage objMail = new MailMessage();
@@ -116,9 +116,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void subsubmit(object sender, EventArgs e)
     {
 
-
+        // receiving text value enter by user 
         string Username = txt_name.Text;
         string Useremail = txt_email.Text;
+        // checking againt table it is all ready exists
         var exist = objsubscribe.emailExist(Useremail);
 
         if (exist.Any())
@@ -127,13 +128,14 @@ public partial class MasterPage : System.Web.UI.MasterPage
             _subRebind();
         }
         else
+            // if those values doesn't exist
         {
-            // insert through linq 
+            // passing value to insert method to insert in subscriber table
             _strMessage(objsubscribe.CommitInsert(Username, Useremail), "subscribed");
             _subRebind();
 
 
-            // lasID is getting last inserted id
+            // variable lastID is getting last inserted id
             int lastID = Convert.ToInt16(objsubscribe.last_id().ToString());
             string subject_email = "Confirm Your Registration with Timmins and District Hospital";
             string body_email = "<a href='http://timmins.sidhusweb.com/confirm_email.aspx?id=" + lastID + "'>Click here act your service.</a>";

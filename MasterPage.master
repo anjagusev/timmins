@@ -266,7 +266,7 @@
                     <h4>Subscribe To Our Newsletter</h4>
             <asp:Label ID="email_Exist" runat="server" /><br />
               <div id="subscribe">
-                  <asp:Panel ID="pnl_sub" runat="server" Visible="true">
+                 <asp:Panel ID="pnl_sub" runat="server" Visible="true">
                 <asp:label ID="lbl_name" runat="server" Text="Name :" AssociatedControlID="txt_name" />
                 <asp:TextBox ID="txt_name" runat="server" />
                 <asp:RequiredFieldValidator ID="rfv_name" runat="server" ControlToValidate="txt_name" ErrorMessage="*" ValidationGroup="req" />
@@ -285,7 +285,7 @@
             </div>
        
         <asp:ContentPlaceHolder ID="cph_main" runat="server">
-            HELLO
+            
         </asp:ContentPlaceHolder>
 
       <%--  Footer--%>

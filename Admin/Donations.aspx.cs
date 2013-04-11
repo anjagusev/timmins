@@ -13,6 +13,8 @@ public partial class Admin_Default2 : System.Web.UI.Page
     {
         ContentPlaceHolder contentPlaceHolder = (ContentPlaceHolder)Master.FindControl("cph_admin_main"); //(replace this with whatever the content place holder id is that you are entering data into)
 
+        lbl_sumresult.Text = objDonation.getTotalDonations().ToString();
+
        GridView grd_donations = (GridView)contentPlaceHolder.FindControl("grd_donations"); //("ddlSurveys") is the name of my dropdown list id
         grd_donations.DataSource = objDonation.getDonations();
         grd_donations.DataBind();

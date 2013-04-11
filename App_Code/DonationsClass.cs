@@ -10,6 +10,17 @@ public class DonationsClass
 {
   DataClassesDataContext dbDC = new DataClassesDataContext();
 
+
+//gets the sum of the donations
+  public decimal getTotalDonations()
+  {
+      DataClassesDataContext db = new DataClassesDataContext();
+
+      var donationSum = (from d in dbDC.tbl_donations select d.amount).Sum();
+      return donationSum;
+  }
+               
+
     public IQueryable<tbl_donation> getDonations()
     {
         //create an insteance of the data context class called dbDC

@@ -7,10 +7,13 @@
 <%-- 
     Donation Feature by Anja Gusev--
     Donations Gridview On Admin
-    
 --%>
  <div style="width:50em; padding-top:2em; margin:0 auto;">
 <asp:Label ID="lbl_header" runat="server" SkinID="head" Text="List of Donors" Width="40em" />
+<br />
+<br />
+<asp:Label ID="lbl_sum" runat="server"  Text="Total Sum of Donations: $" /><asp:Label ID="lbl_sumresult" Font-Bold="true" runat="server"/>
+<br /><br />
       <asp:GridView ID="grd_donations" runat="server" AutoGenerateColumns="False" CellPadding="10" DataKeyNames="id"
             Font-Names="Verdana" Font-Size="Small" ForeColor="#333333" GridLines="None" AllowPaging="True">
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

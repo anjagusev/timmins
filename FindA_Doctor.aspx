@@ -4,6 +4,7 @@
     <%@ MasterType VirtualPath="~/subPage.master" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_sideNav" runat="Server">
  
+    <%--Ad rotator is getting images and link from Ads floder--%>
     <asp:AdRotator id="controlName" runat="server" 
     AdvertisementFile="~/Ads/Ads.xml" Target="_self">
 </asp:AdRotator>
@@ -15,6 +16,7 @@
      <div>
      <asp:label ID="lbl_Sspecialty" runat="server" Text="Search by specialty:" />
         <br />
+         <%--?????????? Drop down list from specialty table which will search aganist doctors table ???--%>
         <asp:Label ID="lbl_speciality" runat="server" Text="Select Specialty: " />
         <asp:DropDownList ID="ddl_sp" runat="server" AutoPostBack="true" OnSelectedIndexChanged="subChange" >
         <asp:ListItem Text="select Speciality" Value="0" />    

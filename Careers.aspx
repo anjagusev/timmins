@@ -7,8 +7,7 @@
  
 </asp:Content>
 
-<%--<asp:Content ID="cnt_main" ContentPlaceHolderID="cph_main" runat="server">
-//put your feature in here
+<asp:Content ID="cnt_main" ContentPlaceHolderID="cph_main" runat="server">
+Find out about the exciting career opportunities at Timmins and District Hospital!
 </asp:Content>
 
---%>

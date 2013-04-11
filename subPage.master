@@ -67,8 +67,8 @@
               <%--  <asp:DropDownList ID="ddl_sideMenu" runat="server" CssClass="mobilemenu mobileSide"
                     AutoPostBack="true" OnSelectedIndexChanged="subMobileSide" />
                 <asp:SiteMapDataSource ID="SiteMapDataSource3" SiteMapProvider="AdminSqlSiteMapProvider"
-                    runat="server" ShowStartingNode="false" StartFromCurrentNode="true" /--%>>
-                <%--OLD MENU ---- CAN BE DELETED -------------------- %>
+                    runat="server" ShowStartingNode="false" StartFromCurrentNode="true" /--
+                -OLD MENU ---- CAN BE DELETED -------------------- %>
             
                 <asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
                     StaticMenuStyle-CssClass="top-nav-bar" DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="false">

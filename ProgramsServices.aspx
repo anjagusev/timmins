@@ -5,7 +5,7 @@
 
   <%--Filler Page, please do not delete --%>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_sideNav" runat="Server">
-<strong>Services</strong>
+<strong></strong>
 
 </asp:Content>
 <%--<asp:Content ID="cnt_main" ContentPlaceHolderID="cph_main" runat="server">

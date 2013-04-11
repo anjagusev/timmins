@@ -3,7 +3,12 @@
    <%-- Access exposed elements from the master page--%>
     <%@ MasterType VirtualPath="~/subPage.master" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_sideNav" runat="Server">
-  SIDE NAV 
+ 
+    <asp:AdRotator id="controlName" runat="server" 
+    AdvertisementFile="~/Ads/Ads.xml" Target="_self">
+</asp:AdRotator>
+
+
 </asp:Content>
 <asp:Content ID="cnt_main" ContentPlaceHolderID="cph_main" runat="server">
 

@@ -6,7 +6,7 @@
 <asp:Label ID="lbl_message" runat="server" />
         <asp:Label ID="lbl_insert" runat="server" Text="Insert a new Page" />
         <br />
-     <table class="tablered">
+     <table class="tablered>
             <tr>
                 <td>
                     <asp:Label ID="lbl_subjectidI" runat="server" Text="Category" AssociatedControlID="ddl_subject" />
@@ -14,6 +14,7 @@
                 <td>
                     <asp:DropDownList ID="ddl_subject" runat="server" AutoPostBack="true" OnSelectedIndexChanged="subChange" />
                 </td>
+                <!--<asp:TextBox ID="txt_subjectidI" runat="server" />-->
             </tr>
             <tr>
                 <td>

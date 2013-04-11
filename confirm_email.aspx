@@ -14,6 +14,7 @@
     <form id="form1" runat="server">
     <div id="container">
         <div id="header">
+            <%--&&&&&&&&&&& This page is to verify user's email ********--%>
             <asp:Label ID="lbl_header" runat="server" Text="<strong>Tadh.com</strong>" />
             <asp:ImageMap ID="header_logo" runat="server" ImageUrl="img/logo_ft.png" ImageAlign="Left" />
         </div>

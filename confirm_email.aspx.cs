@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class confirm_email : System.Web.UI.Page
 {
+    // instance of subscriber class
     subscriberClass objverify = new subscriberClass();
     protected void Page_Load(object sender, EventArgs e)
     {

@@ -60,10 +60,12 @@ public partial class Admin_newsFeed : System.Web.UI.Page
             case "Insert":
                 _strMessage(objNews.commitInsert(txt_headI.Text, txt_introI.Text, txt_paraI.Text), "inserted");
                 //++++++++++++++++++++++++ Added by harry
+                // if admin checked the check box this function will run 
                 subscriberClass objemails = new subscriberClass();
                 emailADO adoreader = new emailADO();
                 if (chk_newsletter.Checked)
                 {
+                    //List of email from emailADO class
                     var allemails = adoreader.getemails();
 
                     SmtpClient smtpclient = new SmtpClient();
@@ -86,7 +88,7 @@ public partial class Admin_newsFeed : System.Web.UI.Page
 
                             mailMessage.Body += txt_introI.Text+"<br/>";
                             mailMessage.Body += "http://timmins.sidhusweb.com/<br/>";
-                            mailMessage.Body +="<a href='http://timmins.sidhusweb.com/confirm_email.aspx?id="+email+"'>Click Here to unsubscribe</a><br/>";
+                            mailMessage.Body += "<a href='http://timmins.sidhusweb.com/unsubscribe_news.aspx?id=" + email + "'>Click Here to unsubscribe</a><br/>";
                         }
                     }
                     // from address is declared on web.config 

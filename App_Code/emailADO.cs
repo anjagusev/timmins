@@ -16,7 +16,7 @@ public class emailADO
 	    }
 	public List<string> getemails()
 	{
-
+        // Ado query is used to get list of email which are valid 
 		List<string> allemails = new List<string>();
 		SqlConnection conn = new SqlConnection(_connstring);
         SqlCommand cmd = new SqlCommand("SELECT email FROM tbl_subscribers WHERE valid ='yes'", conn);

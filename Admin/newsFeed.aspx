@@ -31,6 +31,8 @@
         </tr>
         </table>
         <br />
+        <%--))))))))))))) Added by Harinder--%>
+        <%--Admin will check this box if he whats to send email to subscribers--%>
         <asp:CheckBox ID="chk_newsletter" runat="server" Text="Send email to subscribers"  />
         <br />
         <asp:Button ID="btn_insert" runat="server" Text="Insert" CommandName="Insert" OnCommand="subAdmin" ValidationGroup="insert" />

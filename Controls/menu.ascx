@@ -2,8 +2,7 @@
     Inherits="Controls_menu" %>
       <%--  User Control for the Main Menu Public Side -- By Anja --%>
 
-<asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server"
-    DataSourceID="main_nav" StaticEnableDefaultPopOutImage="false" StaticMenuStyle-CssClass="top-nav-bar">
+<asp:Menu ID="menu" Orientation="Horizontal" CssClass="top-nav-bar" runat="server" DataSourceID="main_nav" StaticEnableDefaultPopOutImage="false" StaticMenuStyle-CssClass="top-nav-bar">
     <DynamicMenuStyle CssClass="dynamicMenu" />
     <DynamicMenuItemStyle CssClass="dynamicMenu"></DynamicMenuItemStyle>
     <StaticMenuItemStyle CssClass="menuItem" HorizontalPadding=".9em"></StaticMenuItemStyle>

@@ -65,18 +65,18 @@ public partial class Template : System.Web.UI.MasterPage
 
     }
 
-    public void subMobileSide(object sender, EventArgs e)
-    {
-        //   SiteMap objSM = new SiteMap();
-        string title = ddl_sideMenu.SelectedItem.ToString();
+    //public void subMobileSide(object sender, EventArgs e)
+    //{
+    //    //   SiteMap objSM = new SiteMap();
+    //    string title = ddl_sideMenu.SelectedItem.ToString();
 
 
-        List<SiteMap> getUrl = (from s in dbDC.SiteMaps where s.Title == title select s).ToList();
+    //    List<SiteMap> getUrl = (from s in dbDC.SiteMaps where s.Title == title select s).ToList();
 
-        foreach (SiteMap s in getUrl)
-        {
-            Response.Redirect(s.Url);
-        }
+    //    foreach (SiteMap s in getUrl)
+    //    {
+    //        Response.Redirect(s.Url);
+    //    }
 
-    }
+    //}
 }

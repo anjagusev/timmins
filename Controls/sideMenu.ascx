@@ -4,5 +4,4 @@
 <StaticMenuItemStyle CssClass="sideNav" HorizontalPadding="1em"></StaticMenuItemStyle>
 </asp:Menu>
 <%--<asp:SiteMapDataSource ID="SiteMapDataSource3" SiteMapProvider="SqlSiteMapProvider" runat="server" ShowStartingNode="false" StartFromCurrentNode="true" />--%>
-
 <asp:SiteMapDataSource ID="main_nav" StartFromCurrentNode="true" runat="server" SiteMapProvider="main_nav" ShowStartingNode="false" />

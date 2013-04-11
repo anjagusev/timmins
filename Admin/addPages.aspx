@@ -6,7 +6,7 @@
 <asp:Label ID="lbl_message" runat="server" />
         <asp:Label ID="lbl_insert" runat="server" Text="Insert a new Page" />
         <br />
-     <table>
+     <table class="tablered">
             <tr>
                 <td>
                     <asp:Label ID="lbl_subjectidI" runat="server" Text="Category" AssociatedControlID="ddl_subject" />

@@ -355,7 +355,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
                     SurveyResponse sres = new SurveyResponse();
                     sres.FilledBy = 2;
-                    sres.SurveyID = surveyID;
+                    sres.SurveyID = surveyid;
                     sres.QuestionID = Convert.ToInt32(tr.Cells[0].Attributes["ID"]);
                     TableCell tc = tr.Cells[1];
                     foreach (Control ctrc in tc.Controls)

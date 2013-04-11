@@ -28,12 +28,7 @@ public partial class subPage : System.Web.UI.MasterPage
         set { _subheading = value; }
     }
 
-    private string _linktitle = "Related Links";
-    public string pp_masterLink
-    {
-        get { return _linktitle; }
-        set { _linktitle = value; }
-    }
+  
 
     protected void imgClick(object sender, EventArgs e)
     {

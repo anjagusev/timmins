@@ -82,7 +82,7 @@
             <%--/end top-nav-bar--%>
             <div id="link-container">
                 <h1>
-                    <%=pp_masterLink %>Quick Links</h1>
+                   Quick Links</h1>
                 <!--SIDE MENU CONTROL-->
                 <uc1:sideMenu ID="sideMenu" runat="server"></uc1:sideMenu>
                 <!--responsive submenu-->

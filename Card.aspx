@@ -6,10 +6,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_sideNav" runat="Server">
 </asp:Content>
 <asp:Content ID="cnt_main" ContentPlaceHolderID="cph_main" runat="server">
+  <asp:Label ID="lbl_send" runat="server">Send a patient a personalized greeting card!</asp:Label>
+  <br />
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:Label ID="lbl_emailmessage" runat="server"></asp:Label>
     <br />
+  
     <div id="greetingcard" style="float: left; border-right: thin ridge; padding-right: 1em;
         border-top: thin ridge; padding-left: 2em; font-size: .6em; padding-bottom: 2em;
         border-left: thin ridge; width: 293px; padding-top: 10px; border-bottom: thin ridge;
@@ -142,18 +145,18 @@
     </div>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <asp:Panel ID="pnlCard" Style="float: left; position: relative; z-index: 101; top: 15px;
+            <asp:Panel ID="pnlCard" Style="float: left;  position: relative; z-index: 101; top: 1em;
                 height: 400px; width: 368px;" runat="server" HorizontalAlign="Center">
                 <asp:Image ID="img_background" runat="server" Style="height: 3em; width: 4em;" /><br />
                 &nbsp;
                 <div id="mail_header">
                     <asp:Label ID="lblSubject" runat="server" />
                     <br />
-                    <asp:Label ID="lbl_from" runat="server">From: </asp:Label>
+                  <%--  <asp:Label ID="lbl_from" runat="server"></asp:Label>--%>
                     <asp:Label ID="lblName" runat="server" />
                     <asp:Label ID="lblSender" runat="server"></asp:Label>
                     <br />
-                    <asp:Label ID="lbl_to" runat="server">To: </asp:Label>
+                   <%-- <asp:Label ID="lbl_to" runat="server"></asp:Label>--%>
                     <asp:Label ID="lblPatient" runat="server"></asp:Label>
                     <div id="card_message">
                         <br />

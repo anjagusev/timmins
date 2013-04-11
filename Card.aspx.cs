@@ -129,8 +129,8 @@ public partial class subPage1 : System.Web.UI.Page
 
         // Set the text.
         lblGreeting.Text = txtGreeting.Text;
-        lblSender.Text = txt_sender.Text;
-        lblPatient.Text = txt_patient.Text;
+        lblSender.Text = "From: " + txt_sender.Text;
+        lblPatient.Text = "To: " + txt_patient.Text;
         lblSubject.Text = "A Virtual Card from  " + txt_name.Text;
 
     }

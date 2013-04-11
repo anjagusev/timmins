@@ -339,7 +339,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
    
     private List<SurveyResponse> GetSurveyReponse()
     {
-        int surveyID = 44;
+        
         List<SurveyResponse> response = new List<SurveyResponse>();
 
         pnlSurvey.FindControl("tbl_response");

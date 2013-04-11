@@ -14,7 +14,6 @@
                 <td>
                     <asp:DropDownList ID="ddl_subject" runat="server" AutoPostBack="true" OnSelectedIndexChanged="subChange" />
                 </td>
-                <!--<asp:TextBox ID="txt_subjectidI" runat="server" />-->
             </tr>
             <tr>
                 <td>

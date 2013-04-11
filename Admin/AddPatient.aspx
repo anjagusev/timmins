@@ -1,32 +1,24 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/adminSubPage.master" AutoEventWireup="true" CodeFile="newsFeed.aspx.cs" Inherits="Admin_newsFeed" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/adminSubPage.master" AutoEventWireup="true" CodeFile="AddPatient.aspx.cs" Inherits="Admin_Default3" %>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_admin_main" Runat="Server">
-    
     <div>
         <asp:Label ID="lbl_message" runat="server" />
 
         <table>
-        <th><asp:Label ID="lbl_insert" runat="server" Text="Insert New Article" /></th>
+        <th><asp:Label ID="lbl_insert" runat="server" Text="Add Patient Info" /></th>
         <tr>
-            <td><asp:Label ID="lbl_headI" runat="server" Text="Heading: " AssociatedControlID="txt_headI" /></td>
+            <td><asp:Label ID="lbl_nameI" runat="server" Text="Name: " AssociatedControlID="txt_nameI" /></td>
             <td>
-                <asp:TextBox ID="txt_headI" runat="server" />
-                <asp:RequiredFieldValidator ID="rfv_headI" runat="server" Text="*Required" ControlToValidate="txt_headI" ValidationGroup="insert" />
+                <asp:TextBox ID="txt_nameI" runat="server" />
+                <asp:RequiredFieldValidator ID="rfv_nameI" runat="server" Text="*Required" ControlToValidate="txt_nameI" ValidationGroup="insert" />
             </td>
         </tr>
         <tr>
-            <td><asp:Label ID="lbl_introI" runat="server" Text="Intro: " AssociatedControlID="txt_introI" /></td>
+            <td><asp:Label ID="lbl_emailI" runat="server" Text="Email: " AssociatedControlID="txt_emailI" /></td>
             <td>
-                <asp:TextBox ID="txt_introI" runat="server" TextMode="MultiLine" />
-                <asp:RequiredFieldValidator ID="rfv_introI" runat="server" Text="*Required" ControlToValidate="txt_introI" ValidationGroup="insert" />
-            </td>
-        </tr>
-        <tr>
-            <td><asp:Label ID="lbl_paraI" runat="server" Text="Paragraph: " AssociatedControlID="txt_paraI" /></td>
-            <td>
-                <asp:TextBox ID="txt_paraI" runat="server" TextMode="MultiLine" />
-                <asp:RequiredFieldValidator ID="rfv_paraI" runat="server" ControlToValidate="txt_paraI" Text="*Required" Display="Dynamic" ValidationGroup="insert" />
+                <asp:TextBox ID="txt_emailI" runat="server" />
+                <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" Text="*Required" ControlToValidate="txt_emailI" ValidationGroup="insert" />
             </td>
         </tr>
         </table>
@@ -39,11 +31,11 @@
         <br />
         
         <br />
-        <asp:Panel ID="pnl_all" runat="server" GroupingText="All Articles">
+        <asp:Panel ID="pnl_all" runat="server" GroupingText="All Patients">
             <table cellpadding="3" cellspacing="5">
                 <thead style="font-weight:bolder;background-color:#d3d3d3;">
                     <tr>
-                        <th><asp:Label ID="lbl_heading" runat="server" Text="Heading" /></th>
+                        <th><asp:Label ID="lbl_name" runat="server" Text="Name" /></th>
                         <th><asp:Label ID="lbl_option" runat="server" Text="Option" /></th>
                         <th><asp:Label ID="lbl_option2" runat="server" Text="Option" /></th>
                     </tr>
@@ -52,7 +44,7 @@
                     <asp:Repeater ID="rpt_all" runat="server">
                         <ItemTemplate>
                             <tr>
-                                <td><%#Eval("heading") %></td>
+                                <td><%#Eval("name") %></td>
                                 <td><asp:LinkButton ID="btn_update" runat="server" Text="Update" CommandName="Update" CommandArgument='<%#Eval("id") %>' OnCommand="subAdmin" /></td>
                                 <td><asp:LinkButton ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" CommandArgument='<%#Eval("id") %>' OnCommand="subAdmin" /></td>
                             </tr>
@@ -62,13 +54,12 @@
             </table>
         </asp:Panel>
 
-        <asp:Panel ID="pnl_update" runat="server" GroupingText="Update an Article">
+        <asp:Panel ID="pnl_update" runat="server" GroupingText="Update Patient Information">
             <table cellpadding="2" cellspacing="3">
                  <thead style="font-weight:bolder;">
                     <tr>
-                        <th><asp:Label ID="lbl_headingU" runat="server" Text="Heading" /></th>
-                        <th><asp:Label ID="lbl_introU" runat="server" Text="Introduction" /></th>
-                        <th><asp:Label ID="lbl_paraU" runat="server" Text="Paragraph" /></th>
+                        <th><asp:Label ID="lbl_nameU" runat="server" Text="Name" /></th>
+                        <th><asp:Label ID="lbl_emailU" runat="server" Text="Email" /></th>
                     </tr>
                  </thead>
                  <tbody>
@@ -76,16 +67,12 @@
                         <ItemTemplate>
                             <tr>
                                 <asp:HiddenField ID="hdf_id" runat="server" Value='<%#Eval("id") %>' />
-                                <td><asp:TextBox ID="txt_headingU" runat="server" Text='<%#Eval("heading") %>' /></td>
-                                <td><asp:TextBox ID="txt_introU" runat="server" Text='<%#Eval("intro") %>' TextMode="MultiLine" /></td>
-                                <td><asp:TextBox ID="txt_paraU" runat="server" Text='<%#Eval("paragraph") %>' /></td>
+                                <td><asp:TextBox ID="txt_nameU" runat="server" Text='<%#Eval("name") %>' /></td>
+                                <td><asp:TextBox ID="txt_emailU" runat="server" Text='<%#Eval("email") %>' />
                             </tr>
                             <tr>
-                                <td><asp:RequiredFieldValidator ID="rfv_headingU" runat="server" Text="*Required" ControlToValidate="txt_headingU" ValidationGroup="update" /></td>
-                                <td><asp:RequiredFieldValidator ID="rfv_introU" runat="server" Text="*Required" ControlToValidate="txt_introU" ValidationGroup="update" /></td>
-                                <td>
-                                    <asp:RequiredFieldValidator ID="rfv_paraU" runat="server" Text="*Required" ControlToValidate="txt_paraU" ValidationGroup="update" Display="Dynamic" />
-                                </td>
+                                <td><asp:RequiredFieldValidator ID="rfv_nameU" runat="server" Text="*Required" ControlToValidate="txt_nameU" ValidationGroup="update" /></td>
+                                <td><asp:RequiredFieldValidator ID="rfv_emailU" runat="server" Text="*Required" ControlToValidate="txt_emailU" ValidationGroup="update" /></td>
                             </tr>
                             <tr>
                                 <td colspan="4">
@@ -99,18 +86,17 @@
                  </tbody>
             </table>
         </asp:Panel>
-        <asp:Panel ID="pnl_delete" runat="server" GroupingText="Delete an Article">
+        <asp:Panel ID="pnl_delete" runat="server" GroupingText="Delete Product">
             <table cellpadding="2" cellspacing="3">
                  <thead style="font-weight:bolder;">
                     <tr>
                         <td colspan="4" align="center" style="color:Red;">
-                            <asp:Label ID="lbl_delete" runat="server" Text="Are you sure you want to delete this item?" />
+                            <asp:Label ID="lbl_delete" runat="server" Text="Are you sure you want to delete this patient from the database?" />
                         </td>
                     </tr>
                     <tr>
-                        <th><asp:Label ID="lbl_headD" runat="server" Text="Heading" /></th>
-                        <th><asp:Label ID="lbl_introD" runat="server" Text="Introduction" /></th>
-                        <th><asp:Label ID="lbl_paraD" runat="server" Text="Paragraph" /></th>
+                        <th><asp:Label ID="lbl_nameD" runat="server" Text="Name" /></th>
+                        <th><asp:Label ID="lbl_emailD" runat="server" Text="Email" /></th>
                     </tr>
                  </thead>
                  <tbody>
@@ -118,9 +104,8 @@
                         <ItemTemplate>
                             <tr>
                                 <asp:HiddenField ID="hdf_id" runat="server" Value='<%#Eval("id") %>' />
-                                <td><asp:TextBox ID="txt_proHeadDe" runat="server" Text='<%#Eval("heading") %>' /></td>
-                                <td><asp:TextBox ID="txt_proIntroDe" runat="server" Text='<%#Eval("intro") %>' /></td>
-                                <td><asp:TextBox ID="txt_proParaDe" runat="server" Text='<%#Eval("paragraph") %>' /></td>
+                                <td><asp:TextBox ID="txt_nameDe" runat="server" Text='<%#Eval("name") %>' /></td>
+                                <td><asp:TextBox ID="txt_emailDe" runat="server" Text='<%#Eval("email") %>' /></td>
                             </tr>
                             <tr>
                                 <td colspan="4">
@@ -136,6 +121,4 @@
         </asp:Panel>
     </div>
 </asp:Content>
-
-
 

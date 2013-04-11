@@ -44,6 +44,7 @@ public partial class Admin_newsFeed : System.Web.UI.Page
     {
         if (flag)
         {
+            Response.Redirect("~/Admin/newsFeed.aspx");
             lbl_message.Text = "Article was succesfully " + str + ".";
         }
         else

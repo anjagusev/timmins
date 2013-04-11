@@ -31,6 +31,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         if (!Page.IsPostBack)
         {
             _subRebind();
+
         }
         this.MsgBoxContinue.Value = Page.ClientScript.GetPostBackEventReference(ShowSurvey, string.Empty);
         PopulateSurvey();
@@ -329,11 +330,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
             int _filledby = Convert.ToInt32(sres.FilledBy);
 
             objSurveyResponse.commitInsert(_surveyid, _questionid, _value, _filledby);
-
+           
+           
         }
 
     }
 
+   
     private List<SurveyResponse> GetSurveyReponse()
     {
         int surveyID = 44;

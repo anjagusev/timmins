@@ -77,7 +77,7 @@ public partial class subPage1 : System.Web.UI.Page
             // if duration is empty then output different message
             if (txt_duration.Text == "0")
             {
-                lbl_output.Text = "Thank you, " + txt_name.Text + ", for filling out the form. " + txt_pname.Text + " will be notified about the visit as soon as possible and an email will be sent to you.<br /><br />";
+                lbl_output.Text = "Thank you, " + txt_name.Text + ", for filling out the form. " + txt_pname.Text + " will be notified about the visit as soon as possible and an email will be sent to you. <a href='PlanaVisit.aspx'>Click here</a> to go back to the Plan a Visit page.<br /><br />";
             }
             else
             {
@@ -94,7 +94,7 @@ public partial class subPage1 : System.Web.UI.Page
                 }
 
                 //output message
-                lbl_output.Text = "Thank you, " + txt_name.Text + ", for filling out the form. " + txt_pname.Text + " will be notified about the visit as soon as possible and an email will be sent to you.<br /><br />";
+                lbl_output.Text = "Thank you, " + txt_name.Text + ", for filling out the form. " + txt_pname.Text + " will be notified about the visit as soon as possible and an email will be sent to you.<a href='PlanaVisit.aspx'>Click here</a> to go back to the Plan a Visit page.<br /><br />";
                 lbl_output.Text += "Your Parking Fee: " + String.Format("{0:C}", parkingfee);
             }
         }

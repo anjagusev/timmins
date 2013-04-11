@@ -163,16 +163,19 @@
                 </div>
                 <div id="side-nav">
                     <div class="side-nav-box">
-                        <asp:HyperLink ID="patientsandvisitors" runat="server" NavigateUrl="~/patientsandvisitors.aspx"
-                            CssClass="text" Text="Patients & Visitors" />
+                        <asp:HyperLink ID="patientsandvisitors" runat="server" NavigateUrl="~/patientsandvisitors.aspx" CssClass="text" Text="Patients & Visitors" />
+                        <br /><br />
+                        <asp:Literal ID="ltl_nav_box1" runat="server" Text="Timmins Transit has a scheduled stop at the front entrance of the hospital..." />
                     </div>
                     <div class="side-nav-box second">
-                        <asp:HyperLink ID="giveback" runat="server" NavigateUrl="~/donations.aspx" CssClass="text"
-                            Text="Give Back" />
+                        <asp:HyperLink ID="giveback" runat="server" NavigateUrl="~/donations.aspx" CssClass="text" Text="Give Back" />
+                        <br /><br />
+                        <asp:Literal ID="ltl_nav_box2" runat="server" Text="Timmins Transit helps its community by collecting donations which will..." />
                     </div>
                     <div class="side-nav-box third">
-                        <asp:HyperLink ID="staffandstudents" runat="server" NavigateUrl="~/FindaDoctor.aspx"
-                            CssClass="text" Text="Find A Doctor" />
+                        <asp:HyperLink ID="staffandstudents" runat="server" NavigateUrl="~/FindaDoctor.aspx" CssClass="text" Text="Find A Doctor" />
+                        <br /><br />
+                        <asp:Literal ID="ltl_nav_box3" runat="server" Text="Let us help you quickly find a doctor that satisfies your health requirements" />
                     </div>
                 </div>
             </div>

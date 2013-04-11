@@ -79,6 +79,10 @@ Job Postings Feature: Advanced Search--%>
         <asp:Label ID="lbl_keywords" runat="server" Text="Keyword(s)" /><br />
         <%--Search Bar--%>
         <asp:TextBox ID="txt_search" runat="server" Text="" placeholder="Search Job Title" />
+        <%-- checking if value entered is text format  --%>
+        <asp:RegularExpressionValidator ID="rev_search" runat="server" Text="Invalid search keyword"
+            ErrorMessage="Please enter your keyword correctly." ControlToValidate="txt_search"
+            Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" />
         <br />
         <br />
         <asp:Button ID="btn_search" runat="server" Text="Search" OnClick="subSearch" />

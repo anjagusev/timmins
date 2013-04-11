@@ -30,7 +30,7 @@ Plan a Visit Feature--%>
     <div>
         <AJAX:ToolkitScriptManager ID="tsm_main" runat="server" />
         <asp:Panel ID="pnl_visitform" runat="server">
-            <asp:Label ID="lbl_info" runat="server" Text="Plan a visit to Timmins and District Hospital by filling out the form below. We will notify the patient you are visiting and then email you to confirm.<br /> You can also enter the duration of the visit to calculate your parking fee." />
+            <asp:Label ID="lbl_info" runat="server" Text="Plan a visit to Timmins and District Hospital by filling out the form below. We will notify the patient you are visiting and then email you to confirm.<br /><br /> You can also enter the duration of the visit to calculate your parking fee." />
             <br />
             <br />
             <asp:Label ID="lbl_required" runat="server" Text="* = Required" ForeColor="Maroon" />

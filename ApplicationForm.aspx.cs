@@ -112,7 +112,7 @@ public partial class subPage1 : System.Web.UI.Page
             objEmail.sendEmail(email, subject, message);
 
             // database insert
-            _strMessage(objLinq.insertApplication(Int32.Parse(Request.QueryString["id"]), txt_name.Text, txt_email.Text, txt_address.Text, txt_city.Text, txt_postalcode.Text, txt_number.Text, resume, txt_coverletter.Text));
+            _strMessage(objLinq.insertApplication(Int32.Parse(Request.QueryString["id"]), txt_name.Text, txt_email.Text, txt_address.Text, txt_city.Text, txt_postalcode.Text, txt_number.Text, resume));
 
         }
 

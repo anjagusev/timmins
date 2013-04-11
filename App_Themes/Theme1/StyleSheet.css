@@ -1026,6 +1026,7 @@ img
      width:300px; 
      height:100px; 
      float:left;  
+     margin-top:75px; /* added for more footer space */
 }
 .logo_ft {
     float:left;

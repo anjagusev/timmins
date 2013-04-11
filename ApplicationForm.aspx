@@ -69,7 +69,7 @@ Job Postings Feature--%>
             <asp:Label ID="lbl_address" runat="server" Text="Address: " AssociatedControlID="txt_address" />
             <br />
             <asp:TextBox ID="txt_address" runat="server" CssClass="textbox"  />
-            <%-- checking if value entered is text format  --%>
+            <%-- checking if value entered is address format  --%>
             <asp:RegularExpressionValidator ID="rfv_address" runat="server" Text="Invalid address, Format: ### Fake Street"
                 ErrorMessage="Please enter the correct address." ControlToValidate="txt_address"
                 Display="Dynamic" SetFocusOnError="true" ValidationExpression="\d{1,3}.?\d{0,3}\s[a-zA-Z]{2,30}\s[a-zA-Z]{2,15}"
@@ -89,14 +89,14 @@ Job Postings Feature--%>
             <asp:Label ID="lbl_postalcode" runat="server" Text="Postal Code: " AssociatedControlID="txt_postalcode" />
             <br />
             <asp:TextBox ID="txt_postalcode" runat="server" CssClass="textbox"  />
-            <%-- checking if value entered is text format  --%>
+            <%-- checking if value entered is postal code format  --%>
             <asp:RegularExpressionValidator ID="rfv_postalcode" runat="server" Text="Invalid postal code, Format: A1A 1A1"
                 ErrorMessage="Please enter the correct postal code." ControlToValidate="txt_postalcode"
                 Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\d{5}-\d{4}|\d{5}|[A-Z]\d[A-Z] \d[A-Z]\d$"
                 ValidationGroup="app_form" />
             <br />
             <br />
-            <asp:Label ID="lbl_infomsg" runat="server" Text="For your <strong>resume</strong> please upload a .doc, .docx, or a .pdf file. <br /> If you have a cover letter, please paste it in the cover letter textbox." />
+            <asp:Label ID="lbl_infomsg" runat="server" Text="For your <strong>resume</strong> please upload a .doc, .docx, or a .pdf file." />
             <br />
             <br />
             <%--Resume--%>
@@ -106,11 +106,6 @@ Job Postings Feature--%>
             <%-- checking if empty --%>
             <asp:Label ID="lbl_rfvresume" runat="server" />
             <br /><br />
-            <%--Cover Letter--%>
-            <asp:Label ID="lbl_coverletter" runat="server" Text="Cover Letter: " AssociatedControlID="txt_coverletter" />
-            <br />
-            <asp:TextBox ID="txt_coverletter" runat="server" TextMode="MultiLine" Height="100" Width="300" />
-            <br />
             <br />
             <%-- Validation Summary for plan a visit form --%>
             <asp:ValidationSummary ID="vds_application" runat="server" HeaderText="Form Errors:"

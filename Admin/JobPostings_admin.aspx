@@ -27,6 +27,9 @@ Job Postings Feature--%>
     <div>
         <AJAX:ToolkitScriptManager ID="tsm_main" runat="server" />
         <h1>Job Postings - Admin</h1>
+        <asp:Label ID="lbl_info" runat="server" Text="Description and qualifications are only shown when updating a job posting." />
+        <br />
+        <br />
         <%--Link to view page--%>
         <asp:HyperLink ID="hlk_view" runat="server" Text="View Page" NavigateUrl="../JobPostings.aspx" Target="_blank" />
         <br />
@@ -143,6 +146,10 @@ Job Postings Feature--%>
                                     <%-- checking if empty --%>
                                     <asp:RequiredFieldValidator ID="rfv_titleU" runat="server" Text="Empty value" ErrorMessage="Please enter the job title"
                                         ControlToValidate="txt_titleU" Display="Dynamic" SetFocusOnError="true" ValidationGroup="update" />
+                                    <%-- checking if value entered is text format  --%>
+                                    <asp:RegularExpressionValidator ID="rev_titleU" runat="server" Text="Invalid job title"
+                                        ErrorMessage="Please enter the job title correctly." ControlToValidate="txt_titleU"
+                                        Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" ValidationGroup="update" />
                                 </td>
                                 <td>
                                     <asp:TextBox ID="txt_datepostedU" runat="server" Text='<%#Eval("date_posted", "{0:dd/MM/yyyy}") %>'
@@ -311,6 +318,10 @@ Job Postings Feature--%>
         <%-- checking if empty --%>
         <asp:RequiredFieldValidator ID="rfv_titleI" runat="server" Text="Empty value" ErrorMessage="Please enter the job title"
             ControlToValidate="txt_titleI" Display="Dynamic" SetFocusOnError="true" ValidationGroup="insert" />
+        <%-- checking if value entered is text format  --%>
+        <asp:RegularExpressionValidator ID="rev_titleI" runat="server" Text="Invalid job title"
+            ErrorMessage="Please enter the job title correctly." ControlToValidate="txt_titleI"
+            Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" ValidationGroup="insert" />
         <br />
         <asp:Label ID="lbl_datepostedI" runat="server" Text="Date Posted*" AssociatedControlID="txt_datepostedI"
             Font-Bold="true" />
@@ -403,7 +414,6 @@ Job Postings Feature--%>
         <asp:Button ID="btn_insert" runat="server" Text="Insert" CommandName="Insert" OnCommand="subAdmin"
             ValidationGroup="insert" />
         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" OnCommand="subAdmin"
-            CausesValidation="false" />
+        <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" OnCommand="subAdmin" />
     </div>
 </asp:Content>

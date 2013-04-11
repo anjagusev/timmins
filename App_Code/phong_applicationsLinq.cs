@@ -41,7 +41,7 @@ public class phong_applicationsLinq
         // create anonymous variable with its value being instance of our LINQ object
         // inner join to job postings table to get job title
         var allApplications = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date });
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date });
         return allApplications;
     }
 
@@ -54,58 +54,54 @@ public class phong_applicationsLinq
         // default to no sorting
         // inner join to job postings table to get job title
         var columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date });
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date });
 
         // check which sorting the user clicked
         switch (_column)
         {
             case "id":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderBy(a => a.application_id);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderBy(a => a.application_id);
                 break;
             case "jobid":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderBy(a => a.jobposting_id);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderBy(a => a.jobposting_id);
                 break;
             case "title":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderBy(j => j.title);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderBy(j => j.title);
                 break;
             case "date":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderByDescending(a => a.app_date);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderByDescending(a => a.app_date);
                 break;
             case "name":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderBy(a => a.name);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderBy(a => a.name);
                 break;
             case "email":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderBy(a => a.email);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderBy(a => a.email);
                 break;
             case "phonenumber":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderBy(a => a.phonenumber);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderBy(a => a.phonenumber);
                 break;
             case "address":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderByDescending(a => a.address);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderByDescending(a => a.address);
                 break;
             case "city":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderByDescending(a => a.city);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderByDescending(a => a.city);
                 break;
             case "postalcode":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderByDescending(a => a.postalcode);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderByDescending(a => a.postalcode);
                 break;
             case "resume":
                 columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderBy(a => a.resume);
-                break;
-            case "coverletter":
-                columnSort = objApplicationsDC.tbl_applications.Join(objApplicationsDC.tbl_jobpostings, a => a.jobposting_id, j => j.jobposting_id, (a, j)
-            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.coverletter, a.app_date }).OrderByDescending(a => a.coverletter);
+            => new { a.application_id, a.jobposting_id, j.title, a.name, a.email, a.phonenumber, a.address, a.city, a.postalcode, a.resume, a.app_date }).OrderBy(a => a.resume);
                 break;
         }
 
@@ -123,7 +119,7 @@ public class phong_applicationsLinq
     }
 
 
-    public bool insertApplication(int _jobpostingID, string _name, string _email, string _address, string _city, string _postalcode, string _phonenumber, string _resume, string _coverletter)
+    public bool insertApplication(int _jobpostingID, string _name, string _email, string _address, string _city, string _postalcode, string _phonenumber, string _resume)
     {
         // create an instance of our LINQ object
         DataClassesDataContext objApplicationsDC = new DataClassesDataContext();
@@ -141,7 +137,6 @@ public class phong_applicationsLinq
             objNewApplication.postalcode = _postalcode;
             objNewApplication.phonenumber = _phonenumber;
             objNewApplication.resume = _resume;
-            objNewApplication.coverletter = _coverletter;
             // set application date to current date
             objNewApplication.app_date = DateTime.ParseExact(DateTime.Now.ToString("dd/MM/yyyy"), "dd/MM/yyyy", null);
             // insert command

@@ -12,6 +12,10 @@ Job Postings Feature--%>
 <asp:Content ID="cnt_main" ContentPlaceHolderID="cph_main" runat="server">
     <%--Search Bar--%>
     <asp:TextBox ID="txt_search" runat="server" Text="" placeholder="Search Job Title" />
+    <%-- checking if value entered is text format  --%>
+    <asp:RegularExpressionValidator ID="rev_search" runat="server" Text="Invalid search keywords"
+        ErrorMessage="Please enter your search correctly." ControlToValidate="txt_search"
+        Display="Dynamic" SetFocusOnError="true" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" />
     <asp:Button ID="btn_search" runat="server" Text="Search" OnClick="subSearch" />
     <asp:LinkButton ID="lnk_advancedsearch" runat="server" PostBackUrl="~/JobPostingsAdvancedSearch.aspx"
         Text="Advanced Search" />
@@ -21,7 +25,7 @@ Job Postings Feature--%>
     <%-- Sort by Department --%>
     <asp:Label ID="lbl_department" runat="server" Text="Filter by Department" />
     <asp:DropDownList ID="ddl_department" runat="server" OnSelectedIndexChanged="subDDLChange"
-        AutoPostBack="true">
+        AutoPostBack="true" CausesValidation="true">
         <asp:ListItem></asp:ListItem>
         <asp:ListItem>Finance</asp:ListItem>
         <asp:ListItem>General</asp:ListItem>

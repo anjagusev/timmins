@@ -123,12 +123,6 @@
         <classShapeMoniker Id="24f56f67-6775-4e9a-82df-3c642888c7ba" />
       </nodes>
     </associationConnector>
-    <classShape Id="727a5088-3677-4632-8aca-2f04ff2378f2" absoluteBounds="1.375, 11.875, 2, 2.9247054036458326">
-      <DataClassMoniker Name="/DataClassesDataContext/tbl_application" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f8afb47b-967e-420b-9688-57b3c7a1e3eb" absoluteBounds="1.3900000000000001, 12.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="05802ef0-a4c9-441d-a213-99c9e298bfcc" absoluteBounds="3.625, 15.25, 2, 1.9631982421875023">
       <DataClassMoniker Name="/DataClassesDataContext/tbl_careeralert" />
       <nestedChildShapes>
@@ -141,13 +135,6 @@
         <elementListCompartment Id="0c78f6d6-32c1-42c3-a2c6-a62bf24dd2d2" absoluteBounds="3.6399999999999997, 12.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.625 : 13.2700512695312); (3.375 : 13.2700512695312)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/DataClassesDataContext/tbl_jobposting/tbl_jobposting_tbl_application" />
-      <nodes>
-        <classShapeMoniker Id="63e1e0e4-074c-408c-a54c-c527f6b38108" />
-        <classShapeMoniker Id="727a5088-3677-4632-8aca-2f04ff2378f2" />
-      </nodes>
-    </associationConnector>
     <classShape Id="4371c511-f7ff-4ef4-a164-d3827578567b" absoluteBounds="1.375, 15.25, 2, 2.5401025390625023">
       <DataClassMoniker Name="/DataClassesDataContext/tbl_visitor" />
       <nestedChildShapes>
@@ -178,5 +165,18 @@
         <elementListCompartment Id="d9172710-61eb-4e7e-ac18-399715757adf" absoluteBounds="1.5150000000000001, 20.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="b1647c34-81a3-4931-adaf-9b6765907f4f" absoluteBounds="1.375, 12, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClassesDataContext/tbl_application" />
+      <nestedChildShapes>
+        <elementListCompartment Id="134c5cd9-41e7-4c75-9326-c76819552530" absoluteBounds="1.3900000000000001, 12.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 13.2700512695313); (3.375 : 13.2700512695313)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/tbl_jobposting/tbl_jobposting_tbl_application" />
+      <nodes>
+        <classShapeMoniker Id="63e1e0e4-074c-408c-a54c-c527f6b38108" />
+        <classShapeMoniker Id="b1647c34-81a3-4931-adaf-9b6765907f4f" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

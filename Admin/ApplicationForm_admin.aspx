@@ -124,16 +124,6 @@ Job Postings Feature--%>
                             Target="_blank" />
                     </ItemTemplate>
                 </asp:TemplateField>
-                <%-- Cover Letter Column --%>
-                <asp:TemplateField>
-                    <HeaderTemplate>
-                        <asp:LinkButton ID="lnk_coverletter" runat="server" Text="Cover Letter" OnCommand="subSort"
-                            CommandName="coverletter" />
-                    </HeaderTemplate>
-                    <ItemTemplate>
-                        <asp:Label ID="lbl_coverletter" runat="server" Text='<%#Eval("coverletter") %>' />
-                    </ItemTemplate>
-                </asp:TemplateField>
                 <%--Delete Button--%>
                 <asp:TemplateField>
                     <ItemTemplate>

@@ -96,6 +96,7 @@ public partial class Admin_newsFeed : System.Web.UI.Page
                     
                     mailMessage.IsBodyHtml = true;
                     smtpclient.Send(mailMessage);
+                    // display message on success 
                     sent_success.Text = "<br/>E-Mail sent successfully ! ";
 
                 }

@@ -23,6 +23,8 @@
         </asp:DropDownList>
         <br />
         <br />
+
+         <%--Two text boxs are added with field validation. These text box with search in doctor's table for matching first name and last name  --%>
         <asp:label ID="lbl_Sname" runat="server" Text="Search by Name" />
         <br />
         <asp:Label ID="lbl_fname" runat="server" Text="Enter First Name: " AssociatedControlID="txt_fname" />
@@ -38,8 +40,9 @@
         <asp:Label ID="no_result" runat="server" />
         <br />
 
-      <%--  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
-
+      <%--  +++++++++++++++++++++++++After selection is done in drop down user will see the result in this gird view+++++++++++++++++++++++++++++++++++++++--%>
+         <%--same gird view is used to display result search by name --%>
+         <%--These two search are functioning differently not binded together--%>
          <asp:GridView ID="grd_doc" Runat="server" 
           AutoGenerateColumns="False"
             AllowSorting="True" BorderWidth="2px" BackColor="White" 

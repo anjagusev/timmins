@@ -65,10 +65,10 @@ public class specialty_doctor
 
 
     //search by name
-    public IQueryable<tbl_doctor> docByName(string _fname, string _lname )
+    public IQueryable<tbl_doctor> docByName(string _fname, string _lname)
     {
         DataClassesDataContext objdocDC = new DataClassesDataContext();
-        var names = objdocDC.tbl_doctors.Where(x =>x.first_name.Contains(_fname)).Where (x =>x.last_name.Contains(_lname));
+        var names = objdocDC.tbl_doctors.Where(x => x.first_name.Contains(_fname)).Where(x => x.last_name.Contains(_lname));
         return names;
     
     }

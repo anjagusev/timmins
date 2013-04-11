@@ -61,10 +61,12 @@ public partial class FindA_Doctor : System.Web.UI.Page
 
     protected void search(object sender, EventArgs e)
     {
-
+        //receiving last name and first name
         string _fname = txt_fname.Text.ToString();
         string _lname = txt_lname.Text.ToString();
+
         var no_res = objLinq.docByName(_fname, _lname);
+        // if no result is found in then it will display no result in "no_result label"
         if (!no_res.Any())
         {
             no_result.Text = "No result Found";

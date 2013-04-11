@@ -35,7 +35,7 @@ public partial class appointmentsDataContext : System.Data.Linq.DataContext
   #endregion
 	
 	public appointmentsDataContext() : 
-			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["TimminsConnectionString2"].ConnectionString, mappingSource)
+			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["TimminsConnectionString"].ConnectionString, mappingSource)
 	{
 		OnCreated();
 	}

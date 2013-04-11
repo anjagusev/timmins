@@ -18,7 +18,7 @@
             <td><asp:Label ID="lbl_emailI" runat="server" Text="Email: " AssociatedControlID="txt_emailI" /></td>
             <td>
                 <asp:TextBox ID="txt_emailI" runat="server" />
-                <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" Text="*Required" ControlToValidate="txt_emailI" ValidationGroup="insert" />
+                <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" Text="*Required" ControlToValidate="txt_emailI" ValidationGroup="insert" /><asp:RegularExpressionValidator ID="rev_emailI" ControlToValidate="txt_emailI" runat="server" ErrorMessage="*Not a valid email format" Display="Dynamic" ValidationExpression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" ValidationGroup="insert" />
             </td>
         </tr>
         </table>
@@ -72,7 +72,7 @@
                             </tr>
                             <tr>
                                 <td><asp:RequiredFieldValidator ID="rfv_nameU" runat="server" Text="*Required" ControlToValidate="txt_nameU" ValidationGroup="update" /></td>
-                                <td><asp:RequiredFieldValidator ID="rfv_emailU" runat="server" Text="*Required" ControlToValidate="txt_emailU" ValidationGroup="update" /></td>
+                                <td><asp:RequiredFieldValidator ID="rfv_emailU" runat="server" Text="*Required" ControlToValidate="txt_emailU" ValidationGroup="update" /><asp:RegularExpressionValidator ID="rev_emailU" ControlToValidate="txt_emailU" runat="server" ErrorMessage="*Not a valid email format" Display="Dynamic" ValidationExpression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" ValidationGroup="update" /></td>
                             </tr>
                             <tr>
                                 <td colspan="4">

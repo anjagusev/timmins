@@ -13,7 +13,6 @@ using System.Text; //added
 public partial class subPage1 : System.Web.UI.Page
 {
 
-    //Master.pp_submasterSubHeading = "Timmins and District Hospital Image Gallery";
     SqlConnection objcon = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["TimminsConnectionString"].ToString());
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -27,6 +26,7 @@ public partial class subPage1 : System.Web.UI.Page
     {
         try
         {
+            //connection query to the datbase table where the paths to the images are stored.  the files themselves are stored in the img folder
             DataTable objdt = new DataTable();
             string query = "select * from Gallery;";
             SqlDataAdapter objda = new SqlDataAdapter(query, objcon);

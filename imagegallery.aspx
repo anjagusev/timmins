@@ -19,8 +19,10 @@
             $('#myGallery').galleryView();
         });
 </script>
-
+    <%--container surrounding the image gallery itself --%>
     <div id="container" style="padding:125px,125px,125px,125px;">
+
+    <%--the image gallery lives within here --%>
     <div id="divgallery" runat="server"></div>
     
     </div>

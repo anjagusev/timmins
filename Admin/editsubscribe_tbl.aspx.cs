@@ -27,7 +27,8 @@ public partial class Admin_editsubscribe_tbl : System.Web.UI.Page
 
         dt_main.DataSource = objsub.getsubscriber();
 
-        dt_main.DataBind();   }
+        dt_main.DataBind(); 
+  }
 
 
 

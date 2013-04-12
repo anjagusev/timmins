@@ -35,6 +35,11 @@ public partial class unsubscribe_news : System.Web.UI.Page
 
             objunsub.reasonOfUnsub(email_received, reason);
 
+            txt_comment.Visible = false;
+            btn_submit.Visible = false;
+
+            mess.Text = " Your comment is valuable for us";
+
             lbl_id.Visible = true;
         }
 

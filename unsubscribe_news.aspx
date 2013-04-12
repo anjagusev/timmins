@@ -23,7 +23,7 @@
                 <asp:Label ID="mess" runat="server" Text="Reason of Unsubscribe" /><br/>
                  <asp:TextBox ID="txt_comment" TextMode="MultiLine" runat="server" Columns="15" Rows="2" />
                 <br />
-                <asp:Button ID="btn_submit" runat="server" Text="submit" />
+                <asp:Button ID="btn_submit" runat="server" Text="submit" OnClick="subsubmit" />
       
             </div>
 

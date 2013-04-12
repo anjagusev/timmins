@@ -59,7 +59,7 @@
         <%--?????????????????????????? DATAList Update and DELETE??????????????????--%>
 
         <asp:DataList ID="dt_main" runat="server" RepeatColumns="2" CellSpacing="2" GridLines="Both" DataKeyField="subscriber_id"
-            OnEditCommand="subShowEditTemplate" OrnUpdateCommand="subCommitUpdate" OnDeleteCommand="subCommitDelete" OnCancelCommand="subCancel">
+            OnEditCommand="subShowEditTemplate" OnUpdateCommand="subCommitUpdate" OnDeleteCommand="subCommitDelete" OnCancelCommand="subCancel">
             <ItemTemplate>
                 <table>
                 <tbody>
@@ -101,7 +101,8 @@
                         <td><asp:Label ID="lbl_validE" runat="server" Text="Validate" /></td>
                         <td><asp:label ID="lbl_valid" runat="server" Text='<%#Bind("valid") %>' /></td>
 
-                        <td><asp:DropDownList ID="ddl_listE" runat="server"> 
+                        <td><asp:DropDownList ID="ddl_listE" runat="server">
+                             
                                     <asp:ListItem value="no" Text="NO" />
                                     <asp:ListItem value="yes" Text="YES" />
                             </asp:DropDownList>

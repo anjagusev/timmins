@@ -61,17 +61,17 @@ public partial class Admin_newsFeed : System.Web.UI.Page
                 _strMessage(objNews.commitInsert(txt_headI.Text, txt_introI.Text, txt_paraI.Text), "inserted");
                 //++++++++++++++++++++++++ Added by harry
                 // if admin checked the check box this function will run 
-                subscriberClass objemails = new subscriberClass();
+               // subscriberClass objemails = new subscriberClass();
                 emailADO adoreader = new emailADO();
                 if (chk_newsletter.Checked)
                 {
                     //List of email from emailADO class
-                    var allemails = adoreader.getemails();
+                    sent_success.Text = "<br/>E-Mail sent successfully ! ";
 
                     SmtpClient smtpclient = new SmtpClient();
                     MailMessage mailMessage = new MailMessage();
 
-
+                    var allemails = adoreader.getemails();
                     mailMessage.Priority = MailPriority.High;
                     foreach (string email in allemails)
                     {
@@ -99,8 +99,7 @@ public partial class Admin_newsFeed : System.Web.UI.Page
                     // display message on success 
                     sent_success.Text = "<br/>E-Mail sent successfully ! ";
 
-                }
-
+                    }
                 break;
             case "Update":
                 _showUpdate(int.Parse(e.CommandArgument.ToString()));

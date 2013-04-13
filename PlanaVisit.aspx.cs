@@ -23,31 +23,28 @@ public partial class subPage1 : System.Web.UI.Page
     // Submit Button: hide form panel, insert info into visitors table
     protected void subSubmit(object sender, EventArgs e)
     {
-        // hide visit form
-        pnl_visitform.Visible = false;
-
-        // set duration to 0 if not entered by user
-        if (txt_duration.Text == "")
+        if (Page.IsValid)
         {
-            txt_duration.Text = "0";
-        }
+            // hide visit form
+            pnl_visitform.Visible = false;
 
-        // check if user selected minutes or hours
-        if (ddl_duration.SelectedIndex == 0)
-        {
-            if (Page.IsValid)
+            // set duration to 0 if not entered by user
+            if (txt_duration.Text == "")
+            {
+                txt_duration.Text = "0";
+            }
+
+            // check if user selected minutes or hours
+            if (ddl_duration.SelectedIndex == 0)
             {
                 // Database Insert if form is valid
                 _strMessage(objLinq.insertVisitor(txt_name.Text, txt_pname.Text, txt_number.Text, Int32.Parse(txt_visitors.Text), DateTime.ParseExact(txt_dateofvisit.Text, "dd/MM/yyyy", null), txt_duration.Text + " minutes", txt_email.Text));
+
             }
-        }
-        else
-        {
-            if (Page.IsValid)
+            else
             {
                 // Database Insert 
                 _strMessage(objLinq.insertVisitor(txt_name.Text, txt_pname.Text, txt_number.Text, Int32.Parse(txt_visitors.Text), DateTime.ParseExact(txt_dateofvisit.Text, "dd/MM/yyyy", null), txt_duration.Text + " hours", txt_email.Text));
-
             }
         }
     }

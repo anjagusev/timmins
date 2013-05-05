@@ -243,8 +243,7 @@
             </div>
             <div id="main-quick-links">
                 <div class="quicklink">
-                    <h4>
-                        Patient Mail</h4>
+                    <a href="./Doctor/mail.aspx"><h4>Patient Mail</h4></a>
                     <h5>
                         Send a message</h5>
                 </div>
